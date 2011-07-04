@@ -1,0 +1,121 @@
+<includes>
+	<include name="View_54">
+		<control type="group">
+			<visible>Control.IsVisible(54)</visible>
+			<control type="group" description="Furniture">
+				<posy>0</posy>
+				<!--<control type="image" description="Stage">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1280</width>
+					<height>720</height>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true">img/Fanart_Stage.png</texture>
+				</control>-->
+				<control type="image" description="Stage">
+					<posx>0</posx>
+					<posy>520</posy>
+					<width>1280</width>
+					<height>200</height>
+					<aspectratio>keep</aspectratio>
+					<texture>img/Fanart_Stage2.png</texture>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus(60)</visible>
+					<posx>40</posx>
+					<posy>664</posy>
+					<width>1200</width>
+					<align>center</align>
+					<font style="bold">XLarge</font>
+					<shadowcolor>Black</shadowcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				
+			</control>
+			<control type="fixedlist" id="54" description="FanArt">
+				<visible>Window.IsActive(MyVideo.xml) | Container.Content(Movies) | Container.Content(Albums) | Container.Content(Artists)</visible>
+				<viewtype label="20445">FanArt</viewtype>
+				<posx>40</posx>
+				<posy>488</posy>
+				<width>1200</width>
+				<height>250</height>
+				<orientation>horizontal</orientation>
+				<onup>9000</onup>
+				<ondown>60</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<focusposition>3</focusposition>
+				<movement>3</movement>
+				<preloaditems>4</preloaditems>
+				<pagecontrol>60</pagecontrol>
+				<itemlayout height="250" width="170">
+					<control type="image">
+						<posx>15</posx>
+						<posy>10</posy>
+						<width>140</width>
+						<height>160</height>
+						<!--<bordertexture border="1">img/ButtonFO.png</bordertexture>
+						<bordersize>1</bordersize>-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image" description="Reflection">
+						<posx>15</posx>
+						<posy>168</posy>
+						<width>140</width>
+						<height>160</height>
+						<bordersize>1</bordersize>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="170">
+					<control type="image">
+						<posx>15</posx>
+						<posy>10</posy>
+						<width>140</width>
+						<height>160</height>
+						<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<bordersize>2</bordersize>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="120" time="300" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,-4" time="300" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image" description="Reflection">
+						<posx>15</posx>
+						<posy>168</posy>
+						<width>140</width>
+						<height>160</height>
+						<bordersize>2</bordersize>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="120" time="300" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,24" time="300" easing="inout" center="auto"/>
+						</animation>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="60">
+					<hitrect x="0" y="680" w="1280" h="80" />
+					<visible>![Skin.HasSetting(KioskEnabled) + Skin.HasSetting(HideScrollbar)]</visible>
+					<posx>82</posx>
+					<posy>32r</posy>
+					<height>18</height>
+					<width>1100</width>
+					<orientation>horizontal</orientation>
+					<texturesliderbackground border="12,0,12,0">img/ScrollBarHorBG.png</texturesliderbackground>
+					<texturesliderbar border="12,0,12,0">img/ScrollBarHorFO.png</texturesliderbar>
+					<texturesliderbarfocus border="12,0,12,0">img/ScrollBarHorFO.png</texturesliderbarfocus>
+					<onup>50</onup>
+					<ondown>-</ondown>
+					<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+						<effect type="fade" start="100" end="0" time="120" reversible="true" />
+					</animation>
+				</control>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,43 @@
+<window id="2005">
+	<defaultcontrol>-</defaultcontrol>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<controls>
+
+
+		<control type="label" id="10">
+			<description>row 1 label</description>
+			<posx>20</posx>
+			<posy>32</posy>
+			<label>-</label>
+		</control>
+
+		<control type="label" id="11">
+			<description>row 2 label</description>
+			<posx>20</posx>
+			<posy>64</posy>
+			<label>-</label>
+		</control>
+
+		<control type="label" id="12">
+			<description>row 3 label</description>
+			<posx>20</posx>
+			<posy>96</posy>
+			<label>-</label>
+		</control>
+
+		<control type="label" id="24">
+			<description>buffering label</description>
+			<posx>0</posx>
+			<posy>350</posy>
+			<width>1280</width>
+			<label>[B]$LOCALIZE[15107] $INFO[Player.CacheLevel]%[/B]</label>
+			<align>center</align>
+			<font>XLarge</font>
+			<shadowcolor>Black</shadowcolor>
+		</control>
+
+		<include>Debug_Grid</include>
+
+	</controls>
+
+</window>

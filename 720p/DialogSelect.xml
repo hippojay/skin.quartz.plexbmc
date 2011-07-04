@@ -1,0 +1,298 @@
+<window id="2000">
+	<defaultcontrol always="true">3</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<include>GlobalBackground</include>
+		<control type="group">
+			<posx>0</posx>
+			<posy>0</posy>
+			<control type="label">
+				<include>DialogID</include>
+				<label>DialogSelect.xml</label>
+			</control>
+			<control type="label" id="1" description="Header label">
+				<posx>600</posx>
+				<posy>30</posy>
+				<width>660</width>
+				<align>center</align>
+				<font>XLarge</font>
+				<label>13406</label>
+			</control>
+			<control type="image" description="separator Top">
+				<posy>75</posy>
+				<posx>660</posx>
+				<width>550</width>
+				<height>2</height>
+				<texture>img/ButtonFO.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image" description="separator Bottom">
+				<posy>667</posy>
+				<posx>660</posx>
+				<width>550</width>
+				<height>2</height>
+				<texture>img/ButtonFO.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="group" description="Group 3">
+				<visible>Control.IsVisible(3)</visible>
+				<posx>620</posx>
+				<posy>0</posy>
+				<control type="image" description="Slider">
+					<visible>Control.HasFocus(3)</visible>
+					<posx>40</posx>
+					<posy>100</posy>
+					<width>540</width>
+					<height>50</height>
+					<texture>img/ButtonFO.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<animation condition="Container(3).Position(0)" effect="slide" start="0,0" end="0,0"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(1)" effect="slide" start="0,0" end="0,50"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(2)" effect="slide" start="0,0" end="0,100"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(3)" effect="slide" start="0,0" end="0,150"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(4)" effect="slide" start="0,0" end="0,200"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(5)" effect="slide" start="0,0" end="0,250"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(6)" effect="slide" start="0,0" end="0,300"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(7)" effect="slide" start="0,0" end="0,350"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(8)" effect="slide" start="0,0" end="0,400"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(9)" effect="slide" start="0,0" end="0,450"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(3).Position(10)" effect="slide" start="0,0" end="0,500"
+					time="200" reversible="true">Conditional</animation>
+				</control>
+				<control type="fixedlist" id="3">
+					<posx>0</posx>
+					<posy>100</posy>
+					<width>580</width>
+					<height>550</height>
+					<onleft>5</onleft>
+					<onright>60</onright>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="535">list</viewtype>
+					<scrolltime>200</scrolltime>
+					<focusposition>4</focusposition>
+					<movement>5</movement>
+					<preloaditems>2</preloaditems>
+					<itemlayout width="580" height="50">
+						
+						<!--<control type="image">
+					<width>640</width>
+					<height>44</height>
+					<texture border="2">img/ButtonNF.png</texture>
+				</control>-->
+						
+						<control type="label">
+							<posx>60</posx>
+							<posy>0</posy>
+							<width>420</width>
+							<font>Small</font>
+							<scroll>false</scroll>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>1r</posx>
+							<posy>0</posy>
+							<width>460</width>
+							<font>XXXSmall</font>
+							<scroll>false</scroll>
+							<align>right</align>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="580" height="50">
+						<control type="label">
+							<posx>60</posx>
+							<posy>0</posy>
+							<width>420</width>
+							<font>Small</font>
+							<scroll>false</scroll>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>1r</posx>
+							<posy>0</posy>
+							<width>460</width>
+							<font>XXXSmall</font>
+							<scroll>true</scroll>
+							<align>right</align>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="group" description="Group 6">
+				<visible>Control.IsVisible(6)</visible>
+				<posx>620</posx>
+				<posy>0</posy>
+				<control type="image" description="Slider">
+					<visible>Control.HasFocus(6)</visible>
+					<posx>40</posx>
+					<posy>100</posy>
+					<width>560</width>
+					<height>50</height>
+					<texture>img/ButtonFO.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<animation condition="Container(6).Position(0)" effect="slide" start="0,0" end="0,0"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(1)" effect="slide" start="0,0" end="0,50"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(2)" effect="slide" start="0,0" end="0,100"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(3)" effect="slide" start="0,0" end="0,150"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(4)" effect="slide" start="0,0" end="0,200"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(5)" effect="slide" start="0,0" end="0,250"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(6)" effect="slide" start="0,0" end="0,300"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(7)" effect="slide" start="0,0" end="0,350"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(8)" effect="slide" start="0,0" end="0,400"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(9)" effect="slide" start="0,0" end="0,450"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(6).Position(10)" effect="slide" start="0,0" end="0,500"
+					time="200" reversible="true">Conditional</animation>
+				</control>
+				<control type="fixedlist" id="6">
+					<posx>0</posx>
+					<posy>100</posy>
+					<width>580</width>
+					<height>550</height>
+					<onleft>5</onleft>
+					<onright>60</onright>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="535">list</viewtype>
+					<scrolltime>200</scrolltime>
+					<focusposition>4</focusposition>
+					<movement>6</movement>
+					<preloaditems>2</preloaditems>
+					<itemlayout width="580" height="50">
+						<control type="label">
+							<posx>60</posx>
+							<posy>0</posy>
+							<width>420</width>
+							<font>Small</font>
+							<scroll>false</scroll>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>1r</posx>
+							<posy>0</posy>
+							<width>460</width>
+							<font>XXXSmall</font>
+							<scroll>false</scroll>
+							<align>right</align>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="580" height="50">
+						<control type="label">
+							<posx>60</posx>
+							<posy>0</posy>
+							<width>420</width>
+							<font>Small</font>
+							<scroll>false</scroll>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>1r</posx>
+							<posy>0</posy>
+							<width>460</width>
+							<font>XXXSmall</font>
+							<scroll>true</scroll>
+							<align>right</align>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="group" description="9000">
+				<posx>150</posx>
+				<posy>120</posy>
+				<control type="image" description="Splitter">
+					<posy>20</posy>
+					<posx>300</posx>
+					<height>540</height>
+					<texture flipx="true">img/Splitter.png</texture>
+				</control>
+				<control type="button" id="5" description="Manual">
+					<posx>125</posx>
+					<posy>0</posy>
+					<width>250</width>
+					<label>368</label>
+					<font>Small</font>
+					<onleft>3</onleft>
+					<onright>3</onright>
+					<onup>3</onup>
+					<ondown>3</ondown>
+				</control>
+			</control>
+		</control>
+		<control type="group" description="Addon Thumbs">
+			<posx>124</posx>
+			<posy>300</posy>
+			<aligny>center</aligny>
+			<control type="image">
+				<width>336</width>
+				<height>350</height>
+				<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+				<fadetime>200</fadetime>
+				<texture  border="1" diffuse="img/Diffuse.png" background="true">$INFO[Container(6).ListItem.Icon]</texture>
+				<animation effect="rotatey" start="0" end="-7" center="260," time="0" reversible="false">WindowOpen</animation>
+			</control>
+			<control type="image" description="Reflection">
+				<posy>350</posy>
+				<width>336</width>
+				<height>350</height>
+				<aspectratio align="left" aligny="top">stretch</aspectratio>
+				<fadetime>200</fadetime>
+				<texture  border="1" diffuse="img/Diffuse.png" background="true" flipy="true">$INFO[Container(6).ListItem.Icon]</texture>
+				<animation effect="rotatey" start="0" end="-7" center="260," time="0" reversible="false">WindowOpen</animation>
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="20" time="0" reversible="false" />
+				</animation>
+			</control>
+		</control>
+		<control type="scrollbar" id="60">
+			<visible>!Skin.HasSetting(KioskEnabled) + Control.IsVisible(3)</visible>
+			<posx>30r</posx>
+			<posy>120</posy>
+			<height>506</height>
+			<width>18</width>
+			<onleft>3</onleft>
+			<onright>-</onright>
+			<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+				<effect type="fade" start="100" end="0" time="200" reversible="true" />
+			</animation>
+		</control>
+		<control type="scrollbar" id="60">
+			<visible>!Skin.HasSetting(KioskEnabled) + Control.IsVisible(6)</visible>
+			<posx>50r</posx>
+			<posy>135</posy>
+			<height>506</height>
+			<width>18</width>
+			<onleft>6</onleft>
+			<onright>-</onright>
+			<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+				<effect type="fade" start="100" end="0" time="200" reversible="true" />
+			</animation>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

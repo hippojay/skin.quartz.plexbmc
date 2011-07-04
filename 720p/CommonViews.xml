@@ -1,0 +1,402 @@
+<includes>
+	<include name="List_Dots_50">
+		<control type="list" id="700" description="Toolbar">
+			<visible>!Skin.HasSetting(KioskEnabled)</visible>
+			<posx>775</posx>
+			<posy>680</posy>
+			<width>300</width>
+			<height>18</height>
+			<onleft>-</onleft>
+			<onright>-</onright>
+			<onup>-</onup>
+			<ondown>-</ondown>
+			<orientation>horizontal</orientation>
+			<itemlayout height="18" width="100">
+				<control type="image">
+					<posx>43</posx>
+					<posy>0</posy>
+					<width>18</width>
+					<height>18</height>
+					<info>ListItem.Thumb</info>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</itemlayout>
+			<focusedlayout height="18" width="100">
+				<control type="image">
+					<posx>43</posx>
+					<posy>0</posy>
+					<width>18</width>
+					<height>18</height>
+					<info>ListItem.Thumb</info>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1" description="Options">
+					<visible>!ControlGroup(9000).HasFocus()</visible>
+					<onclick>Control.SetFocus(9000)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="1" description="Options">
+					<visible>ControlGroup(9000).HasFocus()</visible>
+					<onclick>Control.SetFocus(9000)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(50)</visible>
+					<visible>!Control.HasFocus(50)</visible>
+					<onclick>Control.SetFocus(50)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(50)</visible>
+					<visible>Control.HasFocus(50)</visible>
+					<onclick>Control.SetFocus(50)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+				<!--<item id="2" description="List">
+					<visible>Control.IsVisible(52)</visible>
+					<visible>!Control.HasFocus(52)</visible>
+					<onclick>Control.SetFocus(52)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(52)</visible>
+					<visible>Control.HasFocus(52)</visible>
+					<onclick>Control.SetFocus(52)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(53)</visible>
+					<visible>!Control.HasFocus(53)</visible>
+					<onclick>Control.SetFocus(53)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(53)</visible>
+					<visible>Control.HasFocus(53)</visible>
+					<onclick>Control.SetFocus(53)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>-->
+				<item id="3" description="Scrollbar">
+					<visible>!Control.HasFocus(60)</visible>
+					<onclick>Control.SetFocus(60)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="3" description="Scrollbar">
+					<visible>Control.HasFocus(60)</visible>
+					<onclick>Control.SetFocus(60)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+			</content>
+		</control>
+	</include>
+	<include name="List_Dots_52">
+		<control type="list" id="700" description="Toolbar">
+			<visible>!Skin.HasSetting(KioskEnabled)</visible>
+			<posx>775</posx>
+			<posy>680</posy>
+			<width>300</width>
+			<height>18</height>
+			<onleft>-</onleft>
+			<onright>-</onright>
+			<onup>-</onup>
+			<ondown>-</ondown>
+			<orientation>horizontal</orientation>
+			<itemlayout height="18" width="100">
+				<control type="image">
+					<posx>43</posx>
+					<posy>0</posy>
+					<width>18</width>
+					<height>18</height>
+					<info>ListItem.Thumb</info>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</itemlayout>
+			<focusedlayout height="18" width="100">
+				<control type="image">
+					<posx>43</posx>
+					<posy>0</posy>
+					<width>18</width>
+					<height>18</height>
+					<info>ListItem.Thumb</info>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1" description="Options">
+					<visible>!ControlGroup(9000).HasFocus()</visible>
+					<onclick>Control.SetFocus(9000)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="1" description="Options">
+					<visible>ControlGroup(9000).HasFocus()</visible>
+					<onclick>Control.SetFocus(9000)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(52)</visible>
+					<visible>!Control.HasFocus(52)</visible>
+					<onclick>Control.SetFocus(52)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(52)</visible>
+					<visible>Control.HasFocus(52)</visible>
+					<onclick>Control.SetFocus(52)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+				<item id="3" description="Scrollbar">
+					<visible>!Control.HasFocus(60)</visible>
+					<onclick>Control.SetFocus(60)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="3" description="Scrollbar">
+					<visible>Control.HasFocus(60)</visible>
+					<onclick>Control.SetFocus(60)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+			</content>
+		</control>
+	</include>
+	<include name="List_Dots_51">
+		<control type="list" id="700" description="Toolbar">
+			<visible>!Skin.HasSetting(KioskEnabled)</visible>
+			<posx>775</posx>
+			<posy>680</posy>
+			<width>300</width>
+			<height>18</height>
+			<onleft>-</onleft>
+			<onright>-</onright>
+			<onup>-</onup>
+			<ondown>-</ondown>
+			<orientation>horizontal</orientation>
+			<itemlayout height="18" width="100">
+				<control type="image">
+					<posx>43</posx>
+					<posy>0</posy>
+					<width>18</width>
+					<height>18</height>
+					<info>ListItem.Thumb</info>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</itemlayout>
+			<focusedlayout height="18" width="100">
+				<control type="image">
+					<posx>43</posx>
+					<posy>0</posy>
+					<width>18</width>
+					<height>18</height>
+					<info>ListItem.Thumb</info>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1" description="Options">
+					<visible>!ControlGroup(9000).HasFocus()</visible>
+					<onclick>Control.SetFocus(9000)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="1" description="Options">
+					<visible>ControlGroup(9000).HasFocus()</visible>
+					<onclick>Control.SetFocus(9000)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(51)</visible>
+					<visible>!Control.HasFocus(51)</visible>
+					<onclick>Control.SetFocus(51)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(51)</visible>
+					<visible>Control.HasFocus(51)</visible>
+					<onclick>Control.SetFocus(51)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+				<item id="3" description="Scrollbar">
+					<visible>!Control.HasFocus(60)</visible>
+					<onclick>Control.SetFocus(60)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="3" description="Scrollbar">
+					<visible>Control.HasFocus(60)</visible>
+					<onclick>Control.SetFocus(60)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+			</content>
+		</control>
+	</include>
+	<include name="List_Dots_53">
+		<control type="list" id="700" description="Toolbar">
+			<visible>!Skin.HasSetting(KioskEnabled)</visible>
+			<posx>775</posx>
+			<posy>680</posy>
+			<width>300</width>
+			<height>18</height>
+			<onleft>-</onleft>
+			<onright>-</onright>
+			<onup>-</onup>
+			<ondown>-</ondown>
+			<orientation>horizontal</orientation>
+			<itemlayout height="18" width="100">
+				<control type="image">
+					<posx>43</posx>
+					<posy>0</posy>
+					<width>18</width>
+					<height>18</height>
+					<info>ListItem.Thumb</info>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</itemlayout>
+			<focusedlayout height="18" width="100">
+				<control type="image">
+					<posx>43</posx>
+					<posy>0</posy>
+					<width>18</width>
+					<height>18</height>
+					<info>ListItem.Thumb</info>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1" description="Options">
+					<visible>!ControlGroup(9000).HasFocus()</visible>
+					<onclick>Control.SetFocus(9000)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="1" description="Options">
+					<visible>ControlGroup(9000).HasFocus()</visible>
+					<onclick>Control.SetFocus(9000)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(53)</visible>
+					<visible>!Control.HasFocus(53)</visible>
+					<onclick>Control.SetFocus(53)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="2" description="List">
+					<visible>Control.IsVisible(53)</visible>
+					<visible>Control.HasFocus(53)</visible>
+					<onclick>Control.SetFocus(53)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+				<item id="3" description="Scrollbar">
+					<visible>!Control.HasFocus(60)</visible>
+					<onclick>Control.SetFocus(60)</onclick>
+					<thumb>img/RadioNF.png</thumb>
+				</item>
+				<item id="3" description="Scrollbar">
+					<visible>Control.HasFocus(60)</visible>
+					<onclick>Control.SetFocus(60)</onclick>
+					<thumb>img/RadioFO.png</thumb>
+				</item>
+			</content>
+		</control>
+	</include>
+	<include name="Thumbs">
+		<control type="group" description="Non Music Thumbs">
+			<visible>!ControlGroup(9000).HasFocus() + !stringcompare(Container.Listitem(0).Label,..)</visible>
+			<visible>![Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(addonbrowser.xml)]</visible>
+			<posx>130</posx>
+			<posy>46</posy>
+			<aligny>center</aligny>
+			<control type="image">
+				<visible>Container.Content(Movies) | Container.Content(Seasons) | [Container.Content(TVShows) + Skin.HasSetting(TVPoster)]</visible>
+				<posx>-170</posx>
+				<posy>420</posy>
+				<width>720</width>
+				<height>256</height>
+				<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+				<fadetime>200</fadetime>
+				<texture background="true">img/IconStage.png</texture>
+			</control>
+			<control type="image">
+				<width>396</width>
+				<height>614</height>
+				<aspectratio align="left" aligny="bottom">keep</aspectratio>
+				<fadetime>200</fadetime>
+				<texture border="1" diffuse="img/Diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+				<animation condition="true" effect="rotatey" start="0" end="-7" center="260," time="0" reversible="false">Conditional</animation>
+			</control>
+			<control type="image" description="Reflection">
+				<posx>1</posx>
+				<posy>612</posy>
+				<width>394</width>
+				<height>80</height>
+				<bordersize>1</bordersize>
+				<aspectratio align="left" aligny="top">scale</aspectratio>
+				<fadetime>200</fadetime>
+				<texture background="true" diffuse="img/Reflection2.png" flipy="true">$INFO[ListItem.Icon]</texture>
+				<animation condition="true" effect="rotatey" start="0" end="-7" center="260," time="0" reversible="false">Conditional</animation>
+			</control>
+		</control>
+	</include>	
+	<!--Square_Thumbs-->
+	<include name="Square_Thumbs">
+		<control type="group" description="Square covers + plain for artists">
+			<visible>!ControlGroup(9000).HasFocus() + !stringcompare(Container.Listitem(0).Label,..)</visible>
+			<visible>Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(addonbrowser.xml)</visible>
+			<posx>124</posx>
+			<posy>230</posy>
+			<aligny>center</aligny>
+			<control type="image" description="Icon common background">
+				<visible>Container.Content(Albums) | Container.Content(Artists)</visible>
+				<posx>-200</posx>
+				<posy>220</posy>
+				<width>768</width>
+				<height>256</height>
+				<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+				<fadetime>200</fadetime>
+				<texture background="true">img/IconStage.png</texture>
+			</control>
+			<control type="image" description="Music Thumbs">
+			<visible>!Container.Content(Artists)</visible>	
+				<width>400</width>
+				<height>420</height>
+				<aspectratio align="left" aligny="bottom">stretch</aspectratio>
+				<fadetime>200</fadetime>
+				<texture border="1" diffuse="img/Diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+				<animation condition="true" effect="rotatey" start="0" end="-9" center="260," time="0" reversible="false">Conditional</animation>
+			</control>
+			<control type="image" description="Music thumbs Reflection">
+				<visible>!Container.Content(Artists)</visible>
+				<posx>0</posx>
+				<posy>398</posy>
+				<width>400</width>
+				<height>420</height>
+				<bordersize>1</bordersize>
+				<aspectratio align="left" aligny="top">stretch</aspectratio>
+				<fadetime>200</fadetime>
+				<texture background="true" diffuse="img/Reflection2.png" flipy="true">$INFO[ListItem.Icon]</texture>
+				<animation condition="true" effect="rotatey" start="0" end="-9" center="260," time="0" reversible="false">Conditional</animation>
+			</control>
+			<control type="image" description="Artists thumbs">
+				<visible>Container.Content(Artists)</visible>
+				<posx>6</posx>
+				<posy>-184</posy>
+				<width>396</width>
+				<height>614</height>
+				<aspectratio align="left" aligny="bottom">keep</aspectratio>
+				<fadetime>200</fadetime>
+				<texture border="1" diffuse="img/Diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+				<animation condition="true" effect="rotatey" start="0" end="-7" center="260," time="0" reversible="false">Conditional</animation>
+			</control>
+			<control type="image" description="Artists thumbs Reflection">
+				<visible>Container.Content(Artists)</visible>
+				<posx>7</posx>
+				<posy>428</posy>
+				<width>395</width>
+				<height>80</height>
+				<bordersize>1</bordersize>
+				<aspectratio align="left" aligny="top">scale</aspectratio>
+				<fadetime>200</fadetime>
+				<texture background="true" diffuse="img/Reflection2.png" flipy="true">$INFO[ListItem.Icon]</texture>
+				<animation condition="true" effect="rotatey" start="0" end="-7" center="260," time="0" reversible="false">Conditional</animation>
+			</control>
+		</control>
+	</include>
+	
+			
+</includes>

@@ -1,0 +1,224 @@
+<includes>
+	<include name="Movies_View_52">
+		<control type="group" description="Icons">
+			<visible>Control.IsVisible(52)</visible>
+			<include>TopAndBottomSeparator</include>
+			<include>Headings</include>
+			
+			<include condition="![Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(AddonBrowser.xml)]]">Thumbs</include>
+			
+			<include condition="!Skin.HasSetting(KioskEnabled)">List_Dots_52</include>
+			
+			<control type="fixedlist" id="52" description="Banner Icons">
+				<visible>Container.Content(TVShows) + !Skin.HasSetting(TVPosters)</visible>
+				<viewtype label="536">Icons</viewtype>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<posx>650</posx>
+				<posy>90</posy>
+				<width>580</width>
+				<height>580</height>
+				<scrolltime>240</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>1</focusposition>
+				<movement>2</movement>
+				<preloaditems>4</preloaditems>
+				<itemlayout height="140" width="576">
+					<control type="image">
+						<posx>8</posx>
+						<posy>8</posy>
+						<width>560</width>
+						<height>124</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<bordersize>2</bordersize>-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="140" width="576">
+					<control type="image">
+						<posx>8</posx>
+						<posy>8</posy>
+						<width>560</width>
+						<height>124</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<bordersize>2</bordersize>-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<fadetime>200</fadetime>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="108" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="panel" id="52" description="Icons">
+				<visible>Window.IsActive(MyVideo.xml) | Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(TVPosters)] | Container.Content(Seasons)</visible>
+				<viewtype label="536">Icons</viewtype>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<posx>654</posx>
+				<posy>80</posy>
+				<width>570</width>
+				<height>578</height>
+				<scrolltime>240</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<preloaditems>4</preloaditems>
+				<itemlayout height="190" width="190">
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>150</width>
+						<height>150</height>
+						<!--<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<fadetime>0</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="190" width="190">
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>150</width>
+						<height>150</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<bordersize>2</bordersize>-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+						<fadetime>0</fadetime>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+						<posx>95</posx>
+						<posy>162</posy>
+						<width>180</width>
+						<align>center</align>
+						<font>XXSmall</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="panel" id="52" description="Icons">
+				<visible>Container.Content(Episodes)</visible>
+				<viewtype label="536">Icons</viewtype>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<posx>654</posx>
+				<posy>96</posy>
+				<width>570</width>
+				<height>568</height>
+				<scrolltime>240</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<preloaditems>4</preloaditems>
+				<itemlayout height="142" width="190">
+					<control type="image">
+						<posx>15</posx>
+						<posy>7</posy>
+						<width>160</width>
+						<height>104</height>
+						<!--<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="top">scale</aspectratio>
+						<fadetime>0</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="142" width="190">
+					<control type="image">
+						<posx>15</posx>
+						<posy>7</posy>
+						<width>160</width>
+						<height>104</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<bordersize>2</bordersize>-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="top">scale</aspectratio>
+						<fadetime>0</fadetime>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+						<posx>95</posx>
+						<posy>104</posy>
+						<width>180</width>
+						<align>center</align>
+						<font>XXSmall</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<include name="View_52">
+		<control type="group" description="Group 52">
+			<visible>Control.IsVisible(52)</visible>
+			<include>TopAndBottomSeparator</include>
+			<include>Headings</include>
+			<include condition="![Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(AddonBrowser.xml)]]">Thumbs</include>
+			<include condition="Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml)">Square_Thumbs</include>
+			<include condition="!Skin.HasSetting(KioskEnabled)">List_Dots_52</include>
+			<control type="panel" id="52" description="Square Icons">
+				<viewtype label="536">Icons</viewtype>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<posx>654</posx>
+				<posy>82</posy>
+				<width>570</width>
+				<height>576</height>
+				<scrolltime>240</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<preloaditems>4</preloaditems>
+				<itemlayout height="190" width="190">
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>150</width>
+						<height>150</height>
+						<!--<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<fadetime>0</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="190" width="190">
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>150</width>
+						<height>150</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<bordersize>2</bordersize>-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="center" align="center">keep</aspectratio>
+						<fadetime>0</fadetime>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+						<posx>95</posx>
+						<posy>160</posy>
+						<width>180</width>
+						<align>center</align>
+						<font>XXSmall</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>

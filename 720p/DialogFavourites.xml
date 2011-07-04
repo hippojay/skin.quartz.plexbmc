@@ -1,0 +1,181 @@
+<window type="dialog" id="134">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+
+	<controls>
+		<include>GlobalBackground</include>
+		<include>TopAndBottomSeparator</include>
+				
+			<control type="label" description="Heading">
+				<posx>660</posx>
+				<posy>25</posy>
+				<width>540</width>
+				<align>center</align>
+				<font>XLarge</font>
+				<label>1036</label>
+			</control>
+		<control type="button" id="666" description="Back">
+			<visible>![Skin.HasSetting(KioskEnabled) + Skin.HasSetting(HideFavourites)] + system.getbool(input.enablemouse)</visible>
+			<posx>8</posx>
+			<posy>8</posy>
+			<width>40</width>
+			<height>40</height>
+			<align>left</align>
+			<texturefocus>img/BackFO.png</texturefocus>
+			<texturenofocus>img/BackNF.png</texturenofocus>
+			<onclick>PreviousMenu</onclick>
+		</control>
+		<control type="button" id="450" description="Back">
+			<visible>Skin.HasSetting(KioskEnabled) + Skin.HasSetting(HideFavourites)</visible>
+			<posx>8</posx>
+			<posy>8</posy>
+			<width>40</width>
+			<height>40</height>
+			<align>left</align>
+			<texturefocus>img/BackFO.png</texturefocus>
+			<texturenofocus>img/BackNF.png</texturenofocus>
+			<onfocus>PreviousMenu</onfocus>
+		</control>
+		
+					
+		
+		<control type="group">
+		<visible>![Skin.HasSetting(KioskEnabled) + Skin.HasSetting(HideFavourites)]</visible>
+			<posx>600</posx>
+			<posy>44</posy>
+			<control type="group">
+				<control type="image" description="Vertical List Slider">
+					<posx>66</posx>
+					<posy>250</posy>
+					<width>540</width>
+					<height>50</height>
+					<texture>img/ButtonFO.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<animation condition="Container(450).Position(0)" effect="slide" start="0,0" end="0,-200"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(1)" effect="slide" start="0,0" end="0,-150"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(2)" effect="slide" start="0,0" end="0,-100"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(3)" effect="slide" start="0,0" end="0,-50"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(4)" effect="slide" start="0,0" end="0,0"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(5)" effect="slide" start="0,0" end="0,50"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(6)" effect="slide" start="0,0" end="0,100"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(7)" effect="slide" start="0,0" end="0,150"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(8)" effect="slide" start="0,0" end="0,200"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(9)" effect="slide" start="0,0" end="0,250"
+					time="220" reversible="true">Conditional</animation>
+				<animation condition="Container(450).Position(10)" effect="slide" start="0,0" end="0,300"
+					time="220" reversible="true">Conditional</animation>
+				<animation type="Conditional" condition="!Control.HasFocus(450)">
+					<effect type="fade" start="100" end="60" time="200" reversible="true" />
+				</animation>
+			</control>
+			<control type="fixedlist" id="450">
+				<posx>20</posx>
+				<posy>50</posy>
+				<width>600</width>
+				<height>550</height>
+				<onleft>301</onleft>
+				<onright>60</onright>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<pagecontrol>60</pagecontrol>
+				<focusposition>4</focusposition>
+				<movement>6</movement>
+				<preloaditems>4</preloaditems>
+				<scrolltime>220</scrolltime>
+				<itemlayout width="580" height="50">
+					<control type="label">
+						<posx>60</posx>
+						<posy>2</posy>
+						<width>420</width>
+						<font>Small</font>
+						<scroll>false</scroll>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>1r</posx>
+						<posy>2</posy>
+						<width>460</width>
+						<font>XXSmall</font>
+						<scroll>false</scroll>
+						<align>right</align>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="580" height="50">
+					<control type="label">
+						<posx>60</posx>
+						<posy>2</posy>
+						<width>420</width>
+						<font>Small</font>
+						<scroll>false</scroll>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>1r</posx>
+						<posy>2</posy>
+						<width>460</width>
+						<font>XXSmall</font>
+						<scroll>true</scroll>
+						<align>right</align>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</focusedlayout>
+			</control>
+				<control type="image" description="Thumb">
+					<posx>-480</posx>
+					<posy>90</posy>
+					<width>360</width>
+					<height>540</height>
+					<fadetime>300</fadetime>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<texture background="true" fallback="DefaultAddonNone.png">$INFO[ListItem.Icon]</texture>
+					<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+						<effect type="fade" start="100" end="0" time="200" reversible="true" />
+					</animation>
+				</control>
+				<!--<control type="image" description="Reflection">
+					<posx>-480</posx>
+					<posy>634</posy>
+					<width>360</width>
+					<height>540</height>
+					<fadetime>400</fadetime>
+					<aspectratio align="center" aligny="top">keep</aspectratio>
+					<texture flipy="true" background="true" fallback="DefaultAddonNone.png">$INFO[ListItem.Icon]</texture>
+					<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+						<effect type="fade" end="0" time="200" reversible="true" />
+					</animation>
+					<animation type="Conditional" condition="true">
+						<effect type="fade" end="20" time="0" reversible="false" />
+					</animation>
+				</control>-->
+			</control>
+			<control type="scrollbar" id="60">
+				<posx>50r</posx>
+				<posy>80</posy>
+				<height>500</height>
+				<width>18</width>
+				<onleft>450</onleft>
+				<onright>-</onright>
+				<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+					<effect type="fade" start="100" end="40" time="200" reversible="true" />
+				</animation>
+			</control>
+		
+
+		
+		<include>Debug_Grid</include>
+
+	</controls>
+
+</window>

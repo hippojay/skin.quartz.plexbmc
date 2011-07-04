@@ -1,0 +1,303 @@
+<window id="2003">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+
+		<include>GlobalBackground</include>
+
+<!--RIGHT PANEL-->
+		<control type="group" description="Right Panel">
+			<posx>0</posx>
+			<posy>0</posy>
+			<visible>!Control.IsVisible(4)</visible>
+			<visible>![Control.HasFocus(5) | Control.HasFocus(50)]</visible> <!--Plot/actors toggle-->
+			<control type="image" description="Fanart">
+				<visible>!Control.HasFocus(50)</visible>
+				<posx>685</posx>
+				<posy>46</posy>
+				<width>480</width>
+				<height>300</height>
+				<aspectratio>scale</aspectratio>
+				<aligny>bottom</aligny>
+				<align>center</align>
+				<fadetime>0</fadetime>
+				<bordertexture border="2">img/ButtonFO.png</bordertexture>
+				<bordersize>2</bordersize>
+				<texture background="true" fallback="DefaultAddonNone.png">$INFO[Listitem.Property(Fanart_Image)]</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="group" description="FLAGS">
+					<control type="group">
+						<posy>380</posy>
+						<posx>685</posx>
+						<include>VideoCodecflags</include>
+					</control>
+					<control type="group">
+						<posy>380</posy>
+						<posx>665</posx>
+						<include>AudioCodecflags</include>
+					</control>
+					<animation type="Conditional" condition="true">
+						<effect type="fade" start="0" end="80" time="0" reversible="false" />
+					</animation>
+				</control>
+		</control>
+<!--RIGHT ENDS-->
+<!--LEFT-->
+	<control type="group" description="Left info">
+		
+		
+		<control type="group" description="InfoPanel">
+				<posx>0</posx>
+				<posy>-80</posy>
+				
+							
+			<control type="image" description="Cover">
+				<visible>!Control.HasFocus(50)</visible>
+				<posx>80</posx>
+				<posy>126</posy>
+				<width>500</width>
+				<height>300</height>
+				<aspectratio aligny="center" align="center">keep</aspectratio>
+				<fadetime>0</fadetime>
+				<bordertexture border="2">img/ButtonFO.png</bordertexture>
+				<bordersize>2</bordersize>
+				<texture fallback="DefaultAddonNone.png" background="true">$INFO[Listitem.Icon]</texture>
+			</control>
+			<control type="image" description="Cover">
+				<visible>Control.HasFocus(50)</visible>
+				<posx>80</posx>
+				<posy>126</posy>
+				<width>500</width>
+				<height>300</height>
+				<aspectratio aligny="center" align="center">keep</aspectratio>
+				<fadetime>0</fadetime>
+				<bordertexture border="2">img/ButtonFO.png</bordertexture>
+				<bordersize>2</bordersize>
+				<texture background="true">$INFO[Container(50).Listitem.Icon]</texture>
+			</control>
+		
+		<!--<include>MoviesInfo</include>-->
+		<control type="group">
+		<posy>32</posy>
+		<!--<include>TVInfo</include>
+		<include>EpisodesInfo</include>-->
+		<include>InfoPanel</include>
+		</control>
+			
+		</control>
+	</control>
+<!--LEFT ENDS-->
+		
+		<control type="textbox" id="4" description="Plot">
+			<posx>665</posx>
+			<posy>40</posy>
+			<width>520</width>
+			<height>570</height>
+			<font>Small</font>
+			<align>justify</align>
+			<textcolor>white</textcolor>
+			<shadowcolor>black</shadowcolor>
+			<onleft>-</onleft>
+			<onright>-</onright>
+			<onup>-</onup>
+			<ondown>-</ondown>
+			<visible>ControlGroup(9000).HasFocus(5)</visible>
+			<autoscroll time="8000" delay="8000" repeat="5000">true</autoscroll>
+		</control>
+
+<control type="group">
+		<visible>!Control.IsVisible(4)</visible>
+		<visible>Control.HasFocus(5) | Control.HasFocus(50)</visible>
+		
+		<posx>0</posx>
+		<posy>-45</posy>
+		<control type="image" description="Slider Vertical">
+			<visible>Control.HasFocus(50)</visible>
+			<posx>650</posx>
+			<posy>330</posy>
+			<width>530</width>
+			<height>50</height>
+			<texture>img/ButtonFO.png</texture>
+			<aspectratio>stretch</aspectratio>
+			
+		<animation condition="Container(50).Position(0)" effect="slide" start="0,0" end="0,-200"
+			time="220" reversible="true">Conditional</animation>	
+		<animation condition="Container(50).Position(1)" effect="slide" start="0,0" end="0,-150"
+			time="220" reversible="true">Conditional</animation>
+		<animation condition="Container(50).Position(2)" effect="slide" start="0,0" end="0,-100"
+			time="220" reversible="true">Conditional</animation>
+		<animation condition="Container(50).Position(3)" effect="slide" start="0,0" end="0,-50"
+			time="220" reversible="true">Conditional</animation>
+		<animation condition="Container(50).Position(4)" effect="slide" start="0,0" end="0,0"
+			time="220" reversible="true">Conditional</animation>
+		<animation condition="Container(50).Position(5)" effect="slide" start="0,0" end="0,50"
+			time="220" reversible="true">Conditional</animation>
+		<animation condition="Container(50).Position(6)" effect="slide" start="0,0" end="0,100"
+			time="220" reversible="true">Conditional</animation>
+		<animation condition="Container(50).Position(7)" effect="slide" start="0,0" end="0,150"
+			time="220" reversible="true">Conditional</animation>
+		<animation condition="Container(50).Position(8)" effect="slide" start="0,0" end="0,200"
+			time="220" reversible="true">Conditional</animation>
+		<animation condition="Container(50).Position(9)" effect="slide" start="0,0" end="0,250"
+			time="220" reversible="true">Conditional</animation>
+		<animation condition="Container(50).Position(10)" effect="slide" start="0,0" end="0,300"
+			time="220" reversible="true">Conditional</animation>	
+		
+		</control>	
+		<control type="fixedlist" id="50">
+			<posx>655</posx>
+			<posy>125</posy>
+			<width>500</width>
+			<height>500</height>
+			<onleft>8</onleft>
+			<onright>6</onright>
+			<onup>-</onup>
+			<ondown>5</ondown>
+			<focusposition>4</focusposition>
+				<movement>6</movement>
+			<viewtype label="">list</viewtype>
+			<scrolltime>220</scrolltime>
+			<preloaditems>4</preloaditems>
+			<orientation>vertical</orientation>
+			<itemlayout height="50" width="500">
+				<control type="label">
+					<posx>25</posx>
+					<posy>0</posy>
+					<width>450</width>
+					<height>55</height>
+					<font>XSmall</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<info>ListItem.Label</info>
+					<scroll>false</scroll>
+				</control>
+		
+			</itemlayout>
+			<focusedlayout height="50" width="500">
+				<control type="label">
+					<posx>25</posx>
+					<posy>0</posy>
+					<width>450</width>
+					<height>55</height>
+					<font>XSmall</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<selectedcolor>white</selectedcolor>
+					<info>ListItem.Label</info>
+				</control>
+			</focusedlayout>
+		</control>
+		
+		
+</control>
+		
+
+<control type="group" description="Bottom NAV">
+		<posy>0</posy>
+		<posx>0</posx>
+			<control type="image" description="Splitter">
+				<posy>140r</posy>
+				<posx>0</posx>
+				<width>1280</width>
+				<height>128</height>
+				<texture flipy="true">img/HSplitter.png</texture>
+			</control>
+			
+		<control type="image" description="Slider horizontal">
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<posx>5</posx>
+			<posy>665</posy>
+			<width>210</width>
+			<height>55</height>
+			<texture>img/NavBarFO.png</texture>
+			<aspectratio>stretch</aspectratio>
+		<animation condition="ControlGroup(9000).HasFocus(8)" effect="slide" start="0,0" end="0,0"
+			time="200" reversible="true">Conditional</animation>
+		<animation condition="ControlGroup(9000).HasFocus(11)" effect="slide" start="0,0" end="200,0"
+			time="200" reversible="true">Conditional</animation>
+		<animation condition="ControlGroup(9000).HasFocus(5)" effect="slide" start="0,0" end="400,0"
+			time="200" reversible="true">Conditional</animation>
+		<animation condition="ControlGroup(9000).HasFocus(6)" effect="slide" start="0,0" end="600,0"
+			time="200" reversible="true">Conditional</animation>
+		<animation condition="ControlGroup(9000).HasFocus(10)" effect="slide" start="0,0" end="820,0"
+			time="200" reversible="true">Conditional</animation>
+		<animation condition="ControlGroup(9000).HasFocus(12)" effect="slide" start="0,0" end="1060,0"
+			time="200" reversible="true">Conditional</animation>
+		
+	</control>
+		<control type="grouplist" id="9000">
+			<posx>10</posx>
+			<posy>670</posy>
+			<width>1280</width>
+			<height>40</height>
+			<itemgap>0</itemgap>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<onup>50</onup>
+			<ondown>50</ondown>
+			<orientation>horizontal</orientation>
+			<control type="togglebutton" id="8" description="Play/browse to Show">
+				<height>40</height>
+				<width>200</width>
+				<label>208</label>
+				<font>Small</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<alttexturefocus>-</alttexturefocus>
+				<alttexturenofocus>-</alttexturenofocus>
+				<altlabel>1024</altlabel>
+				<usealttexture>Container.Content(TVShows)</usealttexture>
+			</control>
+			<control type="button" id="11" description="Trailer">
+				<height>40</height>
+				<width>200</width>
+				<label>20410</label>
+				<font>Small</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<enable>!IsEmpty(ListItem.Trailer)</enable>
+				<pulseonselect>true</pulseonselect>
+			</control>
+			<control type="button" id="5" description="Cast / Plot">
+				<height>40</height>
+				<width>200</width>
+				<font>Small</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+			</control>
+			<control type="button" id="6" description="Refresh">
+				<height>40</height>
+				<width>200</width>
+				<label>184</label>
+				<font>Small</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+			</control>
+			<control type="button" id="10" description="Get Thumb">
+				<height>40</height>
+				<width>240</width>
+				<label>13405</label>
+				<font>Small</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+			</control>
+			<control type="button" id="12" description="Get FanArt">
+				<height>40</height>
+				<width>240</width>
+				<label>20413</label>
+				<font>Small</font>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+			</control>
+		</control>
+	</control>
+
+
+
+		<include>Debug_Grid</include>
+
+	</controls>
+
+</window>

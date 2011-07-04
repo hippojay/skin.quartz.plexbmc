@@ -1,0 +1,960 @@
+<includes>
+	<!--RA-->
+	<include name="Movies_RA">
+			<control type="panel" id="311" description="TOP Shortcuts">
+				<visible>ControlGroup(300).HasFocus(301) | Control.HasFocus(311) | Control.HasFocus(901)</visible>
+				<visible>!IsEmpty(Window.Property(LatestMovie.1.Path)) | !IsEmpty(Window.Property(LatestMovie.2.Path)) | !IsEmpty(Window.Property(LatestMovie.3.Path)) | !IsEmpty(Window.Property(LatestMovie.4.Path)) | !IsEmpty(Window.Property(LatestMovie.5.Path))</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<hitrect x="0" y="0" w="1280" h="330" />
+				<posx>60</posx>
+				<posy>80</posy>
+				<width>1160</width>
+				<height>250</height>
+				<onleft>311</onleft>
+				<onright>311</onright>
+				<onup>-</onup>
+				<ondown>300</ondown>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<itemlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>198</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<!--<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>196</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordersize>2</bordersize>-->
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,16" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<posx>116</posx>
+						<posy>196</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>RA</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="6" description="Movies">
+						<visible>!IsEmpty(Window.Property(LatestMovie.1.Path))</visible>
+						<label>$INFO[Window.Property(LatestMovie.1.Title)]</label>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestMovie.1.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestMovie.1.Thumb)]</thumb>
+					</item>
+					<item id="7" description="Shortcut2">
+						<visible>!IsEmpty(Window.Property(LatestMovie.2.Path))</visible>
+						<label>$INFO[Window.Property(LatestMovie.2.Title)]</label>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestMovie.2.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestMovie.2.Thumb)]</thumb>
+					</item>
+					<item id="8" description="Shortcut3">
+						<visible>!IsEmpty(Window.Property(LatestMovie.3.Path))</visible>
+						<label>$INFO[Window.Property(LatestMovie.3.Title)]</label>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestMovie.3.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestMovie.3.Thumb)]</thumb>
+					</item>
+					<item id="9" description="Shortcut4">
+						<visible>!IsEmpty(Window.Property(LatestMovie.4.Path))</visible>
+						<label>$INFO[Window.Property(LatestMovie.4.Title)]</label>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestMovie.4.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestMovie.4.Thumb)]</thumb>
+					</item>
+					<item id="10" description="Shortcut5">
+						<visible>!IsEmpty(Window.Property(LatestMovie.5.Path))</visible>
+						<label>$INFO[Window.Property(LatestMovie.5.Title)]</label>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestMovie.5.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestMovie.5.Thumb)]</thumb>
+					</item>
+				</content>
+			</control>
+	</include>
+	<include name="TV_RA">
+			<control type="panel" id="312" description="TOP Shortcuts">
+				<visible>ControlGroup(300).HasFocus(302) | Control.HasFocus(312) | Control.HasFocus(902)</visible>
+				<visible>!IsEmpty(Window.Property(LatestEpisode.1.Path)) | !IsEmpty(Window.Property(LatestEpisode.2.Path)) | !IsEmpty(Window.Property(LatestEpisode.3.Path)) | !IsEmpty(Window.Property(LatestEpisode.4.Path)) | !IsEmpty(Window.Property(LatestEpisode.5.Path))</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<hitrect x="0" y="0" w="1280" h="330" />
+				<posx>60</posx>
+				<posy>40</posy>
+				<width>1160</width>
+				<height>290</height>
+				<onleft>312</onleft>
+				<onright>312</onright>
+				<onup>-</onup>
+				<ondown>300</ondown>
+				<preloaditems>4</preloaditems>
+				<orientation>horizontal</orientation>
+				<itemlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>45</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">scale</aspectratio>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>238</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">scale</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>45</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<!--<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">scale</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>236</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordersize>2</bordersize>-->
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">scale</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,16" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label" description="Upper episodes only">
+						<posx>116</posx>
+						<posy>-8</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>XSmall</font>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+					<control type="label">
+						<posx>116</posx>
+						<posy>236</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>RA</font>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="6" description="Episodes1">
+						<visible>!IsEmpty(Window.Property(LatestEpisode.1.Path))</visible>
+						<label>$INFO[Window.Property(LatestEpisode.1.ShowTitle)]</label>
+						<label2>[UPPERCASE]$INFO[Window.Property(LatestEpisode.1.EpisodeNo)][/UPPERCASE] - $INFO[Window.Property(LatestEpisode.1.EpisodeTitle)]</label2>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestEpisode.1.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestEpisode.1.Thumb)]</thumb>
+					</item>
+					<item id="7" description="Shortcut2">
+						<visible>!IsEmpty(Window.Property(LatestEpisode.2.Path))</visible>
+						<label>$INFO[Window.Property(LatestEpisode.2.ShowTitle)]</label>
+						<label2>[UPPERCASE]$INFO[Window.Property(LatestEpisode.2.EpisodeNo)][/UPPERCASE] - $INFO[Window.Property(LatestEpisode.2.EpisodeTitle)]</label2>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestEpisode.2.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestEpisode.2.Thumb)]</thumb>
+					</item>
+					<item id="8" description="Shortcut3">
+						<visible>!IsEmpty(Window.Property(LatestEpisode.3.Path))</visible>
+						<label>$INFO[Window.Property(LatestEpisode.3.ShowTitle)]</label>
+						<label2>[UPPERCASE]$INFO[Window.Property(LatestEpisode.3.EpisodeNo)][/UPPERCASE] - $INFO[Window.Property(LatestEpisode.3.EpisodeTitle)]</label2>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestEpisode.3.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestEpisode.3.Thumb)]</thumb>
+					</item>
+					<item id="9" description="Shortcut4">
+						<visible>!IsEmpty(Window.Property(LatestEpisode.4.Path))</visible>
+						<label>$INFO[Window.Property(LatestEpisode.4.ShowTitle)]</label>
+						<label2>[UPPERCASE]$INFO[Window.Property(LatestEpisode.4.EpisodeNo)][/UPPERCASE] - $INFO[Window.Property(LatestEpisode.4.EpisodeTitle)]</label2>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestEpisode.4.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestEpisode.4.Thumb)]</thumb>
+					</item>
+					<item id="10" description="Shortcut5">
+						<visible>!IsEmpty(Window.Property(LatestEpisode.5.Path))</visible>
+						<label>$INFO[Window.Property(LatestEpisode.5.ShowTitle)]</label>
+						<label2>[UPPERCASE]$INFO[Window.Property(LatestEpisode.5.EpisodeNo)][/UPPERCASE] - $INFO[Window.Property(LatestEpisode.5.EpisodeTitle)]</label2>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestEpisode.5.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestEpisode.5.Thumb)]</thumb>
+					</item>
+				</content>
+			</control>
+	</include>
+	<include name="Music_RA">
+			<control type="panel" id="313" description="TOP Shortcuts">
+				<visible>ControlGroup(300).HasFocus(303) | Control.HasFocus(313) | Control.HasFocus(903)</visible>
+				<visible>!IsEmpty(Window.Property(LatestAlbum.1.Path)) | !IsEmpty(Window.Property(LatestAlbum.2.Path)) | !IsEmpty(Window.Property(LatestAlbum.3.Path)) | !IsEmpty(Window.Property(LatestAlbum.4.Path)) | !IsEmpty(Window.Property(LatestAlbum.5.Path))</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<hitrect x="0" y="0" w="1280" h="330" />
+				<posx>60</posx>
+				<posy>80</posy>
+				<width>1160</width>
+				<height>250</height>
+				<onleft>313</onleft>
+				<onright>313</onright>
+				<onup>-</onup>
+				<ondown>300</ondown>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<itemlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>198</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<!--<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>196</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordersize>2</bordersize>-->
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,16" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<posx>116</posx>
+						<posy>196</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>RA</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="6" description="Music">
+						<visible>!IsEmpty(Window.Property(LatestAlbum.1.Path))</visible>
+						<label>$INFO[Window.Property(LatestAlbum.1.Title)]</label>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestAlbum.1.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestAlbum.1.Thumb)]</thumb>
+					</item>
+					<item id="7" description="Shortcut2">
+						<visible>!IsEmpty(Window.Property(LatestAlbum.2.Path))</visible>
+						<label>$INFO[Window.Property(LatestAlbum.2.Title)]</label>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestAlbum.2.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestAlbum.2.Thumb)]</thumb>
+					</item>
+					<item id="8" description="Shortcut3">
+						<visible>!IsEmpty(Window.Property(LatestAlbum.3.Path))</visible>
+						<label>$INFO[Window.Property(LatestAlbum.3.Title)]</label>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestAlbum.3.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestAlbum.3.Thumb)]</thumb>
+					</item>
+					<item id="9" description="Shortcut4">
+						<visible>!IsEmpty(Window.Property(LatestAlbum.4.Path))</visible>
+						<label>$INFO[Window.Property(LatestAlbum.4.Title)]</label>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestAlbum.4.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestAlbum.4.Thumb)]</thumb>
+					</item>
+					<item id="10" description="Shortcut5">
+						<visible>!IsEmpty(Window.Property(LatestAlbum.5.Path))</visible>
+						<label>$INFO[Window.Property(LatestAlbum.5.Title)]</label>
+						<onclick>PlayList.Clear</onclick>
+						<onclick>PlayMedia("$INFO[Window.Property(LatestAlbum.5.Path)]")</onclick>
+						<thumb>$INFO[Window.Property(LatestAlbum.5.Thumb)]</thumb>
+					</item>
+				</content>
+			</control>
+	</include>
+	<!--Shortcuts-->
+	<include name="Movies_Shortcuts">
+			<!--ST MOVIES-->
+			<control type="panel" id="311" description="TOP Shortcuts">
+				<visible>ControlGroup(300).HasFocus(301) | Control.HasFocus(311) | Control.HasFocus(901)</visible>
+				<visible>!IsEmpty(Skin.String(Movies_Shortcuts_Path1)) | !IsEmpty(Skin.String(Movies_Shortcuts_Path2)) | !IsEmpty(Skin.String(Movies_Shortcuts_Path3)) | !IsEmpty(Skin.String(Movies_Shortcuts_Path4)) | !IsEmpty(Skin.String(Movies_Shortcuts_Path5))</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<hitrect x="0" y="0" w="1280" h="330" />
+				<posx>60</posx>
+				<posy>80</posy>
+				<width>1160</width>
+				<height>250</height>
+				<onleft>311</onleft>
+				<onright>311</onright>
+				<onup>-</onup>
+				<ondown>300</ondown>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<itemlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>198</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<!--<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>196</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordersize>2</bordersize>-->
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,16" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<posx>116</posx>
+						<posy>196</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>RA</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="6" description="Movies">
+						<visible>!IsEmpty(Skin.String(Movies_Shortcuts_Path1))</visible>
+						<thumb>$INFO[Skin.String(Movies_Shortcuts_Cover1)]</thumb>
+						<label>$INFO[Skin.String(Movies_Shortcuts_Label1)]</label>
+						<onclick>$INFO[Skin.String(Movies_Shortcuts_Path1)]</onclick>
+					</item>
+					<item id="7" description="Shortcut2">
+						<visible>!IsEmpty(Skin.String(Movies_Shortcuts_Path2))</visible>
+						<thumb>$INFO[Skin.String(Movies_Shortcuts_Cover2)]</thumb>
+						<label>$INFO[Skin.String(Movies_Shortcuts_Label2)]</label>
+						<onclick>$INFO[Skin.String(Movies_Shortcuts_Path2)]</onclick>
+					</item>
+					<item id="8" description="Shortcut3">
+						<visible>!IsEmpty(Skin.String(Movies_Shortcuts_Path3))</visible>
+						<thumb>$INFO[Skin.String(Movies_Shortcuts_Cover3)]</thumb>
+						<label>$INFO[Skin.String(Movies_Shortcuts_Label3)]</label>
+						<onclick>$INFO[Skin.String(Movies_Shortcuts_Path3)]</onclick>
+					</item>
+					<item id="9" description="Shortcut4">
+						<visible>!IsEmpty(Skin.String(Movies_Shortcuts_Path4))</visible>
+						<thumb>$INFO[Skin.String(Movies_Shortcuts_Cover4)]</thumb>
+						<label>$INFO[Skin.String(Movies_Shortcuts_Label4)]</label>
+						<onclick>$INFO[Skin.String(Movies_Shortcuts_Path4)]</onclick>
+					</item>
+					<item id="10" description="Shortcut5">
+						<visible>!IsEmpty(Skin.String(Movies_Shortcuts_Path5))</visible>
+						<thumb>$INFO[Skin.String(Movies_Shortcuts_Cover5)]</thumb>
+						<label>$INFO[Skin.String(Movies_Shortcuts_Label5)]</label>
+						<onclick>$INFO[Skin.String(Movies_Shortcuts_Path5)]</onclick>
+					</item>
+				</content>
+			</control>
+	</include>
+	<include name="TV_Shortcuts">
+			<!--ST TV-->
+			<control type="panel" id="312" description="TOP Shortcuts">
+				<visible>ControlGroup(300).HasFocus(302) | Control.HasFocus(312) | Control.HasFocus(902)</visible>
+				<visible>!IsEmpty(Skin.String(TV_Shortcuts_Path1)) | !IsEmpty(Skin.String(TV_Shortcuts_Path2)) | !IsEmpty(Skin.String(TV_Shortcuts_Path3)) | !IsEmpty(Skin.String(TV_Shortcuts_Path4)) | !IsEmpty(Skin.String(TV_Shortcuts_Path5))</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<hitrect x="0" y="0" w="1280" h="330" />
+				<posx>60</posx>
+				<posy>80</posy>
+				<width>1160</width>
+				<height>250</height>
+				<onleft>312</onleft>
+				<onright>312</onright>
+				<onup>-</onup>
+				<ondown>300</ondown>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<itemlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>198</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<!--<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>196</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordersize>2</bordersize>-->
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,16" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<posx>116</posx>
+						<posy>196</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>RA</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="6" description="TV">
+						<visible>!IsEmpty(Skin.String(TV_Shortcuts_Path1))</visible>
+						<thumb>$INFO[Skin.String(TV_Shortcuts_Cover1)]</thumb>
+						<label>$INFO[Skin.String(TV_Shortcuts_Label1)]</label>
+						<onclick>$INFO[Skin.String(TV_Shortcuts_Path1)]</onclick>
+					</item>
+					<item id="7" description="Shortcut2">
+						<visible>!IsEmpty(Skin.String(TV_Shortcuts_Path2))</visible>
+						<thumb>$INFO[Skin.String(TV_Shortcuts_Cover2)]</thumb>
+						<label>$INFO[Skin.String(TV_Shortcuts_Label2)]</label>
+						<onclick>$INFO[Skin.String(TV_Shortcuts_Path2)]</onclick>
+					</item>
+					<item id="8" description="Shortcut3">
+						<visible>!IsEmpty(Skin.String(TV_Shortcuts_Path3))</visible>
+						<thumb>$INFO[Skin.String(TV_Shortcuts_Cover3)]</thumb>
+						<label>$INFO[Skin.String(TV_Shortcuts_Label3)]</label>
+						<onclick>$INFO[Skin.String(TV_Shortcuts_Path3)]</onclick>
+					</item>
+					<item id="9" description="Shortcut4">
+						<visible>!IsEmpty(Skin.String(TV_Shortcuts_Path4))</visible>
+						<thumb>$INFO[Skin.String(TV_Shortcuts_Cover4)]</thumb>
+						<label>$INFO[Skin.String(TV_Shortcuts_Label4)]</label>
+						<onclick>$INFO[Skin.String(TV_Shortcuts_Path4)]</onclick>
+					</item>
+					<item id="10" description="Shortcut5">
+						<visible>!IsEmpty(Skin.String(TV_Shortcuts_Path5))</visible>
+						<thumb>$INFO[Skin.String(TV_Shortcuts_Cover5)]</thumb>
+						<label>$INFO[Skin.String(TV_Shortcuts_Label5)]</label>
+						<onclick>$INFO[Skin.String(TV_Shortcuts_Path5)]</onclick>
+					</item>
+				</content>
+			</control>
+	</include>
+			<!--ST MUSIC-->
+	<include name="Music_Shortcuts">
+			<control type="panel" id="313" description="TOP Shortcuts">
+				<visible>ControlGroup(300).HasFocus(303) | Control.HasFocus(313) | Control.HasFocus(903)</visible>
+				<visible>!IsEmpty(Skin.String(Music_Shortcuts_Path1)) | !IsEmpty(Skin.String(Music_Shortcuts_Path2)) | !IsEmpty(Skin.String(Music_Shortcuts_Path3)) | !IsEmpty(Skin.String(Music_Shortcuts_Path4)) | !IsEmpty(Skin.String(Music_Shortcuts_Path5))</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<hitrect x="0" y="0" w="1280" h="330" />
+				<posx>60</posx>
+				<posy>80</posy>
+				<width>1160</width>
+				<height>250</height>
+				<onleft>313</onleft>
+				<onright>313</onright>
+				<onup>-</onup>
+				<ondown>300</ondown>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<itemlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>198</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<!--<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>196</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordersize>2</bordersize>-->
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,16" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<posx>116</posx>
+						<posy>196</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>RA</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="6" description="Music">
+						<visible>!IsEmpty(Skin.String(Music_Shortcuts_Path1))</visible>
+						<thumb>$INFO[Skin.String(Music_Shortcuts_Cover1)]</thumb>
+						<label>$INFO[Skin.String(Music_Shortcuts_Label1)]</label>
+						<onclick>$INFO[Skin.String(Music_Shortcuts_Path1)]</onclick>
+					</item>
+					<item id="7" description="Shortcut2">
+						<visible>!IsEmpty(Skin.String(Music_Shortcuts_Path2))</visible>
+						<thumb>$INFO[Skin.String(Music_Shortcuts_Cover2)]</thumb>
+						<label>$INFO[Skin.String(Music_Shortcuts_Label2)]</label>
+						<onclick>$INFO[Skin.String(Music_Shortcuts_Path2)]</onclick>
+					</item>
+					<item id="8" description="Shortcut3">
+						<visible>!IsEmpty(Skin.String(Music_Shortcuts_Path3))</visible>
+						<thumb>$INFO[Skin.String(Music_Shortcuts_Cover3)]</thumb>
+						<label>$INFO[Skin.String(Music_Shortcuts_Label3)]</label>
+						<onclick>$INFO[Skin.String(Music_Shortcuts_Path3)]</onclick>
+					</item>
+					<item id="9" description="Shortcut4">
+						<visible>!IsEmpty(Skin.String(Music_Shortcuts_Path4))</visible>
+						<thumb>$INFO[Skin.String(Music_Shortcuts_Cover4)]</thumb>
+						<label>$INFO[Skin.String(Music_Shortcuts_Label4)]</label>
+						<onclick>$INFO[Skin.String(Music_Shortcuts_Path4)]</onclick>
+					</item>
+					<item id="10" description="Shortcut5">
+						<visible>!IsEmpty(Skin.String(Music_Shortcuts_Path5))</visible>
+						<thumb>$INFO[Skin.String(Music_Shortcuts_Cover5)]</thumb>
+						<label>$INFO[Skin.String(Music_Shortcuts_Label5)]</label>
+						<onclick>$INFO[Skin.String(Music_Shortcuts_Path5)]</onclick>
+					</item>
+				</content>
+			</control>
+	</include>
+	<include name="Pictures_Shortcuts">
+			<!--ST PICTURES-->
+			<control type="panel" id="314" description="TOP Shortcuts">
+				<visible>ControlGroup(300).HasFocus(304) | Control.HasFocus(314) | Control.HasFocus(904)</visible>
+				<visible>!IsEmpty(Skin.String(Pictures_Shortcuts_Path1)) | !IsEmpty(Skin.String(Pictures_Shortcuts_Path2)) | !IsEmpty(Skin.String(Pictures_Shortcuts_Path3)) | !IsEmpty(Skin.String(Pictures_Shortcuts_Path4)) | !IsEmpty(Skin.String(Pictures_Shortcuts_Path5))</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<hitrect x="0" y="0" w="1280" h="330" />
+				<posx>60</posx>
+				<posy>80</posy>
+				<width>1160</width>
+				<height>250</height>
+				<onleft>314</onleft>
+				<onright>314</onright>
+				<onup>-</onup>
+				<ondown>300</ondown>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<itemlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>198</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<!--<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>196</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordersize>2</bordersize>-->
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,16" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<posx>116</posx>
+						<posy>196</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>RA</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="6" description="Pictures">
+						<visible>!IsEmpty(Skin.String(Pictures_Shortcuts_Path1))</visible>
+						<thumb>$INFO[Skin.String(Pictures_Shortcuts_Cover1)]</thumb>
+						<label>$INFO[Skin.String(Pictures_Shortcuts_Label1)]</label>
+						<onclick>$INFO[Skin.String(Pictures_Shortcuts_Path1)]</onclick>
+					</item>
+					<item id="7" description="Shortcut2">
+						<visible>!IsEmpty(Skin.String(Pictures_Shortcuts_Path2))</visible>
+						<thumb>$INFO[Skin.String(Pictures_Shortcuts_Cover2)]</thumb>
+						<label>$INFO[Skin.String(Pictures_Shortcuts_Label2)]</label>
+						<onclick>$INFO[Skin.String(Pictures_Shortcuts_Path2)]</onclick>
+					</item>
+					<item id="8" description="Shortcut3">
+						<visible>!IsEmpty(Skin.String(Pictures_Shortcuts_Path3))</visible>
+						<thumb>$INFO[Skin.String(Pictures_Shortcuts_Cover3)]</thumb>
+						<label>$INFO[Skin.String(Pictures_Shortcuts_Label3)]</label>
+						<onclick>$INFO[Skin.String(Pictures_Shortcuts_Path3)]</onclick>
+					</item>
+					<item id="9" description="Shortcut4">
+						<visible>!IsEmpty(Skin.String(Pictures_Shortcuts_Path4))</visible>
+						<thumb>$INFO[Skin.String(Pictures_Shortcuts_Cover4)]</thumb>
+						<label>$INFO[Skin.String(Pictures_Shortcuts_Label4)]</label>
+						<onclick>$INFO[Skin.String(Pictures_Shortcuts_Path4)]</onclick>
+					</item>
+					<item id="10" description="Shortcut5">
+						<visible>!IsEmpty(Skin.String(Pictures_Shortcuts_Path5))</visible>
+						<thumb>$INFO[Skin.String(Pictures_Shortcuts_Cover5)]</thumb>
+						<label>$INFO[Skin.String(Pictures_Shortcuts_Label5)]</label>
+						<onclick>$INFO[Skin.String(Pictures_Shortcuts_Path5)]</onclick>
+					</item>
+				</content>
+			</control>
+	</include>
+	<include name="Addons_Shortcuts">
+			<!--ST ADDONS-->
+			<control type="panel" id="315" description="TOP Shortcuts">
+				<visible>ControlGroup(300).HasFocus(305) | Control.HasFocus(315) | Control.HasFocus(905)</visible>
+				<visible>!IsEmpty(Skin.String(Addons_Shortcuts_Path1)) | !IsEmpty(Skin.String(Addons_Shortcuts_Path2)) | !IsEmpty(Skin.String(Addons_Shortcuts_Path3)) | !IsEmpty(Skin.String(Addons_Shortcuts_Path4)) | !IsEmpty(Skin.String(Addons_Shortcuts_Path5))</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<hitrect x="0" y="0" w="1280" h="330" />
+				<posx>60</posx>
+				<posy>80</posy>
+				<width>1160</width>
+				<height>250</height>
+				<onleft>315</onleft>
+				<onright>315</onright>
+				<onup>-</onup>
+				<ondown>300</ondown>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<itemlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>198</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<!--<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>196</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordersize>2</bordersize>-->
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,16" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<posx>116</posx>
+						<posy>196</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>RA</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="6" description="Addons">
+						<visible>!IsEmpty(Skin.String(Addons_Shortcuts_Path1))</visible>
+						<thumb>$INFO[Skin.String(Addons_Shortcuts_Cover1)]</thumb>
+						<label>$INFO[Skin.String(Addons_Shortcuts_Label1)]</label>
+						<onclick>$INFO[Skin.String(Addons_Shortcuts_Path1)]</onclick>
+					</item>
+					<item id="7" description="Shortcut2">
+						<visible>!IsEmpty(Skin.String(Addons_Shortcuts_Path2))</visible>
+						<thumb>$INFO[Skin.String(Addons_Shortcuts_Cover2)]</thumb>
+						<label>$INFO[Skin.String(Addons_Shortcuts_Label2)]</label>
+						<onclick>$INFO[Skin.String(Addons_Shortcuts_Path2)]</onclick>
+					</item>
+					<item id="8" description="Shortcut3">
+						<visible>!IsEmpty(Skin.String(Addons_Shortcuts_Path3))</visible>
+						<thumb>$INFO[Skin.String(Addons_Shortcuts_Cover3)]</thumb>
+						<label>$INFO[Skin.String(Addons_Shortcuts_Label3)]</label>
+						<onclick>$INFO[Skin.String(Addons_Shortcuts_Path3)]</onclick>
+					</item>
+					<item id="9" description="Shortcut4">
+						<visible>!IsEmpty(Skin.String(Addons_Shortcuts_Path4))</visible>
+						<thumb>$INFO[Skin.String(Addons_Shortcuts_Cover4)]</thumb>
+						<label>$INFO[Skin.String(Addons_Shortcuts_Label4)]</label>
+						<onclick>$INFO[Skin.String(Addons_Shortcuts_Path4)]</onclick>
+					</item>
+					<item id="10" description="Shortcut5">
+						<visible>!IsEmpty(Skin.String(Addons_Shortcuts_Path5))</visible>
+						<thumb>$INFO[Skin.String(Addons_Shortcuts_Cover5)]</thumb>
+						<label>$INFO[Skin.String(Addons_Shortcuts_Label5)]</label>
+						<onclick>$INFO[Skin.String(Addons_Shortcuts_Path5)]</onclick>
+					</item>
+				</content>
+			</control>
+	</include>
+	<include name="XBMC_Shortcuts">
+			<!--ST XBMC-->
+			<control type="panel" id="316" description="TOP Shortcuts">
+				<visible>ControlGroup(300).HasFocus(306) | Control.HasFocus(316) | Control.HasFocus(906)</visible>
+				<visible>!IsEmpty(Skin.String(XBMC_Shortcuts_Path1)) | !IsEmpty(Skin.String(XBMC_Shortcuts_Path2)) | !IsEmpty(Skin.String(XBMC_Shortcuts_Path3)) | !IsEmpty(Skin.String(XBMC_Shortcuts_Path4)) | !IsEmpty(Skin.String(XBMC_Shortcuts_Path5))</visible>
+				<animation effect="fade" time="200">VisibleChange</animation>
+				<hitrect x="0" y="0" w="1280" h="330" />
+				<posx>60</posx>
+				<posy>80</posy>
+				<width>1160</width>
+				<height>250</height>
+				<onleft>316</onleft>
+				<onright>316</onright>
+				<onup>-</onup>
+				<ondown>300</ondown>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<itemlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>198</posy>
+						<width>190</width>
+						<height>190</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="232">
+					<control type="image">
+						<posx>21</posx>
+						<posy>5</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
+						<!--<bordersize>2</bordersize>-->-->
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>21</posx>
+						<posy>196</posy>
+						<width>190</width>
+						<height>190</height>
+						<!--<bordersize>2</bordersize>-->
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Thumb]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="98" end="110" time="330" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,16" time="330" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="label">
+						<posx>116</posx>
+						<posy>196</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>RA</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="6" description="XBMC">
+						<visible>!IsEmpty(Skin.String(XBMC_Shortcuts_Path1))</visible>
+						<thumb>$INFO[Skin.String(XBMC_Shortcuts_Cover1)]</thumb>
+						<label>$INFO[Skin.String(XBMC_Shortcuts_Label1)]</label>
+						<onclick>$INFO[Skin.String(XBMC_Shortcuts_Path1)]</onclick>
+					</item>
+					<item id="7" description="Shortcut2">
+						<visible>!IsEmpty(Skin.String(XBMC_Shortcuts_Path2))</visible>
+						<thumb>$INFO[Skin.String(XBMC_Shortcuts_Cover2)]</thumb>
+						<label>$INFO[Skin.String(XBMC_Shortcuts_Label2)]</label>
+						<onclick>$INFO[Skin.String(XBMC_Shortcuts_Path2)]</onclick>
+					</item>
+					<item id="8" description="Shortcut3">
+						<visible>!IsEmpty(Skin.String(XBMC_Shortcuts_Path3))</visible>
+						<thumb>$INFO[Skin.String(XBMC_Shortcuts_Cover3)]</thumb>
+						<label>$INFO[Skin.String(XBMC_Shortcuts_Label3)]</label>
+						<onclick>$INFO[Skin.String(XBMC_Shortcuts_Path3)]</onclick>
+					</item>
+					<item id="9" description="Shortcut4">
+						<visible>!IsEmpty(Skin.String(XBMC_Shortcuts_Path4))</visible>
+						<thumb>$INFO[Skin.String(XBMC_Shortcuts_Cover4)]</thumb>
+						<label>$INFO[Skin.String(XBMC_Shortcuts_Label4)]</label>
+						<onclick>$INFO[Skin.String(XBMC_Shortcuts_Path4)]</onclick>
+					</item>
+				</content>
+			</control>
+	</include>
+	
+	
+</includes>

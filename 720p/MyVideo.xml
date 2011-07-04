@@ -1,0 +1,133 @@
+<window id="6">
+	<defaultcontrol alway="true">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="100">WindowOpen</animation>
+	<controls>
+		<include>GlobalBackground</include>
+		<include>Fanart</include>
+		<include>FanartCommons</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>MyVideo.xml</label>
+		</control>
+		<include>View_50_List</include>
+		<include description="Icons">Movies_View_52</include>
+		<include description="FanArt">View_54</include>
+		<!--<control type="group" description="Thumbs">
+			<visible>!ControlGroup(9000).HasFocus()</visible>
+			<include>Thumbs</include>
+		</control>-->
+		<control type="group" description="9000">
+			<visible>!Skin.HasSetting(KioskEnabled)</visible>
+			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">
+				<effect type="fade" start="100" end="0" time="120" reversible="true" />
+			</animation>
+			<posx>110</posx>
+			<posy>154</posy>
+			
+			<control type="image">
+				<visible>Control.IsVisible(54)</visible>
+				<posx>305</posx>
+				<posy>-148</posy>
+				<width>452</width>
+				<height>358</height>
+				<texture>img/Menu.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image" description="Splitter">
+				<visible>!Control.IsVisible(54) + !Control.IsVisible(55)</visible>
+				<posx>400</posx>
+				<posy>-80</posy>
+				<height>580</height>
+				<width>128</width>
+				<texture flipx="true">img/Splitter.png</texture>
+			</control>
+			<control type="image" description="HSplitter">
+				<visible>!Control.IsVisible(54) + !Control.IsVisible(55)</visible>
+				<posx>-5</posx>
+				<posy>234</posy>
+				<height>22</height>
+				<width>370</width>
+				<texture>img/HSplitter.png</texture>
+			</control>
+			<control type="grouplist" id="9000">
+			<animation condition="Control.IsVisible(54)" effect="slide" start="0,0" end="335,-45" time="0">Conditional</animation>
+				<posx>0</posx>
+				<posy>-75</posy>
+				<width>390</width>
+				<height>550</height>
+				<itemgap>0</itemgap>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<scrolltime>200</scrolltime>
+				<orientation>vertical</orientation>
+				<control type="button" id="2" description="View">
+					<width>390</width>
+					<align>left</align>
+				</control>
+				<control type="togglebutton" id="14" description="Watched/Unwatched">
+					<width>390</width>
+					<align>left</align>
+					<label>16100</label>
+					<altlabel>16101</altlabel>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+				</control>
+				<control type="button" id="3" description="Sort">
+					<width>390</width>
+					<align>left</align>
+					<texturenofocus>-</texturenofocus>
+				</control>
+				<control type="togglebutton" id="4" description="SortMode">
+					<width>390</width>
+					<align>left</align>
+					<label>584</label>
+					<altlabel>585</altlabel>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+				</control>
+				<control type="button" id="13" description="Playlists">
+					<description>Playlists</description>
+					<width>390</width>
+					<align>left</align>
+					<label>136</label>
+					<texturenofocus>-</texturenofocus>
+					<onclick>SetFocus(50)</onclick>
+				</control>
+				<control type="radiobutton" id="90" description="Hide Background Fanart">
+				<visible>!Control.IsVisible(54)</visible>
+					<width>390</width>
+					<align>left</align>
+					<label>$LOCALIZE[31102]: $LOCALIZE[31307]</label>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<onclick>Skin.ToggleSetting(HideFanart)</onclick>
+					<selected>Skin.HasSetting(HideFanart)</selected>
+				</control>
+				<control type="button" id="93" description="NowPlaying">
+					<visible>!Player.HasVideo</visible>
+					<enable>Player.HasAudio</enable>
+					<width>390</width>
+					<align>left</align>
+					<label>13350</label>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<onclick>ActivateWindow(2006)</onclick>
+				</control>
+				<control type="button" id="94" description="NowPlaying">
+					<visible>Player.HasVideo</visible>
+					<width>390</width>
+					<align>left</align>
+					<label>13350</label>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<onclick>ActivateWindow(2005)</onclick>
+				</control>
+			</control>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

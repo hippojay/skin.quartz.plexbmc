@@ -1,0 +1,13 @@
+<colors>
+	<color name="Black">FF000000</color>
+	<color name="White">FFdddddd</color>
+	<color name="White2">FFFFFFFF</color>
+	<color name="Red">FFFF0000</color>
+	<color name="Green">FF3db86a</color>
+	<color name="Blue">FF0000FF</color>
+	<color name="Grey">FFc6C6C6</color>
+	<color name="Grey2">FFC1C1C1</color>
+	<color name="Silver">FF999999</color>
+	<color name="FanartDiffuse">FF333333</color>
+	
+</colors>

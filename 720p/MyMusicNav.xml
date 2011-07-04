@@ -1,0 +1,176 @@
+<window id="502">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<include>GlobalBackground</include>
+		<include>Fanart</include>
+		<include>FanartCommons</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>MyMusicNav.xml</label>
+		</control>
+		<control type="label" id="18">
+			<posx>660</posx>
+			<posy>250</posy>
+			<width>580</width>
+			<height>120</height>
+			<font>Large</font>
+			<label>-</label>
+		</control>
+		
+		<include>View_50_List</include>
+		<include condition="!Skin.HasSetting(Music_Library_51_Hide)">View_51</include>
+		<include condition="!Skin.HasSetting(Music_Library_52_Hide)">View_52</include>
+		<include condition="!Skin.HasSetting(Music_Library_53_Hide)">View_53</include>
+		<include condition="!Skin.HasSetting(Music_Library_54_Hide)">View_54</include>
+		<include condition="!Skin.HasSetting(Music_Library_55_Hide)">View_55</include>
+		
+		<control type="group" description="9000">
+		<visible>!Skin.HasSetting(KioskEnabled)</visible>
+			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">
+				<effect type="fade" start="100" end="0" time="120" reversible="true" />
+			</animation>
+			<posx>110</posx>
+			<posy>154</posy>
+			
+			<control type="image">
+				<visible>Control.IsVisible(54)</visible>
+				<posx>305</posx>
+				<posy>-154</posy>
+				<width>452</width>
+				<height>392</height>
+				<texture>img/Menu.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<visible>Control.IsVisible(55)</visible>
+				<posx>305</posx>
+				<posy>-154</posy>
+				<width>452</width>
+				<height>492</height>
+				<texture>img/Menu.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image" description="Splitter">
+				<visible>!Control.IsVisible(54) + !Control.IsVisible(55)</visible>
+				<posx>400</posx>
+				<posy>-80</posy>
+				<height>580</height>
+				<width>128</width>
+				<texture flipx="true">img/Splitter.png</texture>
+			</control>
+			<control type="image" description="HSplitter">
+				<visible>!Control.IsVisible(54) + !Control.IsVisible(55)</visible>
+				<posx>-5</posx>
+				<posy>234</posy>
+				<height>22</height>
+				<width>370</width>
+				<texture>img/HSplitter.png</texture>
+			</control>
+			<control type="grouplist" id="9000">
+			<animation condition="Control.IsVisible(54) | Control.IsVisible(55)" effect="slide" start="0,0" end="335,-75" time="0">Conditional</animation>	
+				<posx>0</posx>
+				<posy>-60</posy>
+				<width>390</width>
+				<height>550</height>
+				<itemgap>0</itemgap>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<scrolltime>200</scrolltime>
+				<control type="button" id="2" description="View">
+				<enable>![Skin.HasSetting(Music_Library_51_Hide) + Skin.HasSetting(Music_Library_52_Hide) + Skin.HasSetting(Music_Library_53_Hide) +Skin.HasSetting(Music_Library_54_Hide) + Skin.HasSetting(Music_Library_55_Hide)]</enable>
+					<width>390</width>
+					<align>left</align>
+				</control>
+				<control type="button" id="3" description="Sort">
+					<width>390</width>
+					<align>left</align>
+					<texturenofocus>-</texturenofocus>
+				</control>
+				<control type="togglebutton" id="4" description="SortMode">
+					<width>390</width>
+					<align>left</align>
+					<label>584</label>
+					<altlabel>585</altlabel>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+				</control>
+				<control type="button" id="8" description="Sort">
+					<width>390</width>
+					<align>left</align>
+					<label>137</label>
+					<texturenofocus>-</texturenofocus>
+				</control>
+				<control type="radiobutton" id="16" description="PartyMode">
+					<visible>!Window.IsActive(MyMusicSongs.xml)</visible>
+					<width>390</width>
+					<align>left</align>
+					<label>589</label>
+					<texturenofocus>-</texturenofocus>
+				</control>
+				<control type="button" id="7">
+					<description>Playlists</description>
+					<visible>Window.IsActive(MyMusicSongs.xml)</visible>
+					<width>390</width>
+					<align>left</align>
+					<label>136</label>
+					<texturenofocus>-</texturenofocus>
+				</control>
+				<control type="radiobutton" id="90" description="Hide Background Fanart">
+					<width>390</width>
+					<align>left</align>
+					<label>$LOCALIZE[31102]: $LOCALIZE[31307]</label>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<onclick>Skin.ToggleSetting(HideFanart)</onclick>
+					<selected>Skin.HasSetting(HideFanart)</selected>
+				</control>
+				<control type="radiobutton" id="91" description="Infopanel Covers">
+					<visible>Control.IsVisible(51) | Control.IsVisible(53) | Control.IsVisible(55)</visible>
+					<enable>!Skin.HasSetting(Info_Small_Fanart)</enable>
+					<width>390</width>
+					<align>left</align>
+					<label>$LOCALIZE[31289]: $LOCALIZE[31288]</label>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<onclick>Skin.ToggleSetting(Info_Small_Poster)</onclick>
+					<selected>Skin.HasSetting(Info_Small_Poster)</selected>
+				</control>
+				<control type="radiobutton" id="92" description="Info Small Fanart">
+					<visible>Control.IsVisible(51) | Control.IsVisible(53) | Control.IsVisible(55)</visible>
+					<enable>!Skin.HasSetting(Info_Small_Poster)</enable>
+					<width>390</width>
+					<align>left</align>
+					<label>$LOCALIZE[31289]: $LOCALIZE[31318]</label>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<onclick>Skin.ToggleSetting(Info_Small_Fanart)</onclick>
+					<selected>Skin.HasSetting(Info_Small_Fanart)</selected>
+				</control>
+				<control type="button" id="93" description="NowPlaying">
+					<visible>!Player.HasVideo</visible>
+					<enable>Player.HasAudio</enable>
+					<width>390</width>
+					<align>left</align>
+					<label>13350</label>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<onclick>ActivateWindow(2006)</onclick>
+				</control>
+				<control type="button" id="94" description="NowPlaying">
+					<visible>Player.HasVideo</visible>
+					<width>390</width>
+					<align>left</align>
+					<label>13350</label>
+					<texturenofocus>-</texturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
+					<onclick>ActivateWindow(2005)</onclick>
+				</control>
+			</control>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

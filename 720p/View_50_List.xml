@@ -1,0 +1,188 @@
+<includes>
+	<include name="View_50_List" description="List">
+		<!--LIST_50-->
+		<control type="group" description="Group 50">
+			<visible>Control.IsVisible(50)</visible>
+			<include>TopAndBottomSeparator</include>
+			<include>Headings</include>
+			
+			<include condition="![Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml) | Window.IsActive(addonbrowser) | Window.IsActive(MyMusicPlaylist.xml)]">Thumbs</include>
+			<include condition="Window.IsActive(MyMusicNav.xml) | Window.IsActive(MyMusicSongs.xml)">Square_Thumbs</include>
+			<include condition="!Skin.HasSetting(KioskEnabled)">List_Dots_50</include>
+						
+			<control type="group">
+				<posx>646</posx>
+				<posy>42</posy>
+				<control type="image" description="Slider">
+					<animation effect="fade" time="110">VisibleChange</animation>
+					<posx>18</posx>
+					<posy>278</posy>
+					<width>546</width>
+					<height>48</height>
+					<texture border="2">img/ButtonFO.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+						<effect type="fade" start="100" end="40" time="0" reversible="true" />
+					</animation>
+					<animation condition="Container(50).Position(0)" effect="slide" start="0,0" end="0,-232"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(50).Position(1)" effect="slide" start="0,0" end="0,-174"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(50).Position(2)" effect="slide" start="0,0" end="0,-116"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(50).Position(3)" effect="slide" start="0,0" end="0,-58"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(50).Position(4)" effect="slide" start="0,0" end="0,0"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(50).Position(5)" effect="slide" start="0,0" end="0,58"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(50).Position(6)" effect="slide" start="0,0" end="0,116"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(50).Position(7)" effect="slide" start="0,0" end="0,174"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(50).Position(8)" effect="slide" start="0,0" end="0,232"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(50).Position(9)" effect="slide" start="0,0" end="0,290"
+					time="150" reversible="true">Conditional</animation>
+					
+				</control>
+				<control type="fixedlist" id="50">
+					<posx>0</posx>
+					<posy>40</posy>
+					<width>600</width>
+					<height>580</height>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="535">list</viewtype>
+					<focusposition>4</focusposition>
+					<movement>5</movement>
+					<preloaditems>4</preloaditems>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="560" height="58">
+						<control type="image">
+							<visible>Window.IsVisible(VideoFiles) | [Window.IsVisible(VideoLibrary) + Skin.HasSetting(Show_Unwatched_Status)]</visible>
+							<posx>0</posx>
+							<posy>24</posy>
+							<height>12</height>
+							<width>12</width>
+							<texture>$INFO[ListItem.Overlay]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="image">
+							<visible>stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posx>30</posx>
+							<posy>24</posy>
+							<height>30</height>
+							<width>50</width>
+							<texture>img/2DNF.png</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posy>5</posy>
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>490</width>
+							<font>Small</font>
+							<aligny>center</aligny>
+							<scroll>false</scroll>
+							<selectedcolor>White2</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posx>8r</posx>
+							<posy>24</posy>
+							<width>112</width>
+							<font>Label2</font>
+							<scroll>false</scroll>
+							<align>right</align>
+							<aligny>top</aligny>
+							<selectedcolor>White2</selectedcolor>
+							<label>[B]$INFO[ListItem.Label2][/B]</label>
+						</control>
+						
+					</itemlayout>
+					<focusedlayout width="560" height="58">
+						<!--<control type="image" description="Button FO">
+							<posx>0</posx>
+							<posy>4</posy>
+							<height>48</height>
+							<width>540</width>
+							<texture border="0">img/ButtonFO.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<include>ButtonScroll</include>
+							<include>ListFade</include>
+						</control>-->
+						<control type="image">
+							<visible>Window.IsVisible(VideoFiles) | [Window.IsVisible(VideoLibrary) + Skin.HasSetting(Show_Unwatched_Status)]</visible>
+							<posx>0</posx>
+							<posy>24</posy>
+							<height>12</height>
+							<width>12</width>
+							<texture>$INFO[ListItem.Overlay]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="image">
+							<visible>stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posx>30</posx>
+							<posy>24</posy>
+							<height>30</height>
+							<width>50</width>
+							<texture>img/2DFO.png</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posy>5</posy>
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>490</width>
+							<font>Small</font>
+							<aligny>center</aligny>
+							<scroll>false</scroll>
+							<!--<textcolor>Black</textcolor>
+							<shadowcolor>Grey</shadowcolor>-->
+							<selectedcolor>White2</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posx>8r</posx>
+							<posy>24</posy>
+							<width>112</width>
+							<font>Label2</font>
+							<scroll>false</scroll>
+							<align>right</align>
+							<aligny>top</aligny>
+							<!--<textcolor>Black</textcolor>
+							<shadowcolor>Grey</shadowcolor>-->
+							<selectedcolor>White2</selectedcolor>
+							<label>[B]$INFO[ListItem.Label2][/B]</label>
+						</control>
+						
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+		<!--ScrollBar-->
+		
+		<control type="scrollbar" id="60">
+			<visible>![Skin.HasSetting(KioskEnabled) + Skin.HasSetting(HideScrollbar)] + ![Control.IsVisible(54) | Control.IsVisible(55)]</visible>
+			<posx>50r</posx>
+			<posy>120</posy>
+			<height>506</height>
+			<width>18</width>
+			<onleft>50</onleft>
+			<onright>-</onright>
+			<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+				<effect type="fade" start="100" end="0" time="120" reversible="true" />
+			</animation>
+		</control>
+		
+			
+	</include>
+</includes>

@@ -1,0 +1,267 @@
+<window id="126">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<include>GlobalBackground</include>
+		<include>TopAndBottomSeparator</include>
+		<control type="group">
+			<posx>0</posx>
+			<posy>0</posy>
+			<control type="label">
+				<include>DialogID</include>
+				<label>FileBrowser.xml</label>
+			</control>
+			<control type="label" id="411" description="Heading">
+				<posx>660</posx>
+				<posy>25</posy>
+				<align>center</align>
+				<width>540</width>
+				<font>XLarge</font>
+				<label>-</label>
+			</control>
+			<control type="group" description="Group 450">
+				<visible>Control.IsVisible(450)</visible>
+				<posx>660</posx>
+				<posy>45</posy>
+				<control type="image" description="Slider">
+					<visible>Control.HasFocus(450)</visible>
+					<posx>15</posx>
+					<posy>54</posy>
+					<width>510</width>
+					<height>50</height>
+					<texture border="8">img/ButtonFO.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<animation condition="Container(450).Position(0)" effect="slide" start="0,0" end="0,0"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(1)" effect="slide" start="0,0" end="0,50"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(2)" effect="slide" start="0,0" end="0,100"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(3)" effect="slide" start="0,0" end="0,150"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(4)" effect="slide" start="0,0" end="0,200"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(5)" effect="slide" start="0,0" end="0,250"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(6)" effect="slide" start="0,0" end="0,300"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(7)" effect="slide" start="0,0" end="0,350"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(8)" effect="slide" start="0,0" end="0,400"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(9)" effect="slide" start="0,0" end="0,450"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(10)" effect="slide" start="0,0" end="0,500"
+					time="200" reversible="true">Conditional</animation>
+					<animation condition="Container(450).Position(11)" effect="slide" start="0,0" end="0,550"
+					time="200" reversible="true">Conditional</animation>
+				</control>
+				<control type="fixedlist" id="450">
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>560</width>
+					<height>550</height>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="535">list</viewtype>
+					<focusposition>4</focusposition>
+					<movement>6</movement>
+					<preloaditems>4</preloaditems>
+					<itemlayout width="560" height="50">
+						<control type="label">
+							<posy>4</posy>
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>420</width>
+							<font>Small</font>
+							<scroll>false</scroll>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>15r</posx>
+							<posy>14</posy>
+							<width min="100" max="120">auto</width>
+							<font>XXXSmall</font>
+							<scroll>false</scroll>
+							<align>right</align>
+							<aligny>top</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="560" height="50">
+						<control type="label">
+							<posy>4</posy>
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>420</width>
+							<font>Small</font>
+							<scroll>false</scroll>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>15r</posx>
+							<posy>14</posy>
+							<width min="100" max="120">auto</width>
+							<font>XXXSmall</font>
+							<scroll>false</scroll>
+							<align>right</align>
+							<aligny>top</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="list" id="700" description="Toolbar">
+				<visible>!Skin.HasSetting(HideDots)</visible>
+				<posx>775</posx>
+				<posy>680</posy>
+				<width>300</width>
+				<height>18</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout height="18" width="100">
+					<control type="image">
+						<posx>43</posx>
+						<posy>0</posy>
+						<width>18</width>
+						<height>18</height>
+						<info>ListItem.Thumb</info>
+						<aspectratio>stretch</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="18" width="100">
+					<control type="image">
+						<posx>43</posx>
+						<posy>0</posy>
+						<width>18</width>
+						<height>18</height>
+						<info>ListItem.Thumb</info>
+						<aspectratio>stretch</aspectratio>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1" description="Options">
+						<visible>!ControlGroup(9000).HasFocus()</visible>
+						<onclick>Control.SetFocus(9000)</onclick>
+						<thumb>img/RadiobuttonNF.png</thumb>
+					</item>
+					<item id="1" description="Options">
+						<visible>ControlGroup(9000).HasFocus()</visible>
+						<onclick>Control.SetFocus(9000)</onclick>
+						<thumb>img/DotFO.png</thumb>
+					</item>
+					<item id="2" description="List">
+						<visible>!Control.HasFocus(450)</visible>
+						<onclick>Control.SetFocus(450)</onclick>
+						<!--<thumb>img/RadiobuttonNF.png</thumb>-->
+						<thumb>img/RadiobuttonNF.png</thumb>
+					</item>
+					<item id="2" description="List">
+						<visible>Control.HasFocus(450)</visible>
+						<onclick>Control.SetFocus(450)</onclick>
+						<thumb>img/DotFO.png</thumb>
+					</item>
+					<item id="3" description="Scrollbar">
+						<visible>!Control.HasFocus(60)</visible>
+						<onclick>Control.SetFocus(60)</onclick>
+						<thumb>img/RadiobuttonNF.png</thumb>
+					</item>
+					<item id="3" description="Scrollbar">
+						<visible>Control.HasFocus(60)</visible>
+						<onclick>Control.SetFocus(60)</onclick>
+						<thumb>img/DotFO.png</thumb>
+					</item>
+				</content>
+			</control>
+			<control type="scrollbar" id="60">
+				<posx>50r</posx>
+				<posy>130</posy>
+				<height>476</height>
+				<width>16</width>
+				<onleft>450</onleft>
+				<onright>-</onright>
+				<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+					<effect type="fade" start="100" end="0" time="200" reversible="true" />
+				</animation>
+			</control>
+			<control type="group" description="Thumbs">
+				<posx>60</posx>
+				<posy>354r</posy>
+				<control type="image" description="Item Icon NOT FLIPPED">
+					<visible>!SubString(Control.GetLabel(416),*)</visible>
+					<posx>1</posx>
+					<posy>1</posy>
+					<width>480</width>
+					<height>300</height>
+					<fadetime>300</fadetime>
+					<texture background="true">$INFO[Container(450).ListItem.Icon]</texture>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<bordertexture border="2">img/ButtonFO.png</bordertexture>
+				<bordersize>2</bordersize>
+				</control>
+				<control type="image" description="Item Icon FLIPPED">
+					<visible>SubString(Control.GetLabel(416),*)</visible>
+					<posx>1</posx>
+					<posy>1</posy>
+					<width>480</width>
+					<height>300</height>
+					<fadetime>300</fadetime>
+					<texture flipx="true" background="true">$INFO[Container(450).ListItem.Icon]</texture>
+					<aspectratio align="center" aligny="bottom">keep</aspectratio>
+					<bordertexture border="2">img/ButtonFO.png</bordertexture>
+				<bordersize>2</bordersize>
+				</control>
+			</control>
+			<control type="group" description="9000">
+				<posx>150</posx>
+				<posy>120</posy>
+				<control type="image" description="Splitter">
+					<posy>-40</posy>
+					<posx>300</posx>
+					<height>540</height>
+					<texture flipx="true">img/Splitter.png</texture>
+				</control>
+				<control type="grouplist" id="9000">
+					<posx>40</posx>
+					<posy>0</posy>
+					<width>260</width>
+					<height>520</height>
+					<itemgap>0</itemgap>
+					<onleft>-</onleft>
+					<onright>450</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<scrolltime>220</scrolltime>
+					<orientation>vertical</orientation>
+					<control type="button" id="413" description="Ok">
+						<width>260</width>
+						<label>186</label>
+						<focusedcolor>Green</focusedcolor>
+					</control>
+					<control type="button" id="414" description="Cancel">
+						<width>260</width>
+						<label>222</label>
+						<focusedcolor>Red</focusedcolor>
+					</control>
+					<control type="button" id="415" description="Create folder">
+						<width>260</width>
+						<label>119</label>
+					</control>
+					<control type="radiobutton" id="416" description="Horizontal Flip">
+						<width>260</width>
+						<align>left</align>
+						<label>749</label>
+					</control>
+				</control>
+			</control>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

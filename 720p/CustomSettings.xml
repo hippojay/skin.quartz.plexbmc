@@ -1,0 +1,186 @@
+<window id="56">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<include>GlobalBackground</include>
+		<include>TopAndBottomSeparator</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>Settings.xml</label>
+		</control>
+		<control type="label" description="Heading">
+			<posx>660</posx>
+			<posy>22</posy>
+			<align>center</align>
+			<width>540</width>
+			<font>XLarge</font>
+			<label>20077</label>
+		</control>
+		<control type="group" description="Group 9000">
+			<visible>Control.IsVisible(9000)</visible>
+			<posx>640</posx>
+			<posy>110</posy>
+			<control type="image" description="Slider">
+				<visible>Control.HasFocus(9000)</visible>
+				<posx>60</posx>
+				<posy>28</posy>
+				<width>480</width>
+				<height>50</height>
+				<texture border="8">img/ButtonFO.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<animation condition="Container(9000).Position(0)" effect="slide" start="0,0" end="0,0"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(1)" effect="slide" start="0,0" end="0,50"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(2)" effect="slide" start="0,0" end="0,100"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(3)" effect="slide" start="0,0" end="0,150"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(4)" effect="slide" start="0,0" end="0,200"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(5)" effect="slide" start="0,0" end="0,250"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(6)" effect="slide" start="0,0" end="0,300"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(7)" effect="slide" start="0,0" end="0,350"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(8)" effect="slide" start="0,0" end="0,400"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(9)" effect="slide" start="0,0" end="0,450"
+					time="100" reversible="true">Conditional</animation>
+				<animation condition="Container(9000).Position(10)" effect="slide" start="0,0" end="0,500"
+					time="100" reversible="true">Conditional</animation>
+			</control>
+			<control type="list" id="9000">
+				<posx>50</posx>
+				<posy>25</posy>
+				<width>580</width>
+				<height>550</height>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onright>60</onright>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="List">list</viewtype>
+				<scrolltime>220</scrolltime>
+				<itemlayout width="560" height="50">
+					<control type="label">
+						<posy>3</posy>
+						<posx>30</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<font>Small</font>
+						<scroll>false</scroll>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="image" description="Arrow">
+						<posy>12</posy>
+						<posx>445</posx>
+						<width>32</width>
+						<height>32</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout width="560" height="50">
+					<control type="label">
+						<posy>3</posy>
+						<posx>30</posx>
+						<posy>0</posy>
+						<width>440</width>
+						<font>Small</font>
+						<scroll>false</scroll>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="image" description="Arrow">
+						<posy>12</posy>
+						<posx>445</posx>
+						<width>32</width>
+						<height>32</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</focusedlayout>
+				<content>
+				<item id="1" description="General">
+					<label>128</label>
+					<thumb>img/ArrowFO.png</thumb>
+					<onclick>ActivateWindow(1501)</onclick>
+				</item>
+				<item id="2" description="Background">
+					<label>31102</label>
+					<thumb>img/ArrowFO.png</thumb>
+					<onclick>ActivateWindow(1502)</onclick>
+				</item>
+				<item id="3" description="Movies">
+					<label>$LOCALIZE[342]</label>
+					<thumb>img/ArrowFO.png</thumb>
+					<onclick>ActivateWindow(1504)</onclick>
+				</item>
+				<item id="4" description="TV">
+					<label>$LOCALIZE[20343]</label>
+					<thumb>img/ArrowFO.png</thumb>
+					<onclick>ActivateWindow(1505)</onclick>
+				</item>
+				<item id="5" description="Music">
+					<label>$LOCALIZE[2]</label>
+					<thumb>img/ArrowFO.png</thumb>
+					<onclick>ActivateWindow(1506)</onclick>
+				</item>
+				<item id="6" description="Pictures">
+					<label>$LOCALIZE[1]</label>
+					<thumb>img/ArrowFO.png</thumb>
+					<onclick>ActivateWindow(1507)</onclick>
+				</item>
+				<item id="7" description="Addons">
+					<label>$LOCALIZE[24001]</label>
+					<thumb>img/ArrowFO.png</thumb>
+					<onclick>ActivateWindow(1508)</onclick>
+				</item>
+				<item id="8" description="XBMC">
+					<label>XBMC $LOCALIZE[1034]</label>
+					<thumb>img/ArrowFO.png</thumb>
+					<onclick>ActivateWindow(1509)</onclick>
+				</item>
+				<item id="9" description="Reset Settings to default">
+					<label>$LOCALIZE[31038]</label>
+					<thumb>icons/icon_warning.png</thumb>
+					<onclick>Skin.ResetSettings</onclick>
+				</item>
+			</content>
+			</control>
+		</control>
+		<!--<control type="scrollbar" id="60">
+			<visible>!Skin.HasSetting(KioskEnabled)</visible>
+			<posx>50r</posx>
+			<posy>120</posy>
+			<height>506</height>
+			<width>18</width>
+			<onleft>9000</onleft>
+			<onright>-</onright>
+			<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+				<effect type="fade" start="100" end="40" time="200" reversible="true" />
+			</animation>
+		</control>-->
+		
+		<control type="image" description="Logo">
+			<posx>80</posx>
+			<posy>100</posy>
+			<width>500</width>
+			<height>256</height>
+			<aspectratio align="center" aligny="bottom">keep</aspectratio>
+			<texture background="true">special://skin/icon.png</texture>
+		</control>
+		<control type="image" description="Reflection">
+			<posx>80</posx>
+			<posy>357</posy>
+			<width>500</width>
+			<height>256</height>
+			<aspectratio align="center" aligny="top">keep</aspectratio>
+			<texture background="true" diffuse="img/Reflection2.png" flipy="true">special://skin/icon.png</texture>
+		</control>
+		
+		
+		<include>Debug_Grid</include>
+	</controls>
+</window>

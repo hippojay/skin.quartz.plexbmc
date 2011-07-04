@@ -1,0 +1,196 @@
+<includes>
+	<include name="View_51" description="List+Info">
+		<control type="group" description="Group 51">
+			<visible>Control.IsVisible(51)</visible>
+			<include>TopAndBottomSeparator</include>
+			<include>Headings</include>
+			<control type="group" description="Video Covers">
+				<!--9000 visibility in Thumbs-->
+				<visible>[Container.Content(Movies) | Container.Content(TVShows)] + !System.IdleTime(1)</visible>
+				<animation effect="fade" start="0" end="100" time="200" reversible="false">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="400" delay="400" reversible="false">Hidden</animation>
+				<include condition="Window.IsActive(VideoLibrary)">Thumbs</include>
+			</control>
+			<control type="group" description="Movie Infopanel">
+				<visible>Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(TVPosters)]</visible>
+			<visible>!ControlGroup(9000).HasFocus() + System.IdleTime(2)</visible>
+				<animation effect="fade" start="0" end="100" time="400" reversible="false">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
+				<include condition="Window.IsActive(VideoLibrary)">InfoThumbs</include>
+				<include condition="Window.IsActive(VideoLibrary)">InfoPanel</include>
+			</control>
+			<control type="group" description="Episodes Infopanel">
+				<visible>!ControlGroup(9000).HasFocus() + Container.Content(Episodes)</visible>
+				<animation effect="fade" start="0" end="100" time="600" reversible="false">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
+				<include condition="Window.IsActive(VideoLibrary)">FadeInfoThumbs</include>
+				<include condition="Window.IsActive(VideoLibrary)">InfoPanel</include>
+			</control>
+			
+			<control type="group" description="Album Covers">
+				<!--9000 visibility in Thumbs-->
+				<visible>Container.Content(Albums) + !System.IdleTime(1)</visible>
+				<animation effect="fade" start="0" end="100" time="200" reversible="false">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="400" delay="400" reversible="false">Hidden</animation>
+				<include condition="Window.IsActive(MusicLibrary)">Square_Thumbs</include>
+			</control>
+			<control type="group" description="Albums Infopanel">
+				<visible>!ControlGroup(9000).HasFocus() + Container.Content(Albums) + System.IdleTime(2)</visible>
+				<animation effect="fade" start="0" end="100" time="600" reversible="false">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
+				<include condition="Window.IsActive(MusicLibrary)">InfoThumbs</include>
+				<include condition="Window.IsActive(MusicLibrary)">InfoPanel</include>
+			</control>
+			<control type="group" description="Songs Infopanel">
+				<visible>!ControlGroup(9000).HasFocus() + Container.Content(Songs)</visible>
+				<animation effect="fade" start="0" end="100" time="600" reversible="false">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
+				<include condition="Window.IsActive(MusicLibrary)">FadeInfoThumbs</include>
+				<include condition="Window.IsActive(MusicLibrary)">InfoPanel</include>
+			</control>	
+			
+			<include condition="!Skin.HasSetting(KioskEnabled)">List_Dots_51</include>
+			<control type="group">
+				<posx>646</posx>
+				<posy>42</posy>
+				<control type="image" description="Slider">
+					<animation effect="fade" time="100">VisibleChange</animation>
+					<posx>18</posx>
+					<posy>278</posy>
+					<width>546</width>
+					<height>48</height>
+					<texture border="2">img/ButtonFO.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<animation type="Conditional" condition="ControlGroup(9000).HasFocus()">
+						<effect type="fade" start="100" end="40" time="0" reversible="true" />
+					</animation>
+					<animation condition="Container(51).Position(0)" effect="slide" start="0,0" end="0,-232"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(51).Position(1)" effect="slide" start="0,0" end="0,-174"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(51).Position(2)" effect="slide" start="0,0" end="0,-116"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(51).Position(3)" effect="slide" start="0,0" end="0,-58"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(51).Position(4)" effect="slide" start="0,0" end="0,0"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(51).Position(5)" effect="slide" start="0,0" end="0,58"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(51).Position(6)" effect="slide" start="0,0" end="0,116"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(51).Position(7)" effect="slide" start="0,0" end="0,174"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(51).Position(8)" effect="slide" start="0,0" end="0,232"
+					time="150" reversible="true">Conditional</animation>
+					<animation condition="Container(51).Position(9)" effect="slide" start="0,0" end="0,290"
+					time="150" reversible="true">Conditional</animation>
+				</control>
+				<control type="fixedlist" id="51">
+					<visible>Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(TVPosters)] | Container.Content(Episodes) | Container.Content(Albums) | Container.Content(Songs)</visible>
+					<posx>0</posx>
+					<posy>40</posy>
+					<width>600</width>
+					<height>580</height>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="31398">List+Info</viewtype>
+					<focusposition>4</focusposition>
+					<movement>5</movement>
+					<preloaditems>4</preloaditems>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="560" height="58">
+						<control type="image">
+							<visible>Window.IsVisible(VideoFiles) | [Window.IsVisible(VideoLibrary) + Skin.HasSetting(Show_Unwatched_Status)]</visible>
+							<posx>0</posx>
+							<posy>24</posy>
+							<height>12</height>
+							<width>12</width>
+							<texture>$INFO[ListItem.Overlay]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="image">
+							<visible>stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posx>30</posx>
+							<posy>24</posy>
+							<height>30</height>
+							<width>50</width>
+							<texture>img/2DNF.png</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posy>5</posy>
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>490</width>
+							<font>Small</font>
+							<aligny>center</aligny>
+							<scroll>false</scroll>
+							<selectedcolor>White2</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posx>8r</posx>
+							<posy>24</posy>
+							<width>112</width>
+							<font>Label2</font>
+							<scroll>false</scroll>
+							<align>right</align>
+							<aligny>top</aligny>
+							<selectedcolor>White2</selectedcolor>
+							<label>[B]$INFO[ListItem.Label2][/B]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="560" height="58">
+						<control type="image">
+							<visible>Window.IsVisible(VideoFiles) | [Window.IsVisible(VideoLibrary) + Skin.HasSetting(Show_Unwatched_Status)]</visible>
+							<posx>0</posx>
+							<posy>24</posy>
+							<height>12</height>
+							<width>12</width>
+							<texture>$INFO[ListItem.Overlay]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="image">
+							<visible>stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posx>30</posx>
+							<posy>24</posy>
+							<height>30</height>
+							<width>50</width>
+							<texture>img/2DFO.png</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posy>5</posy>
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>490</width>
+							<font>Small</font>
+							<aligny>center</aligny>
+							<scroll>false</scroll>
+							<selectedcolor>White2</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
+							<posx>8r</posx>
+							<posy>24</posy>
+							<width>112</width>
+							<font>Label2</font>
+							<scroll>false</scroll>
+							<align>right</align>
+							<aligny>top</aligny>
+							<selectedcolor>White2</selectedcolor>
+							<label>[B]$INFO[ListItem.Label2][/B]</label>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

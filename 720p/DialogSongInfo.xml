@@ -1,0 +1,245 @@
+<window id="135" type="dialog">
+	<defaultcontrol always="true">14</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<!--<backgroundcolor>0</backgroundcolor>-->
+
+	<controls>
+
+		
+		<!--<include>GlobalBackground</include>-->
+
+		<control type="group">
+			<posx>200</posx>
+			<posy>80</posy>
+
+			<control type="image">
+				<posx>-20</posx>
+				<posy>-20</posy>
+				<width>920</width>
+				<height>600</height>
+				<texture border="22">img/Menu.png</texture>
+			</control>
+			<control type="button" id="999" description="Back">
+			<visible>system.getbool(input.enablemouse) + !Window.IsActive(home)</visible>
+			<posx>8</posx>
+			<posy>-8</posy>
+			<width>40</width>
+			<height>40</height>
+			<align>left</align>
+			<texturefocus>img/BackFO.png</texturefocus>
+			<texturenofocus>img/BackNF.png</texturenofocus>
+			<onclick>PreviousMenu</onclick>
+		</control>
+			<control type="label">
+				<include>DialogID</include>
+				<label>DialogSongInfo.xml</label>
+			</control>
+
+			<control type="label">
+				<description>Header Label</description>
+				<posx>10</posx>
+				<align>center</align>
+				<font>Medium</font>
+				<width>860</width>
+				<label>658</label>
+			</control>
+
+			<control type="image" id="3">
+				<description>Cover Image</description>
+				<posx>10</posx>
+				<posy>40</posy>
+				<width>255</width>
+				<height>255</height>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<bordertexture border="5">img/ButtonFO.png</bordertexture>
+				<bordersize>5</bordersize>
+			</control>
+
+			<control type="label">
+				<description>Title</description>
+				<posx>290</posx>
+				<posy>40</posy>
+				<width>580</width>
+				<font>Large</font>
+				<label>$INFO[ListItem.Title]</label>
+				<scroll>true</scroll>
+			</control>
+
+			<control type="grouplist">
+				<posx>290</posx>
+				<posy>84</posy>
+				<width>580</width>
+				<height>112</height>
+				<itemgap>0</itemgap>
+				<orientation>vertical</orientation>
+
+				<control type="label">
+					<description>Album</description>
+					<width>580</width>
+					<height>28</height>
+					<font>XSmall</font>
+					<label>$INFO[ListItem.Album,[COLOR Grey]$LOCALIZE[558]:[/COLOR] ]</label>
+					<scroll>true</scroll>
+					<visible>!IsEmpty(ListItem.Album)</visible>
+				</control>
+
+				<control type="label">
+					<description>Artist</description>
+					<width>580</width>
+					<height>28</height>
+					<font>XSmall</font>
+					<label>$INFO[ListItem.Artist,[COLOR Grey]$LOCALIZE[557]:[/COLOR] ]</label>
+					<scroll>true</scroll>
+					<visible>!IsEmpty(ListItem.Artist)</visible>
+				</control>
+
+				<control type="label">
+					<description>Genre</description>
+					<width>580</width>
+					<height>28</height>
+					<font>XSmall</font>
+					<label>$INFO[ListItem.Genre,[COLOR Grey]$LOCALIZE[515]:[/COLOR] ]</label>
+					<scroll>true</scroll>
+					<visible>!IsEmpty(ListItem.Genre)</visible>
+				</control>
+
+				<control type="label">
+					<description>Year</description>
+					<width>580</width>
+					<height>28</height>
+					<font>XSmall</font>
+					<label>$INFO[ListItem.Year,[COLOR Grey]$LOCALIZE[562]:[/COLOR] ]</label>
+					<scroll>true</scroll>
+					<visible>!IsEmpty(ListItem.Year)</visible>
+				</control>
+
+			</control>
+
+			<control type="grouplist">
+				<posx>290</posx>
+				<posy>190</posy>
+				<itemgap>10</itemgap>
+				<orientation>horizontal</orientation>	
+
+				<control type="label">
+					<description>Rating Title</description>
+					<width min="0" max="200">auto</width>
+					<textcolor>Grey</textcolor>
+					<font>XSmall</font>
+					<label>$LOCALIZE[563]:</label>
+				</control>
+
+				<control type="image">
+					<description>Rating value</description>
+					<width>120</width>
+					<height>50</height>
+					<texture>flags/stars/$INFO[ListItem.StarRating]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
+			</control>
+
+			<control type="textbox" id="4" description="Review">
+				<posx>290</posx>
+				<posy>268</posy>
+				<width>580</width>
+				<height>262</height>
+				<font>XSmall</font>
+				<align>justify</align>
+				<label fallback="161">$INFO[ListItem.Comment]</label>
+			</control>
+
+			<control type="image">
+				<posx>10</posx>
+				<posy>320</posy>
+				<width>255</width>
+				<height>50</height>				
+				<texture border="5">img/ButtonFO.png</texture>
+				<visible>!ControlGroup(9000).HasFocus</visible>
+			</control>
+
+			<!--<control type="image">
+				<posx>10</posx>
+				<posy>320</posy>
+				<width>255</width>
+				<height>50</height>				
+				<texture border="2">img/ButtonNF.png</texture>
+				<visible>ControlGroup(9000).HasFocus</visible>
+			</control>-->
+
+			<control type="label">
+				<posx>30</posx>
+				<posy>320</posy>
+				<width>215</width>
+				<label>33067</label>
+			</control>
+
+			
+
+			<control type="button" id="15" description="Increase Rating">
+				<posx>180</posx>
+				<posy>332</posy>
+				<width>33</width>
+				<height>23</height>
+				<onclick>IncreaseRating</onclick>
+				<texturenofocus>img/UpNF.png</texturenofocus>
+				<texturefocus>img/UpFO.png</texturefocus>
+				<onleft>14</onleft>
+				<onright>14</onright>
+				<onup>13</onup>
+				<ondown>10</ondown>
+			</control>
+			
+			<control type="button" id="14" description="Decrease Rating">
+				<posx>213</posx>
+				<posy>332</posy>
+				<width>33</width>
+				<height>23</height>
+				<onclick>DecreaseRating</onclick>
+				<texturenofocus flipy="true">img/UpNF.png</texturenofocus>
+				<texturefocus flipy="true">img/UpFO.png</texturefocus>
+				<onleft>15</onleft>
+				<onright>15</onright>
+				<onup>13</onup>
+				<ondown>10</ondown>
+			</control>
+			<control type="grouplist" id="9000">
+				<posx>10</posx>
+				<posy>365</posy>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>15</onup>
+				<ondown>14</ondown>
+				<itemgap>2</itemgap>
+				<orientation>vertical</orientation>
+
+				<control type="button" id ="10" description="OK button">
+					<width>255</width>
+					<label>186</label>
+				</control>
+
+				<control type="button" id="11" description="Cancel button">
+					<width>255</width>
+					<label>222</label>
+				</control>
+
+				<control type="button" id="12" description="Album Info button">
+					<width>255</width>
+					<label>10523</label>
+				</control>
+
+				<control type="button" id ="13" description="Get Thumb button">
+					<width>255</width>
+					<label>13405</label>
+				</control>
+
+			</control>
+
+		</control>
+
+		<include>Debug_Grid</include>
+
+	</controls>
+
+</window>

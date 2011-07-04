@@ -1,0 +1,150 @@
+<includes>
+	<include name="View_55">
+		<control type="group">
+			<visible>Control.IsVisible(55)</visible>
+			<control type="group" description="Furniture">
+				<posy>0</posy>
+				<control type="image" description="Stage">
+					<posx>0</posx>
+					<posy>520</posy>
+					<width>1280</width>
+					<height>200</height>
+					<aspectratio>keep</aspectratio>
+					<texture>img/Fanart_Stage2.png</texture>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!stringcompare(Container.Listitem(0).Label,..)]</visible>
+				<animation effect="fade" start="0" end="100" time="600" reversible="false">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
+				<control type="group" description="Thumbs">
+					<visible>Skin.HasSetting(Info_Small_Fanart)</visible>
+					<posx>578</posx>
+					<posy>10</posy>
+					<visible></visible>	
+					<include>FanartInfoThumbs</include>
+				</control>
+			<control type="group" description="Infopanel">
+				<posx>20</posx>
+				<posy>-340</posy>
+				<control type="image" description="InfoBack">
+					<posx>50</posx>
+					<posy>424</posy>
+					<width>555</width>
+					<height>315</height>
+					<aspectratio>stretch</aspectratio>
+					<!--<texture>img/BlackDotST.png</texture>-->
+					<!--<texture>img/Panel.png</texture>-->
+					<texture border="20">img/Menu.png</texture>
+					<animation condition="true" effect="fade" start="0" end="72" delay="0" time="0">Conditional</animation>
+				</control>
+				<control type="group">
+				<posy>40</posy>
+				<posx>4</posx>
+				<include>InfoPanel</include>
+				<animation condition="Skin.HasSetting(Hide_Flags)" effect="slide" start="0,0" end="0,14" delay="0" time="0">Conditional</animation>
+				</control>
+			</control>
+			
+				
+			</control>
+			<control type="fixedlist" id="55" description="FanArt">
+				<visible>Container.Content(Movies) | Container.Content(Albums)</visible>
+				<viewtype label="31397">FanArt+Info</viewtype>
+				<posx>40</posx>
+				<posy>492</posy>
+				<width>1200</width>
+				<height>250</height>
+				<orientation>horizontal</orientation>
+				<onup>9000</onup>
+				<ondown>60</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<focusposition>3</focusposition>
+				<movement>3</movement>
+				<preloaditems>4</preloaditems>
+				<pagecontrol>60</pagecontrol>
+				<itemlayout height="250" width="170">
+					<control type="image">
+						<posx>15</posx>
+						<posy>10</posy>
+						<width>140</width>
+						<height>160</height>
+						<!--<bordertexture border="1">img/ButtonFO.png</bordertexture>
+						<bordersize>1</bordersize>-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+					<control type="image" description="Reflection">
+						<posx>15</posx>
+						<posy>168</posy>
+						<width>140</width>
+						<height>160</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="250" width="170">
+					<control type="image">
+						<posx>15</posx>
+						<posy>10</posy>
+						<width>140</width>
+						<height>160</height>
+						<!--<bordertexture border="1">img/ButtonFO.png</bordertexture>
+						<bordersize>1</bordersize>-->
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="120" time="300" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,-4" time="300" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<control type="image" description="Reflection">
+						<posx>15</posx>
+						<posy>168</posy>
+						<width>140</width>
+						<height>160</height>
+						<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="120" time="300" easing="inout" center="auto"/>
+							<effect type="slide" start="0,0" end="0,24" time="300" easing="inout" center="auto"/>
+						</animation>
+					</control>
+					<!--<control type="label">
+						<posx>116</posx>
+						<posy>190</posy>
+						<width>200</width>
+						<align>center</align>
+						<font>XXSmall</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>-->
+				</focusedlayout>
+			</control>
+			<control type="image" description="9000dim">
+				<visible>ControlGroup(9000).HasFocus()</visible>
+				<include>Dimensions_Fullscreen</include>
+				<texture>img/BlackDotT.png</texture>
+				<animation effect="fade" time="200">VisibleChange</animation>
+			</control>
+		</control>
+		
+			
+		<control type="scrollbar" id="60">
+			<visible>![Skin.HasSetting(KioskEnabled) + Skin.HasSetting(Scrollbar)] + Control.IsVisible(55)</visible>
+			<posx>82</posx>
+			<posy>26r</posy>
+			<height>18</height>
+			<width>1100</width>
+			<orientation>horizontal</orientation>
+			<texturesliderbackground border="12,0,12,0">img/ScrollBarHorBG.png</texturesliderbackground>
+			<texturesliderbar border="12,0,12,0">img/ScrollBarHorFO.png</texturesliderbar>
+			<texturesliderbarfocus border="12,0,12,0">img/ScrollBarHorFO.png</texturesliderbarfocus>
+			<onup>50</onup>
+			<ondown>-</ondown>
+			<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+				<effect type="fade" start="100" end="0" time="120" reversible="true" />
+			</animation>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,52 @@
+<window id="136">
+	<defaultcontrol always="true">-</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="100">WindowOpen</animation>
+	<controls>
+
+		<include>GlobalBackground</include>
+		
+		<control type="group">
+			<posx>320</posx>
+			<posy>250</posy>
+
+			<control type="label">
+				<posy>-200</posy>
+				<width>640</width>
+				<align>center</align>
+				<include>DialogID</include>
+				<label>DialogBusy.xml</label>
+			</control>
+
+			<control type="label" description="Busy label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>640</width>
+				<height>60</height>
+				<font>XLarge</font>
+				<align>center</align>
+				<label>20186</label>
+			</control>
+			
+			<control type="multiimage">
+				<description>Busy animation</description>
+				<posx>286</posx>
+				<posy>100</posy>
+				<width>64</width>
+				<height>64</height>
+				<imagepath>busy</imagepath>
+				<timeperimage>100</timeperimage>
+				<fadetime>0</fadetime>
+				<aspectratio>keep</aspectratio>
+			</control>
+			
+						
+
+		</control>
+
+		<include>Debug_Grid</include>
+
+	</controls>
+
+</window>

@@ -1,0 +1,42 @@
+﻿<window type="dialog" id="115">
+	<defaultcontrol always="true">901</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<visible>!Window.IsVisible(VideoOSDSettings.xml) + !Window.IsVisible(fullscreeninfo) + [VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
+
+
+	<controls>
+
+		<control type="group">
+			<posx>70</posx>
+			<posy>630</posy>
+
+			<control type="image">
+					<posx>-80</posx>
+					<posy>-30</posy>
+					<width>1300</width>
+					<height>120</height>
+					<texture border="0">img/Gradient.png</texture>
+				</control>
+			
+			<control type="progress" description="Buffer caching">
+				<posx>200</posx>
+				<posy>50</posy>
+				<width>670</width>
+				<info>Player.CacheLevel</info>
+				<visible>Player.Caching</visible>
+			</control>
+			
+			<control type="label">
+				<include>DialogID</include>
+				<label>DialogSeekbar.xml</label>
+			</control>
+			<include>BottomBar</include>
+			
+			
+		</control>
+
+		<include>Debug_Grid</include>
+
+	</controls>
+
+</window>

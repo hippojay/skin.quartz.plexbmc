@@ -1,0 +1,124 @@
+<window id="139">
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="100">WindowOpen</animation>
+	<controls>
+		<include>GlobalBackground</include>
+		<control type="label">
+			<posy>40</posy>
+			<include>DialogID</include>
+			<label>DialogPictureInfo.xml</label>
+		</control>
+		<control type="label">
+			<description>heading</description>
+			<posx>0</posx>
+			<posy>40</posy>
+			<width>1280</width>
+			<label>13406</label>
+			<font>XLarge</font>
+			<align>center</align>
+		</control>
+		<control type="image" description="Splitter">
+			<posx>240</posx>
+			<posy>50</posy>
+			<height>128</height>
+			<width>800</width>
+			<texture>img/HSplitter.png</texture>
+		</control>
+		<control type="group">
+			<posx>350</posx>
+			<posy>40</posy>
+			<control type="image" description="Slider ">
+				<visible>Container(5).HasFocus()</visible>
+				<posx>0</posx>
+				<posy>82</posy>
+				<width>580</width>
+				<height>45</height>
+				<texture border="8">img/ButtonFO.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<animation condition="Container(5).Position(0)" effect="slide" start="0,0" end="0,0"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(1)" effect="slide" start="0,0" end="0,45"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(2)" effect="slide" start="0,0" end="0,90"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(3)" effect="slide" start="0,0" end="0,135"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(4)" effect="slide" start="0,0" end="0,180"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(5)" effect="slide" start="0,0" end="0,225"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(6)" effect="slide" start="0,0" end="0,270"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(7)" effect="slide" start="0,0" end="0,315"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(8)" effect="slide" start="0,0" end="0,360"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(9)" effect="slide" start="0,0" end="0,405"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(10)" effect="slide" start="0,0" end="0,450"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(11)" effect="slide" start="0,0" end="0,495"
+						time="180" reversible="true">Conditional</animation>
+				<animation condition="Container(5).Position(12)" effect="slide" start="0,0" end="0,540"
+						time="180" reversible="true">Conditional</animation>
+			</control>
+			<control type="fixedlist" id="5">
+				<posx>0</posx>
+				<posy>80</posy>
+				<width>580</width>
+				<height>540</height>
+				<onleft>-</onleft>
+				<onright>60</onright>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<focusposition>4</focusposition>
+				<movement>7</movement>
+				<pagecontrol>60</pagecontrol>
+				<itemlayout height="45">
+					<control type="label">
+						<posx>20</posx>
+						<width>270</width>
+						<scroll>false</scroll>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>560</posx>
+						<width>270</width>
+						<align>right</align>
+						<scroll>false</scroll>
+						<font>XXSmall</font>
+						<info>ListItem.Label2</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="45">
+					<control type="label">
+						<posx>20</posx>
+						<width>270</width>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>560</posx>
+						<width>270</width>
+						<align>right</align>
+						<font>XXSmall</font>
+						<info>ListItem.Label2</info>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<control type="scrollbar" id="60">
+			<posx>300r</posx>
+			<posy>160</posy>
+			<height>420</height>
+			<width>18</width>
+			<onleft>5</onleft>
+			<onright>-</onright>
+			<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+				<effect type="fade" start="100" end="40" time="200" reversible="true" />
+			</animation>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

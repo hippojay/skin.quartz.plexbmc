@@ -1,0 +1,32 @@
+<window id="2007">
+	<defaultcontrol>2</defaultcontrol>
+
+	<controls>
+
+		<control type="group">
+			<posx>10</posx>
+			<posy>10</posy>
+
+			<control type="label">
+				<include>WindowID</include>
+				<label>SlideShow.xml</label>
+			</control>
+
+		</control>
+<control type="button" id="999" description="Back">
+			<visible>system.getbool(input.enablemouse) + !Window.IsActive(home)</visible>
+			<posx>8</posx>
+			<posy>8</posy>
+			<width>40</width>
+			<height>40</height>
+			<align>left</align>
+			<texturefocus>img/BackFO.png</texturefocus>
+			<texturenofocus>img/BackNF.png</texturenofocus>
+			<onclick>PreviousMenu</onclick>
+		</control>
+		
+		<include>Debug_Grid</include>
+
+	</controls>
+
+</window>

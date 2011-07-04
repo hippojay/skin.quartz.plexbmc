@@ -1,0 +1,182 @@
+<window id="132">
+	<defaultcontrol always="true">3</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<include>GlobalBackground</include>
+		<control type="group">
+			<posx>300</posx>
+			<posy>40</posy>
+			<control type="image" description="Splitter">
+				<posx>280</posx>
+				<posy>50</posy>
+				<height>128</height>
+				<width>600</width>
+				<texture>img/HSplitter.png</texture>
+			</control>
+			<control type="image" description="Splitter">
+				<posx>280</posx>
+				<posy>160</posy>
+				<height>128</height>
+				<width>600</width>
+				<texture flipy="true">img/HSplitter.png</texture>
+			</control>
+			<control type="image" description="Splitter">
+				<posx>280</posx>
+				<posy>530</posy>
+				<height>128</height>
+				<width>600</width>
+				<texture>img/HSplitter.png</texture>
+			</control>
+			<!--<control type="image" description="Splitter">
+				<posx>320</posx>
+				<posy>120r</posy>
+				<height>500</height>
+				<texture flipy="true">img/HSplitter.png</texture>
+			</control>-->
+			
+			<control type="label">
+				<include>DialogID</include>
+				<label>DialogContentSettings.xml</label>
+			</control>
+			<control type="label" description="Directory Contains">
+				<posx>10</posx>
+				<posy>-20</posy>
+				<align>center</align>
+				<font>Normal</font>
+				<width>860</width>
+				<label>20344</label>
+			</control>
+			<control type="spincontrolex" id="3" description="Content Type">
+				<posx>290</posx>
+				<posy>45</posy>
+				<width>580</width>
+				<font>-</font>
+				<label>-</label>
+				<align>right</align>
+				<onup>29</onup>
+				<ondown>4</ondown>
+				<onleft>28</onleft>
+				<onright>28</onright>
+			</control>
+			<control type="label" description="Content Type Label">
+				<posx>290</posx>
+				<posy>45</posy>
+				<width>305</width>
+				<align>left</align>
+				<label>$INFO[Control.GetLabel(3)]</label>
+			</control>
+			<control type="fixedlist" id="4" description="Scraper list">
+				<posx>320</posx>
+				<posy>105</posy>
+				<width>520</width>
+				<height>136</height>
+				<onup>3</onup>
+				<onleft>5</onleft>
+				<onright>3</onright>
+				<ondown>5</ondown>
+				<focusposition>2</focusposition>
+				<movement>1</movement>
+				<itemlayout height="46">
+					<control type="image">
+						<width>520</width>
+						<height>44</height>
+						<bordertexture border="2">img/ButtonNF.png</bordertexture>
+					</control>
+					<control type="label">
+						<posx>15</posx>
+						<width>380</width>
+						<info>ListItem.Label</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="46">
+					<control type="image">
+						<width>520</width>
+						<height>44</height>
+						<texture border="5">img/ButtonFO.png</texture>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(4)">Conditional</animation>
+					</control>
+					<control type="label">
+						<posx>15</posx>
+						<width>380</width>
+						<info>ListItem.Label</info>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="grouplist" id="5" description="Control Area">
+				<posx>290</posx>
+				<posy>250</posy>
+				<width>580</width>
+				<height>300</height>
+				<itemgap>2</itemgap>
+				<onup>4</onup>
+				<ondown>6</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<orientation>vertical</orientation>
+			</control>
+			<control type="button" id="7" description="Button Default">
+				<align>left</align>
+			</control>
+			<control type="radiobutton" id="8" description="RadioButton">
+				<align>left</align>
+			</control>
+			<control type="group">
+				<posy>30</posy>
+				<control type="button" id="6" description="Settings">
+					<posx>290</posx>
+					<posy>492</posy>
+					<width>580</width>
+					<height>44</height>
+					<align>left</align>
+					<textoffsetx>60</textoffsetx>
+					<label>$LOCALIZE[5]</label>
+					<onup>5</onup>
+					<onleft>28</onleft>
+					<onright>29</onright>
+					<ondown>28</ondown>
+				</control>
+				<control type="image" description="Settings Addon Icon">
+					<visible>Control.IsVisible(6)</visible>
+					<posx>294</posx>
+					<posy>495</posy>
+					<width>38</width>
+					<height>38</height>
+					<texture fallback="DefaultAddonNone.png">$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="button" id="28" description="OK">
+					<posx>310</posx>
+					<posy>566</posy>
+					<width>220</width>
+					<label>186</label>
+					<onleft>-</onleft>
+					<onright>29</onright>
+					<onup>6</onup>
+					<ondown>3</ondown>
+				</control>
+				<control type="button" id="29" description="Cancel">
+					<posx>635</posx>
+					<posy>566</posy>
+					<width>220</width>
+					<label>222</label>
+					<onleft>28</onleft>
+					<onright>-</onright>
+					<onup>6</onup>
+					<ondown>3</ondown>
+				</control>
+			</control>
+		</control>
+		<control type="image" description="Addon Icon">
+			<posx>100</posx>
+			<posy>180</posy>
+			<width>360</width>
+			<height>360</height>
+			<texture fallback="DefaultAddonNone.png">$INFO[ListItem.Icon]</texture>
+			<aspectratio align="center" aligny="top">keep</aspectratio>
+			<bordertexture border="8">img/Menu.png</bordertexture>
+			<bordersize>1</bordersize>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

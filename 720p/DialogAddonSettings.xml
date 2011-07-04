@@ -1,0 +1,133 @@
+<window id="10140">
+	<defaultcontrol always="false">9</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<coordinates>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+		<include>GlobalBackground</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>DialogAddonSettings.xml</label>
+		</control>
+		<control type="image" description="separator Top">
+			<posy>74</posy>
+			<posx>660</posx>
+			<width>550</width>
+			<height>2</height>
+			<texture>img/ButtonFO.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="label" id="20" description="Heading">
+			<posx>660</posx>
+			<posy>25</posy>
+			<align>center</align>
+			<width>540</width>
+			<font>XLarge</font>
+			<label>-</label>
+		</control>
+		<control type="grouplist" id="9" description="Left Configure Panel">
+			<posx>100</posx>
+			<posy>120</posy>
+			<width>300</width>
+			<height>420</height>
+			<itemgap>0</itemgap>
+			<onleft>30</onleft>
+			<onright>2</onright>
+			<onup>9</onup>
+			<ondown>9000</ondown>
+		</control>
+		<control type="image" description="separator Top">
+			<posy>495</posy>
+			<posx>80</posx>
+			<width>300</width>
+			<height>2</height>
+			<texture>img/ButtonFO.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="grouplist" id="9000" description="Left OK/Cancel Panel">
+			<posx>100</posx>
+			<posy>500</posy>
+			<width>300</width>
+			<height>150</height>
+			<itemgap>0</itemgap>
+			<onleft>-</onleft>
+			<onright>2</onright>
+			<onup>9</onup>
+			<ondown>-</ondown>
+			<align>center</align>
+			<aligny>top</aligny>
+			<orientation>vertical</orientation>
+			<control type="button" id="10" description="OK Button">
+				<width>260</width>
+				<label>186</label>
+			</control>
+			<control type="button" id="12" description="Defaults Button">
+				<width>260</width>
+				<label>409</label>
+			</control>
+			<control type="button" id="11" description="Cancel Button">
+				<width>260</width>
+				<label>222</label>
+			</control>
+		</control>
+		<control type="image" description="Splitter">
+			<posx>320</posx>
+			<posy>120</posy>
+			<height>500</height>
+			<texture>img/Splitter.png</texture>
+		</control>
+		<control type="image" description="Splitter">
+			<posx>1040</posx>
+			<posy>120</posy>
+			<height>500</height>
+			<texture flipx="true">img/Splitter.png</texture>
+		</control>
+		<control type="group" description="Right Panel">
+			<posx>430</posx>
+			<posy>120</posy>
+			<control type="grouplist" id="2" description="Right controls">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>750</width>
+				<height>650</height>
+				<itemgap>0</itemgap>
+				<onup>2</onup>
+				<ondown>9000</ondown>
+				<onleft>9</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="button" id="13" description="Default Category Button">
+				<font>Small</font>
+			</control>
+			<control type="button" id="3" description="Default Button">
+				<font>Small</font>
+			</control>
+			<control type="radiobutton" id="4" description="Default RadioButton">
+				<font>Small</font>
+				<align>left</align>
+				<radioposx>698</radioposx>
+			</control>
+			<control type="spincontrolex" id="5" description="Default spincontrolex">
+				<font>Small</font>
+				<reverse>yes</reverse>
+			</control>
+			<control type="label" id="7">
+				<label>-</label>
+				<font>Small</font>
+				<textcolor>Grey</textcolor>
+			</control>
+			<control type="image" id="6" description="Default Seperator">
+				<height>-2</height>
+				<texture>-</texture>
+			</control>
+			<control type="sliderex" id="8" description="Default Slider Control">
+				<font>Small</font>
+				<width>600</width>
+			</control>
+		</control>
+		<include>Debug_Grid</include>
+	</controls>
+</window>

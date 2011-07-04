@@ -1,0 +1,182 @@
+<window id="1502">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<backgroundcolor>0</backgroundcolor>
+	<controls>
+		<include>GlobalBackground</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>Settings.xml</label>
+		</control>
+		<control type="image" description="separator Top">
+			<posy>75</posy>
+			<posx>100</posx>
+			<width>1080</width>
+			<height>2</height>
+			<texture>img/OldButtonFO.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="label" description="Heading">
+			<posx>0</posx>
+			<posy>25</posy>
+			<align>center</align>
+			<width>1280</width>
+			<font>XLarge</font>
+			<label>$LOCALIZE[20077] - $LOCALIZE[33068]</label>
+		</control>
+		<control type="group" description="Group 9000">
+			<visible>Control.IsVisible(9000)</visible>
+			<posx>260</posx>
+			<posy>120</posy>
+			<control type="panel" id="9000" description="Icons">
+				<onleft>-</onleft>
+				<onright>60</onright>
+				<onup>9000</onup>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>750</width>
+				<height>570</height>
+				<scrolltime>240</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<preloaditems>4</preloaditems>
+				<itemlayout height="90" width="150">
+					<control type="image">
+						<posx>15</posx>
+						<posy>5</posy>
+						<width>120</width>
+						<height>80</height>
+						<bordertexture border="1">img/ButtonFO.png</bordertexture>
+						<bordersize>1</bordersize>
+						<texture fallback="img/BlackDot.png" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>scale</aspectratio>
+						<fadetime>0</fadetime>
+					</control>
+					<control type="label">
+						<posy>20</posy>
+						<posx>75</posx>
+						<posy>0</posy>
+						<width>120</width>
+						<align>center</align>
+						<font>XSmall</font>
+						<scroll>false</scroll>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="90" width="150">
+					<control type="image">
+						<posx>15</posx>
+						<posy>5</posy>
+						<width>120</width>
+						<height>80</height>
+						<bordertexture border="1">img/ButtonFO.png</bordertexture>
+						<bordersize>1</bordersize>
+						<texture fallback="img/BlackDot.png" background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>scale</aspectratio>
+						<fadetime>0</fadetime>
+						<animation effect="zoom" center="auto" start="100" end="120" time="80">Focus</animation>
+						<animation effect="zoom" center="auto" start="120" end="100" time="80">UnFocus</animation>
+					</control>
+					<control type="label">
+						<posy>20</posy>
+						<posx>75</posx>
+						<posy>0</posy>
+						<width>120</width>
+						<align>center</align>
+						<font>XSmall</font>
+						<scroll>false</scroll>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<icon>special://skin/backgrounds/Default.jpg</icon>
+						<label>571</label>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.Reset(Background)</onclick>
+					</item>
+					
+					<item id="2">
+						<icon>special://skin/backgrounds/Aurora.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/Aurora.jpg)</onclick>
+					</item>
+					
+					<item id="3">
+						<icon>special://skin/backgrounds/Blue.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/Blue.jpg)</onclick>
+					</item>
+					
+					<item id="4">
+						<icon>special://skin/backgrounds/Grey.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/Grey.jpg)</onclick>
+					</item>
+					
+					<item id="5">
+						<icon>special://skin/backgrounds/Grainy.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/Grainy.jpg)</onclick>
+					</item>
+					
+					
+					<item id="6">
+						<icon>special://skin/backgrounds/Pozadina.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/Pozadina.jpg)</onclick>
+					</item>
+					<item id="7">
+						<icon>special://skin/backgrounds/BlueStream.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/BlueStream.jpg)</onclick>
+					</item>
+					<item id="8">
+						<icon>special://skin/backgrounds/OrangeStream.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/OrangeStream.jpg)</onclick>
+					</item>
+					<item id="9">
+						<icon>special://skin/backgrounds/Crystal.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/Crystal.jpg)</onclick>
+					</item>
+					<item id="10">
+						<icon>special://skin/backgrounds/StormClouds.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/StormClouds.jpg)</onclick>
+					</item>
+					<item id="11">
+						<icon>special://skin/backgrounds/FireClouds.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/FireClouds.jpg)</onclick>
+					</item>
+					<item id="12">
+						<icon>special://skin/backgrounds/BlackBubbleWrap.jpg</icon>
+						<onclick>Skin.Reset(Custom_Background)</onclick>
+						<onclick>Skin.SetString(Background,special://skin/backgrounds/BlackBubbleWrap.jpg)</onclick>
+					</item>
+					<item id="13">
+						<icon>special://skin/backgrounds/Default.jpg</icon>
+						<label>636</label>
+						<onclick>Skin.Reset(Background)</onclick>
+						<onclick>Skin.SetImage(Custom_Background)</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+		<!--<control type="scrollbar" id="60">
+			<posx>50r</posx>
+			<posy>120</posy>
+			<height>506</height>
+			<width>18</width>
+			<onleft>9000</onleft>
+			<onright>-</onright>
+			<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
+				<effect type="fade" start="100" end="40" time="200" reversible="true" />
+			</animation>
+		</control>-->
+		
+		<include>Debug_Grid</include>
+	</controls>
+</window>

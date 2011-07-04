@@ -1,0 +1,104 @@
+<window id="2006">
+	<defaultcontrol always="true">-</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<control type="visualisation" id="2" description="Visualisation">
+				<include>Dimensions_Fullscreen</include>
+			</control>
+			<control type="image" description="MusicFanart">
+				<include>Dimensions_Fullscreen</include>
+				<fadetime>400</fadetime>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+				<animation effect="fade" time="300">Visible</animation>
+				<animation effect="fade" time="200">Hidden</animation>
+				<animation type="Conditional" condition="true">
+					<effect type="fade" start="0" end="40" time="0" reversible="false" />
+				</animation>
+			</control>
+			<control type="label">
+				<include>DialogID</include>
+				<label>MusicVisualisation.xml</label>
+			</control>
+			<control type="group">
+				<visible>Player.ShowInfo + ![Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList)] | !Visualisation.Enabled</visible>
+				<animation effect="fade" start="0" end="100" time="600" reversible="false">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
+				<control type="image">
+					<posx>-10</posx>
+					<posy>0</posy>
+					<width>1300</width>
+					<height>240</height>
+					<texture flipy="true" border="0">img/Gradient.png</texture>
+				</control>
+				<control type="image" description="MusicAlbum">
+					<posx>10</posx>
+					<posy>10</posy>
+					<height>150</height>
+					<width>150</width>
+					<fadetime>300</fadetime>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[MusicPlayer.Cover]</texture>
+				</control>
+				<control type="label">
+				<posx>200</posx>
+				<posy>10</posy>
+				<width>800</width>
+					<label>[B]$INFO[MusicPlayer.Title][/B]</label>
+					<scroll>true</scroll>
+					<align>left</align>
+					<font>Large</font>
+				</control>
+				<control type="label">
+				<posx>200</posx>
+				<posy>80</posy>
+				<width>800</width>
+					<label>$INFO[MusicPlayer.Artist]</label>
+					<scroll>true</scroll>
+					<align>left</align>
+					<font>Normal</font>
+				</control>
+				<control type="label">
+					<posx>200</posx>
+					<posy>120</posy>
+					<width>800</width>
+					<label>$INFO[MusicPlayer.Album]</label>
+					<align>left</align>
+					<font>Normal</font>
+				</control>
+				<control type="label">
+					<posx>24r</posx>
+					<posy>10</posy>
+					<width>300</width>
+					<align>right</align>
+					<font>Normal</font>
+					<label>[B]$INFO[System.Time][/B]</label>	
+				</control>
+				<control type="label" description="Track Count">
+					<posx>20r</posx>
+					<posy>120</posy>
+					<width>400</width>
+					<label>$INFO[MusicPlayer.PlaylistPosition,[COLOR=Grey]$LOCALIZE[554]:  ]$INFO[MusicPlayer.PlaylistLength, / ][/COLOR]</label>
+					<align>right</align>
+					<font>Medium</font>
+					<visible>MusicPlayer.ChapterCount</visible>
+				</control>
+				<control type="image">
+					<posx>-10</posx>
+					<posy>600</posy>
+					<width>1300</width>
+					<height>120</height>
+					<texture border="0">img/Gradient.png</texture>
+				</control>
+				<control type="group">
+					<posx>70</posx>
+					<posy>630</posy>
+					<include>BottomBar</include>
+				</control>
+			</control>
+		</control>
+		
+		<include>Debug_Grid</include>
+	</controls>
+</window>
