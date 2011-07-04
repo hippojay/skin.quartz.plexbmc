@@ -1,19 +1,18 @@
 <includes>
 	<include name="VideoCodecflags">
 		<control type="grouplist" description="Video resolutio Set">
-			<visible>!IsEmpty(ListItem.VideoResolution)</visible>
 			<width>505</width>
 			<align>left</align>
 			<orientation>horizontal</orientation>
 			<control type="image" description="DVD">
-				<visible>![stringcompare(ListItem.VideoResolution,1080) | stringcompare(ListItem.VideoResolution,720)]</visible>
+				<visible>![substring(ListItem.Property(VideoResolution),1080) |substring(ListItem.Property(VideoResolution),720)]</visible>
 				<width>80</width>
 				<height>24</height>
 				<aspectratio align="left">keep</aspectratio>
 				<texture>flags/video/dvd.png</texture>
 			</control>
 			<control type="image" description="BR">
-				<visible>[stringcompare(ListItem.VideoResolution,1080) | stringcompare(ListItem.VideoResolution,720)]</visible>
+				<visible>[substring(ListItem.Property(VideoResolution),1080) | substring(ListItem.Property(VideoResolution),720)]</visible>
 				<width>80</width>
 				<height>28</height>
 				<aspectratio align="left">keep</aspectratio>
@@ -24,11 +23,11 @@
 				<width>70</width>
 				<height>24</height>
 				<align>left</align>
-				<texture align="left">$INFO[ListItem.VideoResolution,flags/video/,.png]</texture>
+				<texture align="left">$INFO[ListItem.Property(VideoResolution),flags/video/,.png]</texture>
 			</control>
 		</control>
 		<control type="grouplist" description="Offline Set">
-			<visible>IsEmpty(ListItem.VideoResolution) + IsEmpty(ListItem.AudioChannels) + Container.Content(movies)</visible>
+			<visible>IsEmpty(ListItem.Property(VideoResolution) + IsEmpty(ListItem.Property(AudioChannels) + Container.Content(movies)</visible>
 			<width>505</width>
 			<align>left</align>
 			<orientation>horizontal</orientation>
@@ -54,13 +53,13 @@
 				<width>60</width>
 				<height>28</height>
 				<aspectratio align="right">keep</aspectratio>
-				<texture>$INFO[ListItem.AudioChannels,flags/audio/,.png]</texture>
+				<texture>$INFO[ListItem.Property(AudioChannels),flags/audio/,.png]</texture>
 			</control>
 			<control type="image" description="Audio Codec Image">
 				<width>80</width>
 				<height>28</height>
 				<aspectratio align="right">keep</aspectratio>
-				<texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
+				<texture>$INFO[ListItem.Property(AudioCodec),flags/audio/,.png]</texture>
 			</control>
 		</control>
 	</include>

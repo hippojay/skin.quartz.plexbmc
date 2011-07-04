@@ -1,4 +1,6 @@
 <includes>
+    <include file="PlexHome.xml" />
+    <include file="QuartzHome.xml" />
 	<include file="Defaults.xml" />
 	<include file="CommonViews.xml" />
 	<include file="IncludeHome.xml"/>
