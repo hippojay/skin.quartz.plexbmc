@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.quartz.plexbmc" version="0.2-1.0.3" name="Quartz" provider-name="Pecinko.  Modded by Hippojay for Plexbmc">
+<addon id="skin.quartz.plexbmc" version="0.3-1.0.3" name="Quartz" provider-name="Pecinko.  Modded by Hippojay for Plexbmc">
 	<requires>
 		<import addon="xbmc.gui" version="2.11"/>
-    	<import addon="script.favourites" version="2.0.0"/>
-    	<!--<import addon="script.recentlyadded" version="2.0.5"/>
+    	<!--<import addon="script.favourites" version="2.0.0"/>
+    	<import addon="script.recentlyadded" version="2.0.5"/>
     	<import addon="script.randomitems" version="1.0.11"/>-->
 	</requires>
 	<extension  
