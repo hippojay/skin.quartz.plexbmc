@@ -1,86 +1,56 @@
 ﻿<window id="106">
 	<defaultcontrol always="true">1000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	
+	<include>OpenClose</include>
 	<coordinates>
 		<origin x="440" y="80" />
 	</coordinates>
-
 	<controls>
-
-		<control type="image" description="Background dim">
+		<control type="group">
 			<posx>-440</posx>
 			<posy>-80</posy>
-			<width>1280</width>
-			<height>720</height>
-			<texture>img/BlackDotT.png</texture>
+			<include>BackgroundDim</include>
 		</control>
-		
-		
-		<!--<control type="image" id="997" description="Background top image">
-			<posx>0</posx>
-			<posy>-35</posy>
-			<width>400</width>
-			<height>35</height>
-			<texture border="22,22,22,0">img/ContextTop.png</texture>
-		</control>
-
-		<control type="image" id="999" description="Background image">
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>400</width>
-			<texture border="22,0,22,0">img/ContextMiddle.png</texture>
-		</control>
-
-		<control type="image" id="998" description="Background bottom image">
-			<posx>0</posx>
-			<width>400</width>
-			<height>35</height>
-			<texture border="22,0,22,22">img/ContextBottom.png</texture>
-		</control>-->
 		<control type="image" id="997" description="Background top image">
-			<posx>0</posx>
-			<posy>-54</posy>
-			<width>400</width>
-			<height>54</height>
-			<texture border="0,0,0,0">img/MenuTop.png</texture>
+			<posx>-4</posx>
+			<posy>-44</posy>
+			<width>348</width>
+			<height>44</height>
+			<texture border="16,16,16,0">img/ContextTop.png</texture>
 		</control>
 		<control type="group" description="Close Button">
-				<posx>6</posx>
-				<posy>-46</posy>
-				<include>CloseButton</include>
-			</control>
+			<posx>6</posx>
+			<posy>-34</posy>
+			<include>CloseButton</include>
+		</control>
 		<control type="image" id="999" description="Background image">
-			<posx>0</posx>
+			<posx>-4</posx>
 			<posy>0</posy>
-			<width>400</width>
-			<texture border="0,0,0,0">img/MenuMiddle.png</texture>
+			<width>348</width>
+			<texture border="16,0,16,0">img/ContextMiddle.png</texture>
 		</control>
-
 		<control type="image" id="998" description="Background bottom image">
-			<posx>0</posx>
-			<width>400</width>
-			<height>50</height>
-			<texture border="0,0,0,0">img/MenuBottom.png</texture>
+			<posx>-4</posx>
+			<width>348</width>
+			<height>30</height>
+			<texture border="16,0,16,16">img/ContextBottom.png</texture>
 		</control>
-		
-					
 		<control type="label">
 			<posy>-30</posy>
 			<posx>30</posx>
 			<include>DialogID</include>
 			<label>DialogContextMenu.xml</label>
 		</control>
-
 		<control type="button" id="1000" description="Buttons">
-			<posx>30</posx>
+			<posx>16</posx>
 			<posy>40</posy>
-			<width>340</width>
+			<width>312</width>
 			<height>40</height>
-			<texturefocus border="20">img/ButtonFO.png</texturefocus>
+			<focusedcolor>White</focusedcolor>
+			<texturefocus border="5">img/ButtonFO.png</texturefocus>
+			<!--<texturefocus border="2">img/ButtonContextMenu.png</texturefocus>-->
 			<texturenofocus>-</texturenofocus>
 		</control>
-
 		<control type="image">
 			<posx>-440</posx>
 			<posy>-80</posy>
@@ -89,7 +59,5 @@
 			<texture>debuggrid720.png</texture>
 			<visible>Skin.HasSetting(DebugGrid)</visible>
 		</control>
-
 	</controls>
-
 </window>

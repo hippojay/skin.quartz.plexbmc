@@ -48,16 +48,16 @@
 			<effect type="fade" start="100" end="60" time="300" reversible="true" />
 		</animation>
 	</include>
-	
 	<include name="Sublist">
 		<posy>395</posy>
+		<width>250</width>
 		<height>275</height>
 		<scrolltime>200</scrolltime>
-		<itemlayout height="40" width="190">
+		<itemlayout height="40" width="250">
 			<control type="label">
-				<posx>95</posx>
+				<posx>125</posx>
 				<posy>0</posy>
-				<width>180</width>
+				<width>240</width>
 				<height>40</height>
 				<textoffsetx>0</textoffsetx>
 				<font>Submenu</font>
@@ -66,21 +66,12 @@
 				<aligny>center</aligny>
 				<scroll>false</scroll>
 			</control>
-			<control type="image">
-				<posx>65</posx>
-				<posy>0</posy>
-				<width>60</width>
-				<height>40</height>
-				<info>ListItem.Icon</info>
-				<align>center</align>
-				<aligny>center</aligny>
-			</control>
 		</itemlayout>
-		<focusedlayout height="40" width="190">
+		<focusedlayout height="40" width="250">
 			<control type="label">
-				<posx>95</posx>
+				<posx>125</posx>
 				<posy>0</posy>
-				<width>180</width>
+				<width>250</width>
 				<height>40</height>
 				<textoffsetx>0</textoffsetx>
 				<font>Submenu</font>
@@ -89,46 +80,36 @@
 				<aligny>center</aligny>
 				<scroll>true</scroll>
 			</control>
-			<control type="image">
-				<posx>65</posx>
-				<posy>0</posy>
-				<width>60</width>
-				<height>40</height>
-				<info>ListItem.Icon</info>
-				<align>center</align>
-				<aligny>center</aligny>
-			</control>
 		</focusedlayout>
 	</include>
 	<include name="Slider301">
 		<control type="image" description="Slider301">
 			<visible>!Skin.HasSetting(MoviesSectionHide)</visible>
 			<posx>0</posx>
-			<posy>380</posy>
-			<width>190</width>
+			<width>250</width>
 			<height>44</height>
-			<texture border="0">img/ButtonFO.png</texture>
+			<texture border="5">img/Slider.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<animation condition="Container(301).Position(0)" effect="slide" start="0,0" end="0,0"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(301).Position(1)" effect="slide" start="0,0" end="0,40"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(301).Position(2)" effect="slide" start="0,0" end="0,80"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(301).Position(3)" effect="slide" start="0,0" end="0,120"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(301).Position(4)" effect="slide" start="0,0" end="0,160"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(301).Position(5)" effect="slide" start="0,0" end="0,200"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(301).Position(6)" effect="slide" start="0,0" end="0,240"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(301).Position(7)" effect="slide" start="0,0" end="0,280"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(301).Position(8)" effect="slide" start="0,0" end="0,320"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(301).Position(9)" effect="slide" start="0,0" end="0,360"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<include>Animation301</include>
 		</control>
 	</include>
@@ -136,27 +117,26 @@
 		<control type="image">
 			<visible>!Skin.HasSetting(TVSectionHide)</visible>
 			<posx>0</posx>
-			<posy>380</posy>
-			<width>190</width>
+			<width>250</width>
 			<height>44</height>
-			<texture border="0">img/ButtonFO.png</texture>
+			<texture border="5">img/Slider.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<animation condition="Container(302).Position(0)" effect="slide" start="0,0" end="0,0"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(302).Position(1)" effect="slide" start="0,0" end="0,40"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(302).Position(2)" effect="slide" start="0,0" end="0,80"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(302).Position(3)" effect="slide" start="0,0" end="0,120"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(302).Position(4)" effect="slide" start="0,0" end="0,160"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(302).Position(5)" effect="slide" start="0,0" end="0,200"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(302).Position(6)" effect="slide" start="0,0" end="0,240"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(302).Position(7)" effect="slide" start="0,0" end="0,280"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<include>Animation302</include>
 		</control>
 	</include>
@@ -164,27 +144,26 @@
 		<control type="image">
 			<visible>!Skin.HasSetting(MusicSectionHide)</visible>
 			<posx>0</posx>
-			<posy>380</posy>
-			<width>190</width>
+			<width>250</width>
 			<height>44</height>
-			<texture border="0">img/ButtonFO.png</texture>
+			<texture border="5">img/Slider.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<animation condition="Container(303).Position(0)" effect="slide" start="0,0" end="0,0"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(303).Position(1)" effect="slide" start="0,0" end="0,40"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(303).Position(2)" effect="slide" start="0,0" end="0,80"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(303).Position(3)" effect="slide" start="0,0" end="0,120"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(303).Position(4)" effect="slide" start="0,0" end="0,160"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(303).Position(5)" effect="slide" start="0,0" end="0,200"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(303).Position(6)" effect="slide" start="0,0" end="0,240"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(303).Position(7)" effect="slide" start="0,0" end="0,280"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<include>Animation303</include>
 		</control>
 	</include>
@@ -192,27 +171,26 @@
 		<control type="image">
 			<visible>!Skin.HasSetting(PicturesSectionHide)</visible>
 			<posx>0</posx>
-			<posy>380</posy>
-			<width>190</width>
+			<width>250</width>
 			<height>44</height>
-			<texture border="0">img/ButtonFO.png</texture>
+			<texture border="5">img/Slider.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<animation condition="Container(304).Position(0)" effect="slide" start="0,0" end="0,0"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(304).Position(1)" effect="slide" start="0,0" end="0,40"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(304).Position(2)" effect="slide" start="0,0" end="0,80"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(304).Position(3)" effect="slide" start="0,0" end="0,120"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(304).Position(4)" effect="slide" start="0,0" end="0,160"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(304).Position(5)" effect="slide" start="0,0" end="0,200"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(304).Position(6)" effect="slide" start="0,0" end="0,240"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(304).Position(7)" effect="slide" start="0,0" end="0,280"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<include>Animation304</include>
 		</control>
 	</include>
@@ -220,115 +198,53 @@
 		<control type="image">
 			<visible>!Skin.HasSetting(AddonsSectionHide)</visible>
 			<posx>0</posx>
-			<posy>380</posy>
-			<width>190</width>
+			<width>250</width>
 			<height>44</height>
-			<texture border="0">img/ButtonFO.png</texture>
+			<texture border="5">img/Slider.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<animation condition="Container(305).Position(0)" effect="slide" start="0,0" end="0,0"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(305).Position(1)" effect="slide" start="0,0" end="0,40"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(305).Position(2)" effect="slide" start="0,0" end="0,80"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(305).Position(3)" effect="slide" start="0,0" end="0,120"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(305).Position(4)" effect="slide" start="0,0" end="0,160"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(305).Position(5)" effect="slide" start="0,0" end="0,200"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(305).Position(6)" effect="slide" start="0,0" end="0,240"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(305).Position(7)" effect="slide" start="0,0" end="0,280"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<include>Animation305</include>
 		</control>
 	</include>
 	<include name="Slider306">
 		<control type="image">
 			<posx>0</posx>
-			<posy>380</posy>
-			<width>190</width>
+			<width>250</width>
 			<height>44</height>
-			<texture border="0">img/ButtonFO.png</texture>
+			<texture border="5">img/Slider.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<animation condition="Container(306).Position(0)" effect="slide" start="0,0" end="0,0"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(306).Position(1)" effect="slide" start="0,0" end="0,40"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(306).Position(2)" effect="slide" start="0,0" end="0,80"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(306).Position(3)" effect="slide" start="0,0" end="0,120"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(306).Position(4)" effect="slide" start="0,0" end="0,160"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(306).Position(5)" effect="slide" start="0,0" end="0,200"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(306).Position(6)" effect="slide" start="0,0" end="0,240"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<animation condition="Container(306).Position(7)" effect="slide" start="0,0" end="0,280"
-				time="200" reversible="true">Conditional</animation>
+				time="130" reversible="true">Conditional</animation>
 			<include>Animation306</include>
 		</control>
 	</include>
-	<!--<include name="Split301">
-		<control type="image" description="Splitter301">
-			<visible>Control.IsVisible(301)</visible>
-			<width>190</width>
-			<height>280</height>
-			<texture flipx="true" border="8">img/Splitter.png</texture>
-			<aspectratio>stretch</aspectratio>
-			<include>Animation301</include>
-		</control>
-	</include>
-	<include name="Split302">
-		<control type="image">
-			<visible>Control.IsVisible(302)</visible>
-			<width>190</width>
-			<height>280</height>
-			<texture flipx="true" border="8">img/Splitter.png</texture>
-			<aspectratio>stretch</aspectratio>
-			<include>Animation302</include>
-		</control>
-	</include>
-	<include name="Split303">
-		<control type="image">
-			<visible>Control.IsVisible(303)</visible>
-			<width>190</width>
-			<height>280</height>
-			<texture flipx="true" border="8">img/Splitter.png</texture>
-			<aspectratio>stretch</aspectratio>
-			<include>Animation303</include>
-		</control>
-	</include>
-	<include name="Split304">
-		<control type="image">
-			<visible>Control.IsVisible(304)</visible>
-			<width>190</width>
-			<height>280</height>
-			<texture flipx="true" border="8">img/Splitter.png</texture>
-			<aspectratio>stretch</aspectratio>
-			<include>Animation304</include>
-		</control>
-	</include>
-	<include name="Split305">
-		<control type="image">
-			<visible>Control.IsVisible(305)</visible>
-			<width>190</width>
-			<height>280</height>
-			<texture flipx="true" border="8">img/Splitter.png</texture>
-			<aspectratio>stretch</aspectratio>
-			<include>Animation305</include>
-		</control>
-	</include>
-	<include name="Split306">
-		<control type="image">
-			<visible>Control.IsVisible(306)</visible>
-			<width>190</width>
-			<height>280</height>
-			<texture flipx="true" border="8">img/Splitter.png</texture>
-			<aspectratio>stretch</aspectratio>
-			<include>Animation306</include>
-		</control>
-	</include>
---></includes>
+</includes>

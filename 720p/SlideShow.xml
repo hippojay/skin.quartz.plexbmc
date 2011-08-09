@@ -1,6 +1,6 @@
 <window id="2007">
 	<defaultcontrol>2</defaultcontrol>
-
+	<backgroundcolor>0xff000000</backgroundcolor>
 	<controls>
 
 		<control type="group">

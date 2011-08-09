@@ -1,20 +1,24 @@
 <window id="130" type="dialog">
 	<defaultcontrol always="true">5</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
 	<controls>
-		<include>GlobalBackground</include>
+		<include>MiniBackground</include>
+		<control type="image" description="DialogBG">
+			<posx>40</posx>
+			<posy>50</posy>
+			<width>1200</width>
+			<height>640</height>
+			<aspectratio>stretch</aspectratio>
+			<texture border="22">img/DialogProgressBG.png</texture>
+		</control>
+		<include>Header</include>
 		<control type="label">
 			<include>DialogID</include>
 			<label>ProfileSettings.xml</label>
 		</control>
 		<include>TopAndBottomSeparator</include>
 		<control type="label" id="1000" description="Profile Name">
-			<posx>660</posx>
-			<posy>25</posy>
-			<width>540</width>
-			<align>center</align>
-			<font>XLarge</font>
+			<include>Heading</include>
 			<shadowcolor>black</shadowcolor>
 		</control>
 		<control type="label" id="1001" description="Profile Directory">
@@ -101,27 +105,27 @@
 			</control>
 			<control type="button" id="28" description="OK">
 				<posx>60</posx>
-				<posy>50r</posy>
+				<posy>120r</posy>
 				<width>160</width>
 				<label>186</label>
 				<onleft>5</onleft>
 				<onright>29</onright>
 				<onup>5</onup>
 				<ondown>5</ondown>
-				<texturefocus>img/ButtonFO.png</texturefocus>
-				<focusedcolor>Green</focusedcolor>
+				<texturefocus border="3">img/ButtonFO.png</texturefocus>
+				<texturenofocus border="3">img/ButtonNF.png</texturenofocus>
 			</control>
 			<control type="button" id="29" description="Cancel">
 				<posx>320</posx>
-				<posy>50r</posy>
+				<posy>120r</posy>
 				<width>160</width>
 				<label>222</label>
 				<onleft>28</onleft>
 				<onright>5</onright>
 				<onup>5</onup>
 				<ondown>5</ondown>
-				<texturefocus>img/ButtonFO.png</texturefocus>
-				<focusedcolor>Red</focusedcolor>
+				<texturefocus border="3">img/ButtonFO.png</texturefocus>
+				<texturenofocus border="3">img/ButtonNF.png</texturenofocus>
 			</control>
 		</control>
 		<include>Debug_Grid</include>

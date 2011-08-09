@@ -1,22 +1,20 @@
 <window id="122">
 	<defaultcontrol always="true">2</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-
+	<include>OpenClose</include>
 	<controls>
 
 		<control type="group">
 			<posx>340</posx>
-			<posy>200</posy>
+			<posy>60</posy>
 
 			<control type="image">
-				<posx>-20</posx>
+				<posx>-100</posx>
 				<posy>-20</posy>
-				<width>640</width>
-				<height>496</height>
-				<texture border="22">img/Menu.png</texture>
-				<animation type="Conditional" condition="true">
-					<effect type="fade" start="100" end="75" time="0" reversible="false" />
-				</animation>
+				<width>800</width>
+				<height>512</height>
+				<texture border="22">img/DialogProgressBG.png</texture>
+				
 			</control>
 
 			<control type="label">
@@ -28,21 +26,22 @@
 			<control type="label">
 				<description>Header Label</description>
 				<posx>10</posx>
+				<posy>10</posy>
 				<width>560</width>
 				<label>31048</label>
-				<font>Medium</font>
-				<shadowcolor>black</shadowcolor>
+				<font>Title</font>
 				<align>center</align>
 			</control>
 
 			<control type="fixedlist" id="2">
 				<description>Preset List</description>
 				<posx>10</posx>
-				<posy>58</posy>
+				<posy>80</posy>
 				<width>580</width>
 				<height>368</height>
-				<onleft>-</onleft>
-				<onright>-</onright>
+				<onleft>60</onleft>
+				<onright>60</onright>
+				<pagecontrol>60</pagecontrol>
 				<focusposition>2</focusposition>
 				<movement>3</movement>
 				<onup>-</onup>
@@ -59,6 +58,7 @@
 					<control type="label">
 						<posx>20</posx>
 						<width>540</width>
+						<font>XSmall</font>
 						<info>ListItem.Label</info>
 					</control>
 
@@ -67,14 +67,21 @@
 				<focusedlayout height="46">
 
 					<control type="image">
+						<visible>!Control.HasFocus(60)</visible>
 						<width>580</width>
 						<height>44</height>
 						<texture border="5">img/ButtonFO.png</texture>
 					</control>
-
+					<control type="image">
+					<visible>Control.HasFocus(60)</visible>
+						<width>580</width>
+						<height>44</height>
+						<texture border="2">img/ButtonNF.png</texture>
+					</control>
 					<control type="label">
 						<posx>20</posx>
 						<width>540</width>
+						<font>XSmall</font>
 						<info>ListItem.Label</info>
 					</control>
 
@@ -83,7 +90,16 @@
 			</control>
 
 		</control>
-
+		<control type="scrollbar" id="60">
+			<visible>![Skin.HasSetting(KioskEnabled) + Skin.HasSetting(HideScrollbar)]</visible>
+			<posx>290</posx>
+			<posy>140</posy>
+			<height>360</height>
+			<width>24</width>
+			<onleft>2</onleft>
+			<onright>2</onright>
+		</control>	
+		
 		<include>Debug_Grid</include>
 
 	</controls>

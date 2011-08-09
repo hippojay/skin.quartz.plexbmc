@@ -1,130 +1,196 @@
 <window id="6">
 	<defaultcontrol alway="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
-	<animation effect="fade" time="100">WindowOpen</animation>
+	<views>50,51,52,53,54,55,56,57,58,59</views>
 	<controls>
-		<include>GlobalBackground</include>
-		<include>Fanart</include>
-		<include>FanartCommons</include>
+		<include>VideosBackground</include>
+		<include description="List">View_50_List</include>
+		<include>View_51</include>
+		<include>View_52</include>
+		<include>View_53</include>
+		<include>View_54</include>
+		<include>View_55</include>
+		<include>View_56</include>
+		<include>View_57</include>
+		<include>View_58</include>
+		<include>View_59</include>
+		<include>Header</include>
+		<control type="label" description="Heading">
+			<visible>Container.Content(movies)</visible>
+			<include>Heading</include>
+			<label>[UPPERCASE]$LOCALIZE[20342][/UPPERCASE]</label>
+		</control>
+		<control type="label" description="Heading">
+			<visible>Container.Content(tvshows)</visible>
+			<include>Heading</include>
+			<label>20343</label>
+		</control>
+		<control type="label" description="Heading">
+			<visible>Container.Content(seasons)</visible>
+			<include>Heading</include>
+			<label>$INFO[ListItem.TVShowtitle]</label>
+		</control>
+		<control type="label" description="Heading">
+			<visible>Container.Content(episodes) + !IsEmpty(ListItem.TVShowTitle)</visible>
+			<include>Heading</include>
+			<label>$INFO[ListItem.TVShowtitle] - $LOCALIZE[20373] $INFO[ListItem.Season]</label>
+		</control>
+		<control type="label" description="Heading">
+			<visible>Container.Content(musicvideos)</visible>
+			<include>Heading</include>
+			<label>20389</label>
+		</control>
+		<control type="label" description="Heading">
+			<visible>Container.Content(addons)</visible>
+			<include>Heading</include>
+			<label>24001</label>
+		</control>
+		<control type="label" description="Heading">
+			<include>Heading</include>
+			<label>$LOCALIZE[3]$INFO[Container.FolderName, - ]</label>
+		</control>
 		<control type="label">
 			<include>WindowID</include>
 			<label>MyVideo.xml</label>
 		</control>
-		<include>View_50_List</include>
-		<include description="Icons">Movies_View_52</include>
-		<include description="FanArt">View_54</include>
-		<!--<control type="group" description="Thumbs">
-			<visible>!ControlGroup(9000).HasFocus()</visible>
-			<include>Thumbs</include>
-		</control>-->
 		<control type="group" description="9000">
-			<visible>!Skin.HasSetting(KioskEnabled)</visible>
-			<animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">
-				<effect type="fade" start="100" end="0" time="120" reversible="true" />
-			</animation>
-			<posx>110</posx>
-			<posy>154</posy>
-			
-			<control type="image">
-				<visible>Control.IsVisible(54)</visible>
-				<posx>305</posx>
-				<posy>-148</posy>
-				<width>452</width>
-				<height>358</height>
-				<texture>img/Menu.png</texture>
-				<aspectratio>stretch</aspectratio>
-			</control>
-			<control type="image" description="Splitter">
-				<visible>!Control.IsVisible(54) + !Control.IsVisible(55)</visible>
-				<posx>400</posx>
-				<posy>-80</posy>
-				<height>580</height>
-				<width>128</width>
-				<texture flipx="true">img/Splitter.png</texture>
-			</control>
-			<control type="image" description="HSplitter">
-				<visible>!Control.IsVisible(54) + !Control.IsVisible(55)</visible>
-				<posx>-5</posx>
-				<posy>234</posy>
-				<height>22</height>
-				<width>370</width>
-				<texture>img/HSplitter.png</texture>
-			</control>
+			<include>9000Commons</include>
 			<control type="grouplist" id="9000">
-			<animation condition="Control.IsVisible(54)" effect="slide" start="0,0" end="335,-45" time="0">Conditional</animation>
-				<posx>0</posx>
-				<posy>-75</posy>
-				<width>390</width>
-				<height>550</height>
-				<itemgap>0</itemgap>
-				<onleft>50</onleft>
-				<onright>50</onright>
-				<onup>9000</onup>
-				<ondown>9000</ondown>
-				<scrolltime>200</scrolltime>
-				<orientation>vertical</orientation>
-				<control type="button" id="2" description="View">
-					<width>390</width>
-					<align>left</align>
+				<include>9000GrouplistParameters</include>
+				<control type="button" id="500" description="View50">
+					<enable>!Control.IsVisible(50)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]$LOCALIZE[535][/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(50)</onclick>
 				</control>
-				<control type="togglebutton" id="14" description="Watched/Unwatched">
-					<width>390</width>
-					<align>left</align>
-					<label>16100</label>
-					<altlabel>16101</altlabel>
-					<texturenofocus>-</texturenofocus>
-					<alttexturenofocus>-</alttexturenofocus>
+				<control type="button" id="501" description="View51">
+					<enable>!Control.IsVisible(51)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]$LOCALIZE[544][/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(51)</onclick>
 				</control>
-				<control type="button" id="3" description="Sort">
-					<width>390</width>
-					<align>left</align>
-					<texturenofocus>-</texturenofocus>
+				<control type="button" id="502" description="View52">
+					<enable>!Control.IsVisible(52)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]$LOCALIZE[544] 2[/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(52)</onclick>
 				</control>
-				<control type="togglebutton" id="4" description="SortMode">
-					<width>390</width>
-					<align>left</align>
-					<label>584</label>
-					<altlabel>585</altlabel>
-					<texturenofocus>-</texturenofocus>
-					<alttexturenofocus>-</alttexturenofocus>
+				<control type="button" id="503" description="View53">
+					<enable>!Control.IsVisible(53)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]$LOCALIZE[536][/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(53)</onclick>
 				</control>
-				<control type="button" id="13" description="Playlists">
-					<description>Playlists</description>
-					<width>390</width>
-					<align>left</align>
-					<label>136</label>
-					<texturenofocus>-</texturenofocus>
-					<onclick>SetFocus(50)</onclick>
+				<control type="button" id="504" description="View54">
+					<enable>!Control.IsVisible(54)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]$LOCALIZE[539][/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(54)</onclick>
 				</control>
-				<control type="radiobutton" id="90" description="Hide Background Fanart">
-				<visible>!Control.IsVisible(54)</visible>
-					<width>390</width>
-					<align>left</align>
-					<label>$LOCALIZE[31102]: $LOCALIZE[31307]</label>
-					<texturenofocus>-</texturenofocus>
-					<alttexturenofocus>-</alttexturenofocus>
-					<onclick>Skin.ToggleSetting(HideFanart)</onclick>
-					<selected>Skin.HasSetting(HideFanart)</selected>
+				<control type="button" id="505" description="View55">
+					<enable>!Control.IsVisible(55)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]$LOCALIZE[538][/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(55)</onclick>
 				</control>
-				<control type="button" id="93" description="NowPlaying">
-					<visible>!Player.HasVideo</visible>
-					<enable>Player.HasAudio</enable>
-					<width>390</width>
-					<align>left</align>
+				<control type="button" id="506" description="View56">
+					<enable>!Control.IsVisible(56)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]$LOCALIZE[536] 2[/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(56)</onclick>
+				</control>
+				<control type="button" id="507" description="View57">
+					<enable>!Control.IsVisible(57)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]Panel[/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(57)</onclick>
+				</control>
+				<control type="button" id="508" description="View58">
+					<enable>!Control.IsVisible(58)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]$LOCALIZE[20445][/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(58)</onclick>
+				</control>
+				<control type="button" id="509" description="View59">
+					<enable>!Control.IsVisible(59)</enable>
+					<include>9000ViewButtons</include>
+					<label>[UPPERCASE]$LOCALIZE[20445] 2[/UPPERCASE]</label>
+					<onclick>Container.SetViewMode(59)</onclick>
+				</control>
+				<control type="image" id="510" description="separator">
+					<width>230</width>
+					<height>1</height>
+					<texture>img/Line.png</texture>
+				</control>
+				<control type="radiobutton" id="14" description="Hide Watched">
+					<include>9000Buttons</include>
+					<label>20367</label>
+				</control>
+				<control type="button" id="94" description="Trailer">
+					<visible>!IsEmpty(ListItem.Trailer) + Container.Content(movies)</visible>
+					<include>9000Buttons</include>
+					<label>$LOCALIZE[208] $LOCALIZE[20410]</label>
+					<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+				</control>
+				<control type="button" id="95" description="NowPlaying">
+					<visible>Player.HasAudio</visible>
+					<include>9000Buttons</include>
 					<label>13350</label>
-					<texturenofocus>-</texturenofocus>
-					<alttexturenofocus>-</alttexturenofocus>
 					<onclick>ActivateWindow(2006)</onclick>
 				</control>
-				<control type="button" id="94" description="NowPlaying">
+				<control type="button" id="96" description="NowPlaying">
 					<visible>Player.HasVideo</visible>
-					<width>390</width>
-					<align>left</align>
+					<include>9000Buttons</include>
 					<label>13350</label>
-					<texturenofocus>-</texturenofocus>
-					<alttexturenofocus>-</alttexturenofocus>
 					<onclick>ActivateWindow(2005)</onclick>
+				</control>
+				<control type="button" id="97" description="NowPlaying">
+					<visible>!Player.HasVideo + !Player.HasAudio</visible>
+					<include>9000Buttons</include>
+					<enable>false</enable>
+					<label>13350</label>
+				</control>
+				<!--<control type="image" id="93" description="separator">
+					<width>280</width>
+					<height>1</height>
+					<texture>img/Line.png</texture>
+				</control>-->
+				<control type="button" id="3" description="Sort">
+					<include>9000Buttons</include>
+				</control>
+				<control type="togglebutton" id="4" description="SortMode">
+					<include>9000Buttons</include>
+					<label>$LOCALIZE[21429]: $LOCALIZE[21430]</label>
+					<altlabel>$LOCALIZE[21429]: $LOCALIZE[21431]</altlabel>
+				</control>
+				<control type="edit" id="19" description="Filter">
+					<include>9000Buttons</include>
+					<textwidth>230</textwidth>
+					<label>587</label>
+				</control>
+				<control type="button" id="8" description="Search">
+					<include>9000Buttons</include>
+					<label>137</label>
+				</control>
+				<control type="radiobutton" id="7" description="Stack Toggle">
+					<include>9000Buttons</include>
+					<label>14000</label>
+				</control>
+				<control type="radiobutton" id="17" description="Flatten">
+					<include>9000Buttons</include>
+					<label>20411</label>
+				</control>
+				<control type="radiobutton" id="16" description="Party mode">
+					<include>9000Buttons</include>
+					<label>589</label>
+					<visible>Container.Content(MusicVideos)</visible>
+				</control>
+				<control type="radiobutton" id="11" description="Unlock Shares">
+					<include>9000Buttons</include>
+					<label>20336</label>
+					<onclick>xbmc.mastermode</onclick>
+					<selected>system.ismaster</selected>
+					<visible>system.haslocks</visible>
 				</control>
 			</control>
 		</control>

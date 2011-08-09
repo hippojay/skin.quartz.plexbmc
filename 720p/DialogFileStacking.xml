@@ -1,11 +1,9 @@
 <window id="2008">
 	<defaultcontrol always="true">450</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
+	<allowoverlay>yes</allowoverlay>
+	<include>OpenClose</include>
 	<controls>
-
-		
-		<include>GlobalBackground</include>
+		<include>BackgroundDim</include>
 
 		<control type="group">
 			<posx>340</posx>
@@ -16,7 +14,7 @@
 				<posy>-20</posy>
 				<width>960</width>
 				<height>496</height>
-				<texture border="22">img/Menu.png</texture>
+				<texture border="22">img/DialogProgressBG.png</texture>
 			</control>
 
 			<control type="label">
@@ -29,7 +27,6 @@
 				<posy>32</posy>
 				<width>582</width>
 				<align>center</align>
-				<font>Medium</font>
 				<info>ListItem.Label</info>
 			</control>
 

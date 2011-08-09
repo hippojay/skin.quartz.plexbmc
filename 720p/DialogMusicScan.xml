@@ -1,50 +1,51 @@
 <window id="112">
-	<defaultcontrol always="true">401</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-
 	<controls>
 
 		<control type="group">
-		<animation condition="Window.IsActive(VideoFullScreen.xml) | Window.IsActive(VideoOSD.xml) | Window.IsActive(VideoOSDSettings.xml) | Window.IsActive(MusicVisualisation.xml) | Window.IsActive(DialogKaiToast.xml)" effect="fade" start="100" end="0" time="200" reversible="true">Conditional</animation>
-			<posx>0</posx>
-			<posy>0</posy>
-
+			<posx>1020</posx>
+			<posy>-4</posy>
+			<visible>!Window.IsActive(videofullscreen.xml) + !Window.IsActive(musicvisualisation.xml)</visible>
+			<animation condition="Window.IsActive(home)" effect="slide" start="0,0" end="50,0" time="0" >Conditional</animation>
+			<animation condition="Window.IsActive(dialogvideoscan.xml)" effect="slide" start="0,0" end="0,-20" time="0">Conditional</animation>
 			<control type="label">
 				<posy>38</posy>
 				<include>DialogID</include>
 				<label>DialogVideoScan.xml</label>
 			</control>
-			<control type="label" id="401" description="Heading">
-				<posx>80</posx>
-				<posy>0</posy>
+			<control type="label" id="402" description="DIR">
+				<posx>0</posx>
+				<posy>16</posy>
 				<width>350</width>
 				<height>30</height>
-				<font>KAI</font>
-				<align>left</align>
+				<font>XXXSmall</font>
+				<align>right</align>
+				<haspath>true</haspath>
 				<textcolor>Silver</textcolor>
+				<shadowcolor>Black</shadowcolor>
 				<label>-</label>
 			</control>
-			<control type="label" id="402" description="Current Directory">
-				<posx>430</posx>
-				<posy>0</posy>
-				<width>380</width>
+			<control type="label" description="Progress Label">
+				<posx>50</posx>
+				<posy>16</posy>
+				<width>350</width>
 				<height>30</height>
 				<scroll>false</scroll>
-				<font>KAI</font>
+				<font>XXXSmall</font>
 				<textcolor>Silver</textcolor>
-				<align>left</align>
-				<label>-</label>
+				<shadowcolor>Black</shadowcolor>
+				<align>right</align>
+				<label>$INFO[Control.GetLabel(403), ,%]</label>
 			</control>
 			<control type="progress" id="403" description="Progress">
-				<posx>80</posx>
-				<posy>30</posy>
-				<width>350</width>
+				<posx>84</posx>
+				<posy>40</posy>
+				<width>2</width>
 				<height>2</height>
 				<align>right</align>
+				<texturebg>-</texturebg>
+    			<midtexture>-</midtexture>
 			</control>
-
-			
-
 		</control>
 
 		<include>Debug_Grid</include>

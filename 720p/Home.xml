@@ -1,9 +1,9 @@
 <window id="0">
-	<defaultcontrol always="true">8999</defaultcontrol>
+	<defaultcontrol always="true">8998</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
-
-    <include condition="!Skin.HasSetting(plexbmcok)">QuartzHome</include>
+	<animation effect="fade" time="100">WindowOpen</animation>
+    
+    <include condition="!Skin.HasSetting(plexbmcok)">XBMCHome</include>
     <include condition="Skin.HasSetting(plexbmcok)">PlexHome</include>
 
 </window>

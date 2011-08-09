@@ -1,213 +1,193 @@
 <window id="146">
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">300</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
+	<coordinates>
+		<origin x="0" y="0" />
+	</coordinates>
 	<controls>
-		
-		<include>GlobalBackground</include>
-		<control type="label">
-			<include>WindowID</include>
-			<label>DialogAddonInfo.xml</label>
-		</control>	
-			
-<!--RIGHT PANEL-->
-		<control type="group" description="Right Panel">
-			<posx>800</posx>
-			<posy>390</posy>
-			
-			<control type="image" description="Addon FanArt">
-			<visible>!Window.IsActive(dialogtextviewer)</visible>
-				<posx>-133</posx>
-				<posy>-316</posy>
-				<width>512</width>
-				<height>288</height>
-				<aspectratio>keep</aspectratio>
-				<aligny>bottom</aligny>
-				<align>center</align>
-				<fadetime>0</fadetime>
-				<bordertexture border="2">img/ButtonFO.png</bordertexture>
-				<bordersize>2</bordersize>
-				<texture background="true">$INFO[Listitem.Property(Fanart_Image)]</texture>
-			</control>
-			
-		<control type="textbox" id="400" description=" LONG Description">
-			<visible>!Window.IsActive(dialogtextviewer)</visible>
-			<visible>!Control.HasFocus(10) + IsEmpty(Listitem.Property(Fanart_Image))</visible>
-			<posx>-127</posx>
-			<posy>-330</posy>
-			<width>520</width>
-			<height>540</height>
-			<font>XSmall</font>
-			<align>justify</align>
-			<aligny>bottom</aligny>
-			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
-			<onleft>-</onleft>
-			<onright>-</onright>
-			<onup>-</onup>
-			<ondown>-</ondown>
-			<info fallback="416">Listitem.Property(Addon.Description)</info>
-			<autoscroll time="2400" delay="8000" repeat="5000">true</autoscroll>
-		</control>
-		<control type="textbox" id="400" description="SHORTER Description">
-			<visible>!Control.HasFocus(10) + !IsEmpty(Listitem.Property(Fanart_Image))</visible>
-			<posx>-127</posx>
-			<posy>0</posy>
-			<width>520</width>
-			<height>227</height>
-			<font>XSmall</font>
-			<align>justify</align>
-			<aligny>bottom</aligny>
-			<textcolor>white</textcolor>
-			<shadowcolor>black</shadowcolor>
-			<onleft>-</onleft>
-			<onright>-</onright>
-			<onup>-</onup>
-			<ondown>-</ondown>
-			<info fallback="416">Listitem.Property(Addon.Description)</info>
-			<autoscroll time="2400" delay="8000" repeat="5000">true</autoscroll>
-		</control>
-			
-		</control>
-
-<!--LEFT INFOs-->
-
-<control type="image" description="Infopanel Thumb">
-						<posx>70</posx>
-						<posy>74</posy>
-						<width>512</width>
-						<height>288</height>
-						<aspectratio>keep</aspectratio>
-						<aligny>bottom</aligny>
-						<align>center</align>
-						<fadetime>0</fadetime>
-						<bordertexture border="2">img/ButtonFO.png</bordertexture>
-						<bordersize>2</bordersize>
-						<texture>$INFO[ListItem.Icon]</texture>
-					</control>
-
-<control type="group">
-<posy>-14</posy>
-<include>InfoPanel</include>
-</control>
-
-			
-			
-<!--Navigation-->
-	<control type="group" description="Bottom NAV">
-		<posy>0</posy>
-		<posx>0</posx>
-			<control type="image" description="Splitter">
-				<posy>140r</posy>
-				<posx>0</posx>
-				<width>1280</width>
-				<height>128</height>
-				<texture flipy="true">img/HSplitter.png</texture>
-			</control>
-			
-		<control type="image" description="Slider horizontal">
-			<visible>ControlGroup(9000).HasFocus()</visible>
-			<posx>5</posx>
-			<posy>665</posy>
-			<width>210</width>
-			<height>50</height>
-			<texture>img/NavBarFO.png</texture>
+		<include>BlackOverlay</include>
+		<include>AddonsBackground</include>
+		<control type="image" description="Vignette">
+			<include>Dimensions_Fullscreen</include>
+			<texture>img/VignetteDefault.png</texture>
 			<aspectratio>stretch</aspectratio>
-			
-		<animation condition="ControlGroup(9000).HasFocus(300)" effect="slide" start="0,0" end="0,0"
-			time="200" reversible="true">Conditional</animation>
-		<animation condition="ControlGroup(9000).HasFocus(6)" effect="slide" start="0,0" end="200,0"
-			time="200" reversible="true">Conditional</animation>
-		<animation condition="ControlGroup(9000).HasFocus(7)" effect="slide" start="0,0" end="400,0"
-			time="200" reversible="true">Conditional</animation>
-		<animation condition="ControlGroup(9000).HasFocus(9)" effect="slide" start="0,0" end="600,0"
-			time="200" reversible="true">Conditional</animation>
-		<animation condition="ControlGroup(9000).HasFocus(8)" effect="slide" start="0,0" end="800,0"
-			time="200" reversible="true">Conditional</animation>
-		<animation condition="ControlGroup(9000).HasFocus(10)" effect="slide" start="0,0" end="1000,0"
-			time="200" reversible="true">Conditional</animation>
-		
-		
-	</control>
-		<control type="grouplist" id="9000">
-			<posx>10</posx>
-			<posy>670</posy>
-			<width>1280</width>
-			<height>40</height>
-			<itemgap>0</itemgap>
-			<onleft>9000</onleft>
-			<onright>9000</onright>
-			<onup>50</onup>
-			<ondown>50</ondown>
-			<orientation>horizontal</orientation>
-			<control type="button" id="300" description="Description">
-				<height>40</height>
-				<width>200</width>
-				<label>21821</label>
-				<font>Small</font>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onright>6</onright>
-				<onleft>10</onleft>
-			</control>
-			<control type="button" id="6" description="Enable Addon">
-				<posx>180</posx>
-				<height>40</height>
-				<width>200</width>
-				<label>24022</label>
-				<font>Small</font>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onright>7</onright>
-				<onleft>300</onleft>
-			</control>
-			<control type="button" id="7" description="Disable Addon">
-				<posx>347</posx>
-				<height>40</height>
-				<width>200</width>
-				<label>24021</label>
-				<font>Small</font>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onright>9</onright>
-				<onleft>6</onleft>
-			</control>
-			<control type="button" id="9" description="Addon settings">
-				<posx>527</posx>
-				<height>40</height>
-				<width>200</width>
-				<label>24020</label>
-				<font>Small</font>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onright>8</onright>
-				<onleft>7</onleft>
-			</control>
-			<control type="button" id="8" description="Update addon">
-				<posx>693</posx>
-				<height>40</height>
-				<width>200</width>
-				<label>24069</label>
-				<font>Small</font>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onright>7</onright>
-				<onleft>9</onleft>
-			</control>
-			<control type="button" id="10" description="Changelog">
-				<posx>873</posx>
-				<height>40</height>
-				<width>200</width>
-				<label>24054</label>
-				<font>Small</font>
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onright>300</onright>
-				<onleft>8</onleft>
-			</control>
-			
 		</control>
-</control>
+		<include>Header</include>
+		<control type="label" description="Heading">
+			<include>Heading</include>
+			<label>24003</label>
+		</control>
+		<control type="group">
+			<posy>0</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>200</posy>
+				<height>540</height>
+				<width>1280</width>
+				<aspectratio>stretch</aspectratio>
+				<texture>img/BlackDotST2.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>200</posy>
+				<height>1</height>
+				<width>1280</width>
+				<aspectratio>stretch</aspectratio>
+				<texture>img/Line.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<control type="group">
+				<posx>0</posx>
+				<posy>0</posy>
+				<control type="image" description="Icon">
+					<posx>840</posx>
+					<posy>70</posy>
+					<width>380</width>
+					<height>380</height>
+					<aspectratio align="right" aligny="center">keep</aspectratio>
+					<bordertexture border="9">img/ThumbShadow3FO.png</bordertexture>
+					<bordersize>9</bordersize>
+					<texture fallback="DefaultAddonNone.png">$INFO[ListItem.Thumb]</texture>
+				</control>
+				<control type="group" description="Left info">
+					<posx>60</posx>
+					<posy>40</posy>
+					<control type="label" description="Type">
+						<include>DetailsVideoInfoCommons</include>
+						<posy>480</posy>
+						<textcolor>Silver</textcolor>
+						<label>$LOCALIZE[564]:</label>
+					</control>
+					<control type="label" description="Author">
+						<include>DetailsVideoInfoCommons</include>
+						<posy>510</posy>
+						<textcolor>Silver</textcolor>
+						<label>$LOCALIZE[21863]:</label>
+					</control>
+					<control type="label" description="Version">
+						<posy>540</posy>
+						<textcolor>Silver</textcolor>
+						<include>DetailsVideoInfoCommons</include>
+						<label>24051</label>
+					</control>
+					<control type="image" description="Rating">
+						<height>24</height>
+						<width>100</width>
+						<posy>570</posy>
+						<aspectratio align="left">keep</aspectratio>
+						<texture>flags/stars/$INFO[ListItem.StarRating]</texture>
+					</control>
+					<control type="label" description="Disclaimer">
+						<visible>!IsEmpty(ListItem.Property(Addon.Disclaimer))</visible>
+						<posy>610</posy>
+						<width>800</width>
+						<height>30</height>
+						<font>XSmall</font>
+						<align>left</align>
+						<textcolor>Blue</textcolor>
+						<label>$LOCALIZE[24052]: $INFO[ListItem.Property(Addon.Disclaimer)]</label>
+					</control>					
+				</control>
+				<control type="group">
+					<posx>200</posx>
+					<posy>40</posy>
+					<control type="label" description="type">
+						<include>DetailsAddonInfoCommons</include>
+						<posy>480</posy>
+						<label>$INFO[ListItem.Property(Addon.Type)]</label>
+					</control>
+					<control type="label" description="author">
+						<include>DetailsAddonInfoCommons</include>
+						<posy>510</posy>
+						<label>$INFO[ListItem.Property(Addon.Creator)]</label>
+					</control>
+					<control type="label" description="version">
+						<posy>540</posy>
+						<include>DetailsAddonInfoCommons</include>
+						<label>$INFO[ListItem.Property(Addon.Version)]</label>
+					</control>
+					
+				</control>
+				
+			</control>
+			<control type="group" description="top">
+				<posx>60</posx>
+				<posy>40</posy>
+				<control type="label" description="Item Label">
+					<posy>170</posy>
+					<width>750</width>
+					<height>40</height>
+					<include>TitleCommons</include>
+					<align>left</align>
+					<autoscroll time="6000" delay="8000" repeat="8000">true</autoscroll>
+					<info>ListItem.Property(Addon.Name)</info>
+				</control>
+				
+				<control type="label" description="summary">
+					<posy>250</posy>
+					<width>750</width>
+					<height>30</height>
+					<font>XSmall</font>
+					<align>left</align>
+					<label>$INFO[ListItem.Property(Addon.Summary)]</label>
+				</control>
+				<control type="textbox" description="Plot">
+					<include>PlotVideoInfoCommons</include>
+					<label>$INFO[ListItem.Property(Addon.Description)]</label>
+				</control>
+				
+			</control>
+				
+		</control>
+		<control type="group" description="Options">
+			<posy>0</posy>
+			<posx>0</posx>
+			<control type="grouplist" id="300">
+				<posx>980</posx>
+				<posy>480</posy>
+				<width>220</width>
+				<height>auto</height>
+				<itemgap>0</itemgap>
+				<onup>300</onup>
+				<ondown>300</ondown>
+				<control type="button" id="6" description="Install">
+					<height>40</height>
+					<width>220</width>
+					<align>right</align>
+					<label>24038</label>
+					<texturefocus flipx="true" border="4">img/ButtonOverlay.png</texturefocus>
+				</control>
+				<control type="button" id="7" description="Disable">
+					<height>40</height>
+					<width>220</width>
+					<align>right</align>
+					<label>24021</label>
+					<texturefocus flipx="true" border="4">img/ButtonOverlay.png</texturefocus>
+				</control>
+				<control type="button" id="8" description="update">
+					<height>40</height>
+					<width>220</width>
+					<align>right</align>
+					<label>24069</label>
+					<texturefocus flipx="true" border="4">img/ButtonOverlay.png</texturefocus>
+				</control>
+				<control type="button" id="9" description="settings">
+					<height>40</height>
+					<width>220</width>
+					<align>right</align>
+					<label>5</label>
+					<texturefocus flipx="true" border="4">img/ButtonOverlay.png</texturefocus>
+				</control>
+				<control type="button" id="10" description="changelog">
+					<height>40</height>
+					<width>220</width>
+					<align>right</align>
+					<label>24054</label>
+					<texturefocus flipx="true" border="4">img/ButtonOverlay.png</texturefocus>
+				</control>
+			</control>
+		</control>
 		<include>Debug_Grid</include>
-</controls>
+	</controls>
 </window>

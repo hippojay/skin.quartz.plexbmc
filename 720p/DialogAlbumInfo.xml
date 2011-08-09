@@ -1,252 +1,202 @@
 <window id="2001">
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">300</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
+	<coordinates>
+		<origin x="0" y="0" />
+	</coordinates>
 	<controls>
-		<include>GlobalBackground</include>
-		<!--RIGHT PANEL-->
-		<control type="group" description="Right Panel">
-			<posx>670</posx>
-			<posy>120</posy>
-			<control type="group">
-				<visible>!Control.IsVisible(4)</visible>
-				<visible>Control.HasFocus(5) | Control.HasFocus(50)</visible>
-				<control type="image" description="Slider Vertical">
-					<visible>Control.HasFocus(50)</visible>
-					<posx>36</posx>
-					<posy>10</posy>
-					<width>460</width>
-					<height>40</height>
-					<texture>img/ButtonFO.png</texture>
-					<aspectratio>stretch</aspectratio>
-					<animation condition="Container(50).Position(0)" effect="slide" start="0,0" end="0,0"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(1)" effect="slide" start="0,0" end="0,40"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(2)" effect="slide" start="0,0" end="0,80"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(3)" effect="slide" start="0,0" end="0,120"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(4)" effect="slide" start="0,0" end="0,160"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(5)" effect="slide" start="0,0" end="0,200"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(6)" effect="slide" start="0,0" end="0,240"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(7)" effect="slide" start="0,0" end="0,280"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(8)" effect="slide" start="0,0" end="0,320"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(9)" effect="slide" start="0,0" end="0,360"
-			time="220" reversible="true">Conditional</animation>
-					<animation condition="Container(50).Position(10)" effect="slide" start="0,0" end="0,400"
-			time="220" reversible="true">Conditional</animation>
-				</control>
-				<control type="fixedlist" id="50">
-					<posx>20</posx>
-					<posy>0</posy>
-					<width>500</width>
-					<height>500</height>
-					<onleft>6</onleft>
-					<onright>6</onright>
-					<onup>-</onup>
-					<ondown>5</ondown>
-					<focusposition>4</focusposition>
-					<movement>6</movement>
-					<viewtype label="">list</viewtype>
-					<scrolltime>220</scrolltime>
-					<orientation>vertical</orientation>
-					<itemlayout height="40" width="500">
-						<control type="label">
-							<posx>25</posx>
-							<posy>0</posy>
-							<width>450</width>
-							<height>55</height>
-							<font>XSmall</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<info>ListItem.Label</info>
-							<scroll>false</scroll>
-						</control>
-					</itemlayout>
-					<focusedlayout height="40" width="500">
-						<control type="label">
-							<posx>25</posx>
-							<posy>0</posy>
-							<width>450</width>
-							<height>55</height>
-							<font>XSmall</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<selectedcolor>white</selectedcolor>
-							<info>ListItem.Label</info>
-						</control>
-						<control type="label">
-							<posx>1r</posx>
-							<posy>0</posy>
-							<width>50</width>
-							<height>55</height>
-							<font>XXSmall</font>
-							<align>right</align>
-							<aligny>center</aligny>
-							<selectedcolor>white</selectedcolor>
-							<info>ListItem.Label2</info>
-						</control>
-					</focusedlayout>
-				</control>
-			</control>
-			<control type="textbox" id="4" description="Album Review">
-				<visible>!Control.IsVisible(50)</visible>
+		<include>BlackOverlay</include>
+		<include>MusicBackground</include>
+		<control type="image" description="Vignette">
+			<include>Dimensions_Fullscreen</include>
+			<texture>img/VignetteDefault.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<include>Header</include>
+		<control type="label" description="Heading">
+			<visible>container.content(albums)</visible>
+			<include>Heading</include>
+			<label>13351</label>
+		</control>
+		<control type="label" description="Heading">
+			<visible>container.content(artists)</visible>
+			<include>Heading</include>
+			<label>21891</label>
+		</control>
+		<control type="label" description="Heading">
+			<visible>![container.content(artists) | container.content(albums)]</visible>
+			<include>Heading</include>
+			<label>$INFO[ListItem.FolderName]</label>
+		</control>
+		<control type="group" description="BG Overlay">
+			<posy>0</posy>
+			<control type="image">
 				<posx>0</posx>
-				<posy>-60</posy>
-				<width>533</width>
-				<height>540</height>
-				<label>$INFO[ListItem.Plot]</label>
-				<font>Small</font>
-				<align>justify</align>
-				<textcolor>white</textcolor>
-				<shadowcolor>black</shadowcolor>
-				<onleft>-</onleft>
-				<onright>-</onright>
-				<onup>-</onup>
-				<ondown>-</ondown>
-				<autoscroll time="8000" delay="8000" repeat="5000">true</autoscroll>
+				<posy>380</posy>
+				<width>1280</width>
+				<height>340</height>
+				<texture>img/Gradient.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>240</posy>
+				<height>480</height>
+				<width>1280</width>
+				<aspectratio>stretch</aspectratio>
+				<texture>img/BlackDotST2.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>239</posy>
+				<height>1</height>
+				<width>1280</width>
+				<aspectratio>stretch</aspectratio>
+				<texture>img/Line.png</texture>
 			</control>
 		</control>
-		<!--RIGHT ENDS-->
-		<!--LEFT-->
-		<control type="group" description="Infopanel">
+		<control type="group">
 			<control type="group">
-				<posy>-20</posy>
-				<!--<include>MusicInfo</include>-->
-				<include>InfoPanel</include>
-			</control>
-			<control type="group" description="InfoFanart">
 				<posx>0</posx>
 				<posy>0</posy>
-				<control type="image" description="Info Fanart/Cover Background">
-					<posx>169</posx>
-					<posy>75</posy>
-					<width>320</width>
-					<height>320</height>
-					<aligny>bottom</aligny>
-					<align>center</align>
-					<texture border="8">img/Menu.png</texture>
-					<animation effect="fade" start="0" time="200" delay="0">VisibleChange</animation>
-				</control>
-				<control type="image" description="Infopanel Thumb">
-					<posx>170</posx>
-					<posy>76</posy>
-					<width>318</width>
-					<height>318</height>
-					<aspectratio>scale</aspectratio>
-					<aligny>bottom</aligny>
-					<align>center</align>
-					<fadetime>0</fadetime>
-					<texture fallback="DefaultAddonNone.png">$INFO[ListItem.Icon]</texture>
+				<control type="image" description="Icon">
+					<posx>840</posx>
+					<posy>70</posy>
+					<width>380</width>
+					<height>380</height>
+					<aspectratio align="right" aligny="center">keep</aspectratio>
+					<bordertexture border="9">img/ThumbShadow3FO.png</bordertexture>
+					<bordersize>9</bordersize>
+					<texture>$INFO[ListItem.Icon]</texture>
 				</control>
 			</control>
+			<control type="group" description="Top info">
+				<posx>60</posx>
+				<posy>160</posy>
+				<control type="label" description="Item Label">
+					<visible>true</visible>
+					<posy>130</posy>
+					<width>700</width>
+					<height>40</height>
+					<include>TitleCommons</include>
+					<align>left</align>
+					<autoscroll time="6000" delay="8000" repeat="8000">true</autoscroll>
+					<info>ListItem.Label</info>
+				</control>
+				<control type="label" description="Album Title">
+					<visible>true</visible>
+					<posy>130</posy>
+					<width>700</width>
+					<height>40</height>
+					<include>TitleCommons</include>
+					<align>left</align>
+					<autoscroll time="6000" delay="8000" repeat="8000">true</autoscroll>
+					<info>ListItem.Album</info>
+				</control>
+				<control type="label" description="Artist Label">
+					<visible>!container.content(artists)</visible>
+					<posy>180</posy>
+					<width>700</width>
+					<height>30</height>
+					<font>XSmall</font>
+					<align>left</align>
+					<textcolor>Silver</textcolor>
+					<label>$INFO[ListItem.Artist]</label>
+				</control>
+				<control type="label" description="Styles Label">
+					<visible>container.content(artists)</visible>
+					<posy>180</posy>
+					<width>700</width>
+					<height>30</height>
+					<font>XSmall</font>
+					<align>left</align>
+					<textcolor>Silver</textcolor>
+					<scroll>false</scroll>
+					<label>$INFO[ListItem.Property(Artist_Style)]</label>
+				</control>
+				<control type="label" description="Moods Label">
+					<visible>container.content(artists)</visible>
+					<visible>IsEmpty(ListItem.Property(Artist_Style))</visible>
+					<posy>180</posy>
+					<width>700</width>
+					<height>30</height>
+					<font>XSmall</font>
+					<align>left</align>
+					<textcolor>Silver</textcolor>
+					<scroll>false</scroll>
+					<label>$INFO[ListItem.Property(Artist_Mood)]</label>
+				</control>
+				<control type="label" description="Year & Genre">
+					<posy>210</posy>
+					<width>700</width>
+					<height>30</height>
+					<font>XSmall</font>
+					<align>left</align>
+					<textcolor>Silver</textcolor>
+					<label>$INFO[ListItem.Year,, ⋅ ]$INFO[ListItem.Genre]</label>
+				</control>
+				<control type="label" description="Genre">
+					<posy>210</posy>
+					<width>700</width>
+					<height>30</height>
+					<font>XSmall</font>
+					<align>left</align>
+					<textcolor>Silver</textcolor>
+					<label>$INFO[ListItem.Property(Artist_Genre)]</label>
+				</control>
+				<control type="textbox" id="4" description="Plot">
+					<posx>0</posx>
+					<posy>270</posy>
+					<width>700</width>
+					<height>252</height>
+					<font>Small</font>
+					<align>justify</align>
+					<autoscroll delay="6500" time="4000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+				</control>
+				
+			</control>
 		</control>
-		<!--LEFT ENDS-->
-		<control type="image">
-			<posx>27</posx>
-			<posy>307</posy>
-			<width>800</width>
-			<height>1</height>
-			<texture>separator.png</texture>
-		</control>
-		<control type="image" description="Album image">
-			<visible>Control.HasFocus(50)</visible>
-			<posx>800</posx>
-			<posy>80</posy>
-			<width>400</width>
-			<height>545</height>
-			<texture>$INFO[Container(50).Listitem.Icon]</texture>
-			<aspectratio>keep</aspectratio>
-		</control>
-		<control type="group" description="Bottom NAV">
-			<posy>10</posy>
+		<control type="group" description="Options">
+			<posy>66</posy>
 			<posx>0</posx>
-			<control type="image" description="Splitter">
-				<posy>135r</posy>
-				<posx>0</posx>
-				<width>1280</width>
-				<height>128</height>
-				<texture flipy="true">img/HSplitter.png</texture>
-			</control>
-			<control type="image" description="Slider horizontal">
-				<visible>ControlGroup(9000).HasFocus()</visible>
-				<posx>25</posx>
-				<posy>660</posy>
-				<width>210</width>
-				<height>55</height>
-				<texture>img/NavBarFO.png</texture>
-				<aspectratio>stretch</aspectratio>
-				<animation condition="ControlGroup(9000).HasFocus(6)" effect="slide" start="0,0" end="0,0"
-			time="200" reversible="true">Conditional</animation>
-				<animation condition="ControlGroup(9000).HasFocus(10)" effect="slide" start="0,0" end="200,0"
-			time="200" reversible="true">Conditional</animation>
-				<animation condition="ControlGroup(9000).HasFocus(12)" effect="slide" start="0,0" end="400,0"
-			time="200" reversible="true">Conditional</animation>
-				<animation condition="ControlGroup(9000).HasFocus(5)" effect="slide" start="0,0" end="600,0"
-			time="200" reversible="true">Conditional</animation>
-				<animation condition="ControlGroup(9000).HasFocus(11)" effect="slide" start="0,0" end="800,0"
-			time="200" reversible="true">Conditional</animation>
-			</control>
-			<control type="grouplist" id="9000">
-				<posx>40</posx>
-				<posy>665</posy>
-				<width>1280</width>
-				<height>40</height>
+			<control type="grouplist" id="300">
+				<posx>980</posx>
+				<posy>458</posy>
+				<width>220</width>
+				<height>auto</height>
 				<itemgap>0</itemgap>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
-				<onup>50</onup>
-				<ondown>-</ondown>
-				<align>left</align>
-				<orientation>horizontal</orientation>
+				<aligny>bottom</aligny>
 				<control type="button" id="6" description="Refresh">
 					<height>40</height>
-					<width>200</width>
+					<width>220</width>
+					<align>right</align>
 					<label>184</label>
-					<font>Small</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus flipx="true" border="4">img/ButtonOverlay.png</texturefocus>
 				</control>
 				<control type="button" id="10" description="Get Thumb">
 					<height>40</height>
-					<width>200</width>
+					<width>220</width>
+					<align>right</align>
 					<label>13405</label>
-					<font>Small</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus flipx="true" border="4">img/ButtonOverlay.png</texturefocus>
+				</control>
+				<control type="button" id="11" description="Last FM">
+					<height>40</height>
+					<width>220</width>
+					<align>right</align>
+					<label>Last FM</label>
+					<texturefocus flipx="true" border="4">img/ButtonOverlay.png</texturefocus>
 				</control>
 				<control type="button" id="12" description="Get FanArt">
 					<height>40</height>
-					<width>200</width>
+					<width>220</width>
+					<align>right</align>
 					<label>20413</label>
-					<font>Small</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-				</control>
-				<control type="button" id="5" description="Cast / Plot">
-					<height>40</height>
-					<width>200</width>
-					<label>-</label>
-					<font>Small</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
-				</control>
-				<control type="button" id="11" description="LastFM">
-					<height>40</height>
-					<width>200</width>
-					<label>-</label>
-					<font>Small</font>
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus flipx="true" border="4">img/ButtonOverlay.png</texturefocus>
 				</control>
 			</control>
 		</control>
 		<include>Debug_Grid</include>
 	</controls>
+	
 </window>

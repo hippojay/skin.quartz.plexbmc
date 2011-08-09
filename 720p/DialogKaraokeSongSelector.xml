@@ -1,8 +1,7 @@
 <window type="dialog" id="143">
-	<backgroundcolor>0</backgroundcolor>
+	<include>OpenClose</include>
 	<controls>
-
-		<include>GlobalBackground</include>
+		<include>BackgroundDim</include>
 
 		<control type="group">
 			<posx>100</posx>
@@ -20,7 +19,7 @@
 				<posy>-30</posy>
 				<width>400</width>
 				<height>104</height>
-				<texture border="22">img/Menu.png</texture>
+				<texture border="5,0,5,5" flipy="true">img/MessagePanel.png</texture>
 			</control>
 
 			<control type="label" id="401">
@@ -28,7 +27,6 @@
 				<posy>2</posy>
 				<width>340</width>
 				<height>25</height>
-				<font>XSmall</font>
 			</control>
 
 			<control type="label" id="402">
@@ -36,8 +34,7 @@
 				<posy>28</posy>
 				<width>340</width>
 				<height>20</height>
-				<font>Small</font>
-				<textcolor>Grey</textcolor>
+				<textcolor>Silver</textcolor>
 			</control>
 
 		</control>

@@ -18,7 +18,7 @@
 				<posy>-20</posy>
 				<width>640</width>
 				<height>600</height>
-				<texture border="2">img/Menu.png</texture>
+				<texture border="22">img/DialogProgressBG.png</texture>
 			</control>
 			<control type="group">
 			<posx>-14</posx>
@@ -49,7 +49,7 @@
 			<control type="scrollbar" id="61">
 				<posx>580</posx>
 				<posy>70</posy>
-				<width>20</width>
+				<width>24</width>
 				<height>460</height>
 				<onleft>Close</onleft>
 				<onright>Close</onright>

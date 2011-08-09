@@ -1,7 +1,7 @@
 ﻿<window>
 	<defaultcontrol always="true">10</defaultcontrol>
+	<backgroundcolor>0xff000000</backgroundcolor>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
 	
 	<controls>
 		<include>GlobalBackground</include>

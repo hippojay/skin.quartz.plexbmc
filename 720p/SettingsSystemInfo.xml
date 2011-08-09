@@ -1,39 +1,34 @@
 <window id="7">
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">9001</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
 
 	<controls>
-
-		<include>GlobalBackground</include>
-
+	
+		<include>MiniBackground</include>
+		<control type="image" description="DialogBG">
+			<posx>40</posx>
+			<posy>50</posy>
+			<width>1200</width>
+			<height>640</height>
+			<aspectratio>stretch</aspectratio>
+			<texture border="22">img/DialogProgressBG.png</texture>
+		</control>
+		
+		<include>Header</include>
 		<control type="label">
 			<include>WindowID</include>
 			<label>SettingsSystemInfo.xml</label>
 		</control>
 
-		<control type="image" description="separator Top">
-				<posx>70</posx>
-				<posy>100</posy>
-				<width>1100</width>
-				<height>2</height>
-				<texture>img/ButtonFO.png</texture>
-				<aspectratio>stretch</aspectratio>
-			</control>
 			<control type="label" description="Heading">
-				<posx>0</posx>
-				<posy>40</posy>
-				<width>1280</width>
-				<height>50</height>
-				<align>center</align>
-				<font>XLarge</font>
+				<include>Heading</include>
 				<label>130</label>
 			</control>	
 			
 		<control type="group">
-			<posy>30</posy>
+			<posy>0</posy>
 
-			<control type="grouplist" id="9000">
+			<control type="grouplist" id="9001">
 				<posx>80</posx>
 				<posy>80</posy>
 				<width>200</width>
@@ -41,8 +36,8 @@
 				<itemgap>0</itemgap>
 				<onleft>-</onleft>
 				<onright>-</onright>
-				<onup>9000</onup>
-				<ondown>9000</ondown>
+				<onup>9001</onup>
+				<ondown>9001</ondown>
 
 				<control type="button" id="95" description="General">
 				

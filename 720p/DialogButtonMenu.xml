@@ -1,110 +1,118 @@
-<window type="ButtonMenu" id="111">
-	<defaultcontrol always="true">307</defaultcontrol>
-	<backgroundcolor>0</backgroundcolor>
+<window type="buttonMenu" id="111">
+	<defaultcontrol always="true">9001</defaultcontrol>
+	<include>OpenClose</include>
 	<coordinates>
+		<system>1</system>
 		<posx>0</posx>
 		<posy>0</posy>
 	</coordinates>
 	<controls>
-		<!--<include>GlobalBackground</include>-->
-		<control type="group">
-			<include>GlobalOverlay</include>
-			<animation condition="true" effect="fade" end="60" time="0">Conditional</animation>
-		</control>
-		
-		<control type="label">
-			<include>DialogID</include>
-			<label>DialogButtonMenu.xml</label>
+		<include>BackgroundDim</include>
+		<control type="image">
+			<posx>305</posx>
+			<posy>235</posy>
+			<width>670</width>
+			<height>250</height>
+			<texture border="22">img/DialogProgressBG.png</texture>
 		</control>
 		<control type="group">
-			<posx>340</posx>
-			<posy>140</posy>
-			
-			<control type="image">
-				<posx>100</posx>
-				<width>400</width>
-				<height>380</height>
-				<texture border="5">img/Menu.png</texture>
-				<aspectratio>stretch</aspectratio>
-			</control>
-			<control type="group" description="Close Button">
-				<posx>104</posx>
-				<posy>4</posy>
-				<include>CloseButton</include>
-			</control>
-			<control type="image" description="Separator">
-				<posy>80</posy>
-				<posx>150</posx>
-				<height>2</height>
-				<width>300</width>
-				<texture>img/ButtonFO.png</texture>
-			</control>
-			<control type="label" id="3100">
-				<posx>100</posx>
-				<posy>20</posy>
-				<font>XLarge</font>
-				<textcolor>White</textcolor>
-				<width>400</width>
-				<height>50</height>
-				<align>center</align>
+			<posx>310</posx>
+			<posy>240</posy>
+			<include>CloseButton</include>
+		</control>
+		<control type="group">
+			<posx>305</posx>
+			<posy>240</posy>
+			<control type="label" id="3100" description="Buttons Label">
+				<posx>10</posx>
+				<posy>24</posy>
+				<width>650</width>
+				<height>35</height>
 				<label>-</label>
-			</control>
-			<control type="label" description="Mouse Close button label">
-			<visible>Control.HasFocus(13)</visible>
-				<posx>100</posx>
-				<posy>20</posy>
-				<font>XLarge</font>
-				<textcolor>White</textcolor>
-				<width>400</width>
-				<height>50</height>
-				<align>center</align>
-				<label>222</label>
-			</control>
-
-			<control type="grouplist" id="307" description="Menu">
-				<posx>150</posx>
-				<posy>20</posy>
-				<width>400</width>
-				<height>400</height>
-				<itemgap>0</itemgap>
 				<align>center</align>
 				<aligny>center</aligny>
-				<orientation>vertical</orientation>
-				<onup>307</onup>
-				<ondown>307</ondown>
-				<onleft>Dialog.Close(shutdownmenu)</onleft>
-				<onright>Dialog.Close(shutdownmenu)</onright>
-				
-					<control type="button" id="3" description="Shutdown">
-						<width>300</width>
-						<height>50</height>
-						<visible>!Skin.HasSetting(Shutdown_Hide)</visible>
-						<label>13005</label>
-						<onclick>ShutDown()</onclick>
-					</control>
-					<control type="button" id="4" description="Suspend">
-						<width>300</width>
-						<height>50</height>
-						<visible>!Skin.HasSetting(Suspend_Hide)</visible>
-						<label>13011</label>
-						<onclick>XBMC.Suspend()</onclick>
-					</control>
-					<control type="button" id="5" description="Reboot">
-						<width>300</width>
-						<height>50</height>
-						<visible>!Skin.HasSetting(Reboot_Hide)</visible>
-						<label>13013</label>
-						<onclick>XBMC.Reset()</onclick>
-					</control>
-					<control type="button" id="6" description="Quit">
-						<width>300</width>
-						<height>50</height>
-						<visible>!Skin.HasSetting(Quit_Hide)</visible>
-						<label>13009</label>
-						<onclick>xbmc.quit</onclick>
-					</control>
+				<include>TitleCommons</include>
 			</control>
-			
+			<control type="grouplist" id="9001">
+				<posx>15</posx>
+				<posy>85</posy>
+				<width>640</width>
+				<itemgap>20</itemgap>
+				<align>center</align>
+				<orientation>Horizontal</orientation>
+				<control type="button" id="11" description="Quit xbmc">
+					<width>90</width>
+					<height>90</height>
+					<texturefocus>ButtonMenuExitNF.png</texturefocus>
+					<texturenofocus>ButtonMenuExitNF.png</texturenofocus>
+					<onclick>XBMC.Quit()</onclick>
+					
+					<font>-</font>
+					<label>$LOCALIZE[13009]</label>
+					<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="130" time="240" center="auto"/>
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="zoom" start="130" end="100" time="120" center="auto"/>
+						</animation>
+						<animation condition="!Control.HasFocus(11)" effect="fade" start="100" end="50" time="100" reversible="true">Conditional</animation>
+				</control>
+				<control type="button" id="15" description="Shutdown button">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>90</width>
+					<height>90</height>
+					<texturefocus>ButtonMenuShutdownNF.png</texturefocus>
+					<texturenofocus>ButtonMenuShutdownNF.png</texturenofocus>
+					<onclick>XBMC.Powerdown()</onclick>
+					
+					<font>-</font>
+					<label>13005</label>
+					<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="130" time="240" center="auto"/>
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="zoom" start="130" end="100" time="120" center="auto"/>
+						</animation>
+						<animation condition="!Control.HasFocus(15)" effect="fade" start="100" end="50" time="100" reversible="true">Conditional</animation>
+				</control>
+				<control type="button" id="12" description="Suspend xbmc">
+					<width>90</width>
+					<height>90</height>
+					<texturefocus>ButtonMenuSleepNF.png</texturefocus>
+					<texturenofocus>ButtonMenuSleepNF.png</texturenofocus>
+					<onclick>XBMC.Suspend()</onclick>
+					
+					<font>-</font>
+					<label>13011</label>
+					<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="130" time="240" center="auto"/>
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="zoom" start="130" end="100" time="120" center="auto"/>
+						</animation>
+						<animation condition="!Control.HasFocus(12)" effect="fade" start="100" end="50" time="100" reversible="true">Conditional</animation>
+				</control>
+				<control type="button" id="14">
+					<description>Reboot button</description>
+					<width>90</width>
+					<height>90</height>
+					<texturefocus>ButtonMenuRestartNF.png</texturefocus>
+					<texturenofocus>ButtonMenuRestartNF.png</texturenofocus>
+					<onclick>XBMC.Reset()</onclick>
+					
+					<font>-</font>
+					<label>13013</label>
+					<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="130" time="240" center="auto"/>
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="zoom" start="130" end="100" time="120" center="auto"/>
+						</animation>
+						<animation condition="!Control.HasFocus(14)" effect="fade" start="100" end="50" time="100" reversible="true">Conditional</animation>
+				</control>
+			</control>
 		</control>
+		<include>Debug_Grid</include>
 	</controls>
 </window>

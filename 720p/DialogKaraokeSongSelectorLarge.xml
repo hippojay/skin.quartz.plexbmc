@@ -1,8 +1,8 @@
 <window type="dialog" id="144">
-	<backgroundcolor>0</backgroundcolor>
+	<include>OpenClose</include>
 	<controls>
-
-			<include>GlobalBackground</include>
+		
+		<include>BackgroundDim</include>
 
 		<control type="group">
 			<posx>415</posx>
@@ -13,7 +13,7 @@
 				<posy>0</posy>
 				<width>450</width>
 				<height>150</height>
-				<texture border="22">img/Menu.png</texture>
+				<texture border="22">img/DialogProgressBG.png</texture>
 			</control>
 
 			<control type="label">
@@ -28,8 +28,8 @@
 				<posx>20</posx>
 				<posy>10</posy>
 				<width>410</width>
-				<font>Normal</font>
-				<label>31321</label>
+				<font>Title</font>
+				<label>31031</label>
 				<align>center</align>
 			</control>
 
@@ -46,9 +46,8 @@
 				<posx>20</posx>
 				<posy>85</posy>
 				<width>410</width>
-				<font>Normal</font>
 				<align>center</align>
-				<textcolor>Grey</textcolor>
+				<textcolor>Silver</textcolor>
 				<scroll>true</scroll>
 			</control>
 

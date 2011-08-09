@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.quartz.plexbmc" version="0.1-0.7.2" name="Quartz PleXBMC" provider-name="Original Skin creator Pecinko. Modded by hippojay">
+<addon id="skin.quartz.plexbmc" version="0.1-1.0.3" name="Quartz" provider-name="Pecinko.  Modded by Hippojay for Plexbmc">
 	<requires>
 		<import addon="xbmc.gui" version="2.11"/>
-		<import addon="script.favourites" version="1.0.6"/>
+    	<import addon="script.favourites" version="2.0.0"/>
+    	<import addon="script.recentlyadded" version="2.0.5"/>
+    	<import addon="script.randomitems" version="1.0.11"/>
 	</requires>
 	<extension  
 	point="xbmc.gui.skin" 
@@ -13,8 +15,7 @@
 	debugging="false"/>
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-		<minversion app="xbmc">33035</minversion>
-		<summary>Created for XBMC by Pecinko.  Modded for PleXBMC by hippojay</summary>
-		<description>Simple, elegant and human friendly. Skin for the rest of us.  Tweaked for PleXBMC</description>
+		<description>Inspired mostly by ATV and MediaStream this skin brings fast, simple and flexible user interface. It's friendly to non-technical users and low powered devices like ATV2.</description>
+		<disclaimer>Compatible with XBMC Dharma (v 10.1)</disclaimer>
 	</extension>
 </addon>

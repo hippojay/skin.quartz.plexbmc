@@ -1,7 +1,0 @@
-Ver 0.7.2
-
-Fixes and lots of improvements.
-
-Ver 0.5.0
-
-Initial release of Quartz skin.

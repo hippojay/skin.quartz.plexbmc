@@ -1,16 +1,24 @@
 <window id="136">
 	<defaultcontrol always="true">-</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 	<backgroundcolor>0</backgroundcolor>
-	<animation effect="fade" time="100">WindowOpen</animation>
+	<allowoverlay>no</allowoverlay>
+	<coordinates>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<include>OpenClose</include>
 	<controls>
-
-		<include>GlobalBackground</include>
-		
+		<include>BackgroundDim</include>
+		<control type="image">
+			<posx>350</posx>
+			<posy>200</posy>
+			<width>600</width>
+			<height>240</height>
+			<texture border="22">img/DialogProgressBG.png</texture>
+		</control>
 		<control type="group">
-			<posx>320</posx>
-			<posy>250</posy>
-
+			<posx>350</posx>
+			<posy>230</posy>
 			<control type="label">
 				<posy>-200</posy>
 				<width>640</width>
@@ -18,35 +26,25 @@
 				<include>DialogID</include>
 				<label>DialogBusy.xml</label>
 			</control>
-
 			<control type="label" description="Busy label">
 				<posx>0</posx>
-				<posy>0</posy>
-				<width>640</width>
+				<posy>20</posy>
+				<width>600</width>
 				<height>60</height>
-				<font>XLarge</font>
+				<font>Title</font>
 				<align>center</align>
 				<label>20186</label>
 			</control>
-			
-			<control type="multiimage">
-				<description>Busy animation</description>
-				<posx>286</posx>
-				<posy>100</posy>
+			<control type="image" description="Busy animation">
+				<posx>268</posx>
+				<posy>80</posy>
 				<width>64</width>
 				<height>64</height>
-				<imagepath>busy</imagepath>
-				<timeperimage>100</timeperimage>
-				<fadetime>0</fadetime>
+				<texture>busy/Busy.png</texture>
 				<aspectratio>keep</aspectratio>
+				<animation effect="rotate" start="360" end="0" center="auto" time="1200" loop="true" pulse="true" condition="true">conditional</animation>
 			</control>
-			
-						
-
 		</control>
-
 		<include>Debug_Grid</include>
-
 	</controls>
-
 </window>

@@ -1,16 +1,19 @@
 <window id="34">
 	<defaultcontrol always="true">2</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
 	<controls>
-		<include>GlobalBackground</include>
-		<include>TopAndBottomSeparator</include>
+		<include>MiniBackground</include>
+		<control type="image" description="DialogBG">
+			<posx>40</posx>
+			<posy>50</posy>
+			<width>1200</width>
+			<height>640</height>
+			<aspectratio>stretch</aspectratio>
+			<texture border="22">img/DialogProgressBG.png</texture>
+		</control>
+		<include>Header</include>
 		<control type="label" description="Heading">
-			<posx>660</posx>
-			<posy>25</posy>
-			<align>center</align>
-			<width>540</width>
-			<font>XLarge</font>
+			<include>Heading</include>
 			<label>10034</label>
 		</control>
 		<control type="label">

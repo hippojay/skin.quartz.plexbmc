@@ -1,11 +1,11 @@
 <includes>
 	<include name="VideoCodecflags">
-		<control type="grouplist" description="Video resolutio Set">
+		<control type="grouplist" description="Video resolution Set">
 			<width>505</width>
 			<align>left</align>
 			<orientation>horizontal</orientation>
 			<control type="image" description="DVD">
-				<visible>![substring(ListItem.Property(VideoResolution),1080) |substring(ListItem.Property(VideoResolution),720)]</visible>
+				<visible>![substring(ListItem.Property(VideoResolution),1080) | substring(ListItem.Property(VideoResolution),720)]</visible>
 				<width>80</width>
 				<height>24</height>
 				<aspectratio align="left">keep</aspectratio>
@@ -27,7 +27,7 @@
 			</control>
 		</control>
 		<control type="grouplist" description="Offline Set">
-			<visible>IsEmpty(ListItem.Property(VideoResolution) + IsEmpty(ListItem.Property(AudioChannels) + Container.Content(movies)</visible>
+			<visible>IsEmpty(ListItem.Property(VideoResolution)) + IsEmpty(ListItem.Property(AudioChannels)) + Container.Content(movies) </visible>
 			<width>505</width>
 			<align>left</align>
 			<orientation>horizontal</orientation>
@@ -63,7 +63,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="AudioTypeHackflagsConditions">
+	<!--<include name="AudioTypeHackflagsConditions">
 		<control type="group">
 			<control type="image">
 				<description>MP3 Image</description>
@@ -119,6 +119,47 @@
 				<height>24</height>
 				<aspectratio align="left">keep</aspectratio>
 				<texture>flags/audio/ogg.png</texture>
+				<visible>substring(ListItem.Filename,.ogg,right)</visible>
+			</control>
+		</control>
+	</include>-->
+	<include name="AudioLabelFlag">
+		<control type="group">
+			<!--<posx>505</posx>
+			<posy>548</posy>-->
+			<control type="label">
+				<include>MusicValuesInfoPanelCommons</include>
+				<label>MP3</label>
+				<visible>substring(ListItem.Filename,.mp3,right)</visible>
+			</control>
+			<control type="label">
+				<include>MusicValuesInfoPanelCommons</include>
+				<label>WMA</label>
+				<visible>substring(ListItem.Filename,.wma,right)</visible>
+			</control>
+			<control type="label">
+				<include>MusicValuesInfoPanelCommons</include>
+				<label>MPA</label>
+				<visible>substring(ListItem.Filename,.mpa,right)</visible>
+			</control>
+			<control type="label">
+				<include>MusicValuesInfoPanelCommons</include>
+				<label>AAC</label>
+				<visible>substring(ListItem.Filename,.aac,right) | substring(ListItem.Filename,.m4a,right) | substring(ListItem.Filename,.mp4,right)</visible>
+			</control>
+			<control type="label">
+				<include>MusicValuesInfoPanelCommons</include>
+				<label>FLAC</label>
+				<visible>substring(ListItem.Filename,.flac,right)</visible>
+			</control>
+			<control type="label">
+				<include>MusicValuesInfoPanelCommons</include>
+				<label>APE</label>
+				<visible>substring(ListItem.Filename,.ape,right)</visible>
+			</control>
+			<control type="label">
+				<include>MusicValuesInfoPanelCommons</include>
+				<label>OGG</label>
 				<visible>substring(ListItem.Filename,.ogg,right)</visible>
 			</control>
 		</control>

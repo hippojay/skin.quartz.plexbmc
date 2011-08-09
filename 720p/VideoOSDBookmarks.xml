@@ -8,7 +8,7 @@
 			<posx>240</posx>
 			<posy>100</posy>
 				
-			<include>CloseButton</include>
+			
 			<control type="image">
 				<posx>-10</posx>
 				<posy>-20</posy>
@@ -16,7 +16,7 @@
 				<height>552</height>
 				<texture border="22">img/Menu.png</texture>
 				<animation type="Conditional" condition="true">
-						<effect type="fade" start="100" end="60" time="0" reversible="false" />
+						<effect type="fade" start="100" end="90" time="0" reversible="false" />
 					</animation>
 			</control>
 
@@ -147,7 +147,7 @@
 				</control>
 
 			</control>
-
+			<include>CloseButton</include>
 		</control>
 
 		<include>Debug_Grid</include>

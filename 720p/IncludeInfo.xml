@@ -1,550 +1,234 @@
 <includes>
 	<include name="InfoPanel">
 		<control type="group" description="Info group">
-			<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
 			<posx>70</posx>
-			<posy>436</posy>
-			<control type="label" description="Title label">
+			<posy>460</posy>
+			<control type="label" description="Title label long">
 				<posx>0</posx>
-				<posy>-20</posy>
+				<posy>4</posy>
 				<width>505</width>
-				<height>27</height>
+				<height>30</height>
 				<align>left</align>
-				<label>[B]$INFO[ListItem.Label][/B]</label>
+				<label>$INFO[ListItem.Label]</label>
 				<scroll>false</scroll>
-				<font>XSmall</font>
+				<font>XTitle</font>
+				<textcolor>White</textcolor>
 			</control>
-			<!--<control type="image" description="separator">
-				<posx>0</posx>
-				<posy>34</posy>
-				<width>505</width>
-				<height>1</height>
-				<texture>img/OldButtonFO.png</texture>
-				<aspectratio>stretch</aspectratio>
-			</control>-->
-			<control type="grouplist" description="Labels">
-				<visible>Window.IsActive(2003) | [!Skin.HasSetting(PlotOn) + Container.Content(Movies)] | Container.Content(Songs) | Container.Content(Albums) | Window.IsActive(DialogAddonInfo.xml)</visible>
-				<!--<animation effect="fade" time="500">VisibleChange</animation>-->
-				<posx>0</posx>
-				<posy>29</posy>
-				<width>105</width>
-				<height>160</height>
-				<orientation>vertical</orientation>
-				<control type="label" description="Director label 1">
-					<visible>Container.Content(Movies)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[20339]:</label>
+			<control type="group" description="Addon Plots">
+				<visible>Window.IsActive(addonbrowser.xml)</visible>
+				<posy>-10</posy>
+				<control type="textbox" description="Plot">
+					<include>Plot51Commons</include>
+					<label fallback="425">$INFO[ListItem.Property(Addon.Description)]</label>
 				</control>
-				<control type="label" description="Artist label 1">
-					<visible>Container.Content(Songs) | Container.Content(Albums)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[557]:</label>
+			</control>
+			<control type="group" description="Video Plots">
+				<visible>![Window.IsActive(mymusicnav.xml) | Window.IsActive(mymusicsongs.xml) | Window.IsActive(mymusicplaylist.xml)]</visible>
+				<posy>-10</posy>
+				<control type="textbox" description="Plot">
+					<include>Plot51Commons</include>
+					<label>$INFO[ListItem.Plot]</label>
 				</control>
-				<control type="label" description="Addon author 1">
-					<visible>Window.IsActive(DialogAddonInfo.xml)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[21863]:</label>
+				<control type="textbox" description="Plot">
+					<visible>IsEmpty(ListItem.Plot)</visible>
+					<include>Plot51Commons</include>
+					<label>$INFO[ListItem.PlotOutline]</label>
 				</control>
-				<control type="label" description="Genre label 2">
-					<visible>Container.Content(Movies) | Container.Content(Songs) | Container.Content(Albums)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[515]:</label>
+				<control type="textbox" description="Plot">
+					<visible>Container.Content(Seasons)</visible>
+					<include>Plot51Commons</include>
+					<label fallback="416">$INFO[Container.ShowPlot]</label>
 				</control>
-				<control type="label" description="Addon type 2">
-					<visible>Window.IsActive(DialogAddonInfo.xml)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[564]:</label>
-				</control>
-				<control type="label" description="Rating label 3">
-					<visible>Container.Content(Movies)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[563]:</label>
-				</control>
-				<control type="label" description="Album label 3">
-					<visible>Container.Content(Songs)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[558]:</label>
-				</control>
-				<control type="label" description="Moods label 3">
+			</control>
+			<control type="group" description="Audio Plots">
+				<visible>Window.IsActive(mymusicnav.xml) | Window.IsActive(mymusicsongs.xml) | Window.IsActive(mymusicplaylist.xml)</visible>
+				<posy>-10</posy>
+				<control type="textbox" description="Plot">
 					<visible>Container.Content(albums)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[175]:</label>
+					<include>Plot51Commons</include>
+					<label fallback="425">$INFO[ListItem.Property(Album_Description)]</label>
 				</control>
-				<control type="label" description="Addon version">
-					<visible>Window.IsActive(DialogAddonInfo.xml)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[24051]</label>
+				<control type="textbox" description="Plot">
+					<visible>Container.Content(artists)</visible>
+					<include>Plot51Commons</include>
+					<label fallback="416">$INFO[ListItem.Property(Artist_Description)]</label>
 				</control>
-				<control type="label" description="Year label 4">
-					<visible>Container.Content(Movies) | Container.Content(songs) | Container.Content(albums)</visible>
-					<font>XSmall</font>
-					<width>105</width>
-					<height>30</height>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[345]:</label>
+				<control type="textbox" description="Addons">
+					<visible>Container.Content(Addons)</visible>
+					<include>Plot51Commons</include>
+					<label>$INFO[ListItem.Property(Addon.description)]</label>
 				</control>
-				<control type="label" description="Addon disclaimer label">
-					<visible>Window.IsActive(DialogAddonInfo.xml)</visible>
-					<font>KAI</font>
-					<width>105</width>
-					<height>30</height>
-					<wrapmultiline>true</wrapmultiline>
-					<align>right</align>
-					<textcolor>Grey</textcolor>
-					<label>$LOCALIZE[24052]:</label>
-				</control>
-			</control>
-			<control type="grouplist" description="Values">
-				<visible>Window.IsActive(2003) | [!Skin.HasSetting(PlotOn) + Container.Content(Movies)] | Container.Content(songs) | Container.Content(albums) | Window.IsActive(DialogAddonInfo.xml)</visible>
-				<!--<animation effect="fade" time="500">VisibleChange</animation>-->
-				<posx>110</posx>
-				<posy>29</posy>
-				<width>400</width>
-				<height>160</height>
-				<orientation>vertical</orientation>
-				<control type="label" description="Director value 1">
-					<visible>Container.Content(Movies)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<scroll>false</scroll>
-					<label>$INFO[ListItem.Director]</label>
-				</control>
-				<control type="label" description="Artist value 1">
-					<visible>Container.Content(Songs) | Container.Content(Albums)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<label>$INFO[ListItem.Artist]</label>
-				</control>
-				<control type="label" description="Addon author value 1">
-					<visible>Window.IsActive(DialogAddonInfo.xml)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<label>$INFO[ListItem.Property(Addon.Creator)]</label>
-				</control>
-				<control type="label" description="Genre value 2">
-					<visible>Container.Content(Movies) | Container.Content(Songs) | Container.Content(Albums)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<scroll>false</scroll>
-					<label>$INFO[ListItem.Genre]</label>
-				</control>
-				<control type="label" description="Addon type 2">
-					<visible>Window.IsActive(DialogAddonInfo.xml)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<label>$INFO[ListItem.Property(Addon.Type)]</label>
-				</control>
-				<control type="label" description="Rating value 3">
-					<visible>Container.Content(Movies)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<label>$INFO[ListItem.Rating]</label>
-				</control>
-				<control type="label" description="Album value 3">
-					<visible>Container.Content(Songs)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<scroll>false</scroll>
-					<label>$INFO[ListItem.Album]</label>
-				</control>
-				<control type="label" description="Moods value 3">
-					<visible>Container.Content(albums)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<scroll>false</scroll>
-					<label>$INFO[ListItem.Property(Album_Mood)]</label>
-				</control>
-				<control type="label" description="Addon version 3">
-					<visible>Window.IsActive(DialogAddonInfo.xml)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<label>$INFO[ListItem.Property(Addon.Version)]</label>
-				</control>
-				<control type="label" description="Year value 4">
-					<visible>Container.Content(Movies) | Container.Content(songs) | Container.Content(albums)</visible>
-					<font>XSmall</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<label>$INFO[ListItem.Year]</label>
-				</control>
-				<control type="label" description="Addon disclaimer">
-					<visible>Window.IsActive(DialogAddonInfo.xml)</visible>
-					<font>KAI</font>
-					<width>395</width>
-					<height>30</height>
-					<align>left</align>
-					<textcolor>Grey</textcolor>
-					<label>$INFO[ListItem.Property(Addon.Disclaimer)]</label>
-				</control>
-			</control>
-			<control type="textbox" description="Plot">
-				<visible>!Window.IsActive(2003) + [Container.Content(Episodes) | Container.Content(TVShows) | [Skin.HasSetting(PlotOn) + Container.Content(Movies)]]</visible>
-				<!--<animation effect="fade" time="500">VisibleChange</animation>-->
-				<posx>0</posx>
-				<posy>27</posy>
-				<width>505</width>
-				<height>137</height>
-				<font>XSmall</font>
-				<align>justify</align>
-				<label fallback="416">$INFO[ListItem.Plot]</label>
-				<autoscroll delay="6000" time="3600" repeat="10000">true</autoscroll>
-			</control>
-			<control type="group">
-				<posy>54</posy>
-				<!--<control type="image" description="separator">
-					<posy>134</posy>
-					<posx>0</posx>
-					<width>505</width>
-					<height>1</height>
-					<texture>img/OldButtonFO.png</texture>
-					<aspectratio>stretch</aspectratio>
-				</control>-->
-				<control type="label" description="Addon Status Label+value">
-					<visible>Window.IsActive(DialogAddonInfo.xml)</visible>
-					<posx>0</posx>
-					<width>505</width>
-					<posy>122</posy>
-					<font>XSmall</font>
-					<align>left</align>
-					<textcolor>White</textcolor>
-					<label>$LOCALIZE[126]: $INFO[ListItem.Property(Addon.Status)]</label>
-				</control>
-				<control type="label" description="Runtime label+value">
-					<visible>Container.Content(Episodes) | [!Skin.HasSetting(PlotOn) + Container.Content(Movies)]</visible>
-					<posx>0</posx>
-					<width>405</width>
-					<posy>122</posy>
-					<font>XSmall</font>
-					<textcolor>White</textcolor>
-					<align>left</align>
-					<scroll>false</scroll>
-					<label>$LOCALIZE[2050]: $INFO[ListItem.Duration] [LOWERCASE]$LOCALIZE[12391][/LOWERCASE]</label>
-				</control>
-				<control type="label" description="Year label+value">
-					<visible>Container.Content(TVShows)</visible>
-					<posx>0</posx>
-					<width>405</width>
-					<posy>122</posy>
-					<font>XSmall</font>
-					<textcolor>White</textcolor>
-					<align>left</align>
-					<scroll>false</scroll>
-					<label>$LOCALIZE[345]: $INFO[ListItem.Year]</label>
-				</control>
-				<control type="group" description="Movies Plot addition">
-					<visible>Skin.HasSetting(PlotOn) + Container.Content(Movies)</visible>
-					<!--<control type="label" description="Kobasica">
+				<control type="group">
+					<visible>container.content(songs)</visible>
+					<control type="label" description="Songs">
+						<posy>92</posy>
+						<include>Songs51Commons</include>
+						<label>$INFO[ListItem.Album,$LOCALIZE[558]  ]</label>
+					</control>
+					<control type="label" description="Songs">
 						<posy>122</posy>
-						<posx>0</posx>
-						<width>505</width>
-						<align>left</align>
-						<font>XSmall</font>
-						<scroll>false</scroll>
-						<label>$INFO[ListItem.Year]    $LOCALIZE[563] $INFO[ListItem.Rating]    $INFO[ListItem.MPAA]    $INFO[ListItem.Duration] [LOWERCASE]$LOCALIZE[12391][/LOWERCASE]</label>
-					</control>-->
-				
+						<include>Songs51Commons</include>
+						<label>$INFO[ListItem.FileExtension,$LOCALIZE[564]  ]</label>
+					</control>
+					<control type="label" description="Songs">
+						<posy>154</posy>
+						<include>Songs51Commons</include>
+						<label>$INFO[ListItem.TrackNumber,$LOCALIZE[554]  ]</label>
+					</control>
 					<control type="image" description="Rating">
-						<posy>132</posy>
-						<posx>0</posx>
-						<width>24</width>
-						<aspectratio aligny="center" align="left">keep</aspectratio>
-						<texture>Star.png</texture>
-					</control>
-					<control type="label" description="Rating">
-						<posy>122</posy>
-						<posx>28</posx>
-						<width>120</width>
-						<align>left</align>
-						<font>XSmall</font>
-						<label fallback="?">$INFO[ListItem.Rating]</label>
-					</control>
-					
-					<control type="label" description="Year value">
-						<visible>Container.Content(Movies)</visible>
-						<posy>122</posy>
-						<posx>160</posx>
-						<width>150</width>
-						<align>left</align>
-						<font>XSmall</font>
-						<scroll>false</scroll>
-						<label>$INFO[ListItem.Year]</label>
-					</control>
-					<control type="label" description="Duration value">
-						<visible>Container.Content(Movies)</visible>
-						<posy>122</posy>
-						<posx>260</posx>
-						<width>200</width>
-						<align>left</align>
-						<font>XSmall</font>
-						<scroll>false</scroll>
-						<label>$INFO[ListItem.Duration] [LOWERCASE]$LOCALIZE[12391][/LOWERCASE]</label>
-					</control>
-				</control>
-				<control type="image" description="MPAA flag">
-					<visible>Container.Content(Episodes) | Container.Content(TVShows)</visible>
-					<posx>403</posx>
-					<posy>135</posy>
-					<height>22</height>
-					<width>100</width>
-					<aspectratio align="right">keep</aspectratio>
-					<texture>$INFO[ListItem.MPAA,flags/mpaa/,.png]</texture>
-				</control>
-				<control type="image" description="MPAA flag">
-					<visible>Container.Content(Movies)</visible>
-					<posx>403</posx>
-					<posy>138</posy>
-					<height>24</height>
-					<width>100</width>
-					<aspectratio align="right">keep</aspectratio>
-					<texture>$INFO[ListItem.MPAA,flags/mpaa/,.png]</texture>
-				</control>
-				<control type="group" description="Audio Flags">
-					<visible>Container.Content(Songs) | Container.Content(Albums)</visible>
-					<posy>136</posy>
-					<posx>0</posx>
-					<include>AudioTypeHackflagsConditions</include>
-					<control type="image" description="CD Image">
-						<visible>Container.Content(albums)</visible>
-						<posy>-6</posy>
-						<width>60</width>
-						<height>32</height>
+						<height>18</height>
+						<posy>190</posy>
+						<include>Songs51Commons</include>
 						<aspectratio align="left">keep</aspectratio>
-						<texture>flags/audio/cdda.png</texture>
-					</control>
-					<control type="image" description="Star Rating">
-						<width>80</width>
-						<height>20</height>
-						<posx>425</posx>
-						<aspectratio align="right">keep</aspectratio>
-						<texture>flags/stars/$INFO[ListItem.StarRating]</texture>
+						<texture>badges/$INFO[ListItem.StarRating]</texture>
 					</control>
 				</control>
 			</control>
-			<!--<control type="image" description="separator">
-				<posy>234</posy>
-				<posx>0</posx>
-				<width>505</width>
-				<height>1</height>
-				<texture>img/OldButtonFO.png</texture>
-				<aspectratio>stretch</aspectratio>
-			</control>-->
-			<control type="group" description="FLAGS">
-				<animation condition="true" effect="fade" start="0" end="50" time="0">Conditional</animation>
-				<animation condition="Window.IsActive(MyVideoNav.xml) + Control.IsVisible(55)" effect="slide" start="0,0" end="0,-14" time="0">Conditional</animation>
+			<control type="group" description="Info">
+				<posy>-104</posy>
 				<control type="group">
-					<posy>242</posy>
-					<posx>0</posx>
-					<include condition="!Skin.HasSetting(Hide_Flags) + !Window.IsActive(2003)">VideoCodecflags</include>
-				</control>
-				<control type="group">
-					<posy>238</posy>
-					<posx>0</posx>
-					<include condition="!Skin.HasSetting(Hide_Flags) + !Window.IsActive(2003)">AudioCodecflags</include>
+					<control type="group" description="Video info">
+						<visible>![Window.IsActive(mymusicplaylist.xml) | Window.IsActive(mymusicnav.xml) | Window.IsActive(mymusicsongs.xml)]</visible>
+						<posx>0</posx>
+						<posy>-236</posy>
+						<control type="label" description="Description long">
+							<visible>!container.content(episodes)</visible>
+							<posx>0</posx>
+							<posy>386</posy>
+							<width>505</width>
+							<height>30</height>
+							<align>left</align>
+							<label>$INFO[ListItem.Year,, ⋅ ]$INFO[ListItem.Duration,, $LOCALIZE[12391]]$INFO[ListItem.MPAA, ⋅ ]$INFO[ListItem.Property(UnWatchedEpisodes), ⋅ $LOCALIZE[16101] ]</label>
+							<scroll>false</scroll>
+							<textcolor>Silver</textcolor>
+							<font>XSmall</font>
+						</control>
+						<control type="label" description="Description long">
+							<visible>container.content(episodes)</visible>
+							<posx>0</posx>
+							<posy>386</posy>
+							<width>505</width>
+							<height>30</height>
+							<align>left</align>
+							<label>$INFO[ListItem.Date,, ⋅ ]$INFO[ListItem.Duration,, $LOCALIZE[12391]]$INFO[ListItem.MPAA, ⋅ ]$INFO[ListItem.Property(UnWatchedEpisodes), ⋅ $LOCALIZE[16101] ]</label>
+							<scroll>false</scroll>
+							<textcolor>Silver</textcolor>
+							<font>XSmall</font>
+						</control>
+						<control type="label" description="Trailer Label">
+							<visible>container.content(movies) + !IsEmpty(ListItem.Trailer)</visible>
+							<height>18</height>
+							<width>100</width>
+							<posx>505</posx>
+							<posy>372</posy>
+							<font>XXSmall</font>
+							<align>right</align>
+							<scroll>false</scroll>
+							<textcolor>Silver</textcolor>
+							<label>$LOCALIZE[20410]</label>
+						</control>
+						<control type="image" description="Rating">
+							<height>18</height>
+							<width>100</width>
+							<posx>415</posx>
+							<posy>393</posy>
+							<aspectratio align="left">keep</aspectratio>
+							<texture>$INFO[ListItem.Rating,badges/,.png]</texture>
+							<colordiffuse>Silver</colordiffuse>
+							<animation effect="fade" time="100">VisibleChange</animation>
+						</control>
+						<control type="image">
+							<height>18</height>
+							<width>30</width>
+							<posx>376</posx>
+							<posy>393</posy>
+							<aspectratio align="left">keep</aspectratio>
+							<texture>$INFO[ListItem.Property(VideoResolution),badges/,.png]</texture>
+							<animation effect="fade" time="100">VisibleChange</animation>
+						</control>
+					</control>
+					<control type="group" description="Music info">
+						<visible>Window.IsActive(mymusicplaylist.xml) | Window.IsActive(mymusicnav.xml) | Window.IsActive(mymusicsongs.xml)</visible>
+						<posx>0</posx>
+						<posy>-236</posy>
+						<control type="label" description="Description long">
+							<posx>0</posx>
+							<posy>386</posy>
+							<width>505</width>
+							<height>30</height>
+							<align>left</align>
+							<label>$INFO[ListItem.Genre]$INFO[ListItem.Property(Artist_Genre)]$INFO[ListItem.Property(Artist_YearsActive), ⋅ ]$INFO[ListItem.Year, ⋅ ]$INFO[ListItem.Duration, ⋅ ]</label>
+							<scroll>false</scroll>
+							<textcolor>Silver</textcolor>
+							<font>XSmall</font>
+						</control>
+					</control>
 				</control>
 			</control>
 		</control>
 	</include>
-	
 	<include name="InfoThumbs">
-		<control type="group" description="Info thumbs">
-			<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
-			<control type="group" description="Cover">
-				<visible>!Skin.HasSetting(Info_Small_Fanart) + ![Container.Content(episodes) | Container.content(songs) | [Container.Content(TVShows) + !Skin.HasSetting(TVPosters)]]</visible>
-				<control type="image" description="Infopanel Back">
-					<visible>Skin.HasSetting(HideFanart)</visible>
-					<posx>70</posx>
-					<posy>60</posy>
-					<width>512</width>
-					<height>512</height>
-					<aspectratio>stretch</aspectratio>
-					<aligny>bottom</aligny>
-					<align>center</align>
-					<fadetime>0</fadetime>
-					<texture>img/IconStage.png</texture>
-					<animation condition="true" effect="fade" start="0" end="60" time="0">Conditional</animation>
-				</control>
-				<control type="image" description="Infopanel Thumb">
-					<posx>70</posx>
-					<posy>74</posy>
-					<width>512</width>
-					<height>288</height>
-					<aspectratio>keep</aspectratio>
-					<aligny>bottom</aligny>
-					<align>center</align>
-					<fadetime>0</fadetime>
-					<texture>$INFO[ListItem.Icon]</texture>
-				</control>
-				<control type="image" description="Reflection">
-				<visible>Skin.HasSetting(HideFanart)</visible>
-					<posx>70</posx>
-					<posy>362</posy>
-					<width>512</width>
-					<height>288</height>
-					<aspectratio>keep</aspectratio>
-					<aligny>bottom</aligny>
-					<align>center</align>
-					<fadetime>0</fadetime>
-					<texture diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Icon]</texture>
-				</control>
-				
+		<control type="group" description="Non Faded Info thumbs">
+			<control type="image" description="MiniStage">
+				<posx>60</posx>
+				<posy>264</posy>
+				<width>522</width>
+				<height>212</height>
+				<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+				<texture>img/IconStage2.png</texture>
 			</control>
-			<control type="image" description="Infopanel Small Fanart">
-				<visible>Skin.HasSetting(Info_Small_Fanart) + ![Container.Content(episodes) | Container.content(songs) | [Container.Content(TVShows) + !Skin.HasSetting(TVPosters)]]</visible>
-				<posx>90</posx>
-				<posy>74</posy>
-				<width>472</width>
-				<height>266</height>
-				<aspectratio>keep</aspectratio>
-				<aligny>bottom</aligny>
-				<align>center</align>
-				<fadetime>0</fadetime>
-				<texture background="true">$INFO[Listitem.Property(Fanart_Image)]</texture>
+			<control type="image" description="Thumb Reflection">
+				<posx>200</posx>
+				<posy>402</posy>
+				<width>238</width>
+				<height>340</height>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+				<bordersize>9</bordersize>
+				<texture background="true" diffuse="img/Reflection3.png" flipy="true">$INFO[ListItem.Icon]</texture>
 			</control>
-			<control type="image" description="Reflection">
-				<visible>Skin.HasSetting(HideFanart)</visible>
-				<visible>Skin.HasSetting(Info_Small_Fanart) + ![Container.Content(episodes) | Container.content(songs) | [Container.Content(TVShows) + !Skin.HasSetting(TVPosters)]]</visible>
-				<posx>90</posx>
-				<posy>340</posy>
-				<width>472</width>
-				<height>266</height>
-				<aspectratio>keep</aspectratio>
-				<aligny>bottom</aligny>
-				<align>center</align>
-				<fadetime>0</fadetime>
-				<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
-			</control>
-		</control>
-		
-	</include>
-	<include name="FadeInfoThumbs">
-		<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
-		<control type="group" description="Info thumbs">
-			<control type="image" description="Icon Back">
-				<visible>Skin.HasSetting(HideFanart) + !Skin.HasSetting(Info_Small_Fanart) + ![Container.Content(TVShows) + !Skin.HasSetting(TVPosters)] + !Container.Content(Episodes)</visible>
-				<posx>70</posx>
-				<posy>60</posy>
-				<width>512</width>
-				<height>512</height>
-				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				<fadetime>0</fadetime>
-				<texture>img/IconStage.png</texture>
-				<animation condition="true" effect="fade" start="0" end="60" time="0">Conditional</animation>
-			</control>
-			<control type="image" description="Faded Icon">
-				<visible>!Skin.HasSetting(Info_Small_Fanart)</visible>
-				<posx>70</posx>
-				<posy>74</posy>
-				<width>512</width>
-				<height>288</height>
-				<aspectratio align="center" aligny="bottom">keep</aspectratio>
-				<fadetime>200</fadetime>
+			<control type="image" description="Thumb">
+				<posx>200</posx>
+				<posy>80</posy>
+				<width>238</width>
+				<height>340</height>
+				<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+				<bordertexture border="9">img/ThumbShadow3.png</bordertexture>
+				<bordersize>9</bordersize>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 			</control>
-			<control type="image" description="Faded Icon Reflection">
-				<visible>Skin.HasSetting(HideFanart) + !Skin.HasSetting(Info_Small_Fanart)</visible>
-				<posx>70</posx>
-				<posy>362</posy>
-				<width>512</width>
-				<height>288</height>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<fadetime>200</fadetime>
-				<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Icon]</texture>
-			</control>
-			<control type="image" description="Faded Infopanel Small Fanart">
-				<visible>Skin.HasSetting(Info_Small_Fanart)</visible>
-				<posx>90</posx>
-				<posy>74</posy>
-				<width>472</width>
-				<height>266</height>
-				<aspectratio>keep</aspectratio>
-				<aligny>bottom</aligny>
-				<align>center</align>
-				<fadetime>200</fadetime>
-				<texture background="true">$INFO[Listitem.Property(Fanart_Image)]</texture>
-			</control>
-			<control type="image" description="Fanart Reflection">
-				<visible>Skin.HasSetting(HideFanart) + Skin.HasSetting(Info_Small_Fanart)</visible>
-				<posx>90</posx>
-				<posy>340</posy>
-				<width>472</width>
-				<height>266</height>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<fadetime>200</fadetime>
-				<texture background="true" diffuse="img/Reflection.png" flipy="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
-			</control>
 		</control>
 	</include>
-	<include name="FanartInfoThumbs" description="View55">
-		<visible>!stringcompare(Container.Listitem(0).Label,..)</visible>
-		<control type="group" description="Info thumbs">
-			<control type="image" description="Faded Infopanel Small Fanart">
-				<posx>65</posx>
-				<posy>74</posy>
-				<width>560</width>
-				<height>315</height>
-				<aspectratio>keep</aspectratio>
-				<aligny>bottom</aligny>
-				<align>center</align>
-				<fadetime>400</fadetime>
-				<bordertexture border="2">img/ButtonFO.png</bordertexture>
-				<bordersize>2</bordersize>
-				<texture background="true">$INFO[Listitem.Property(Fanart_Image)]</texture>
+	<include name="FadeInfoThumbs">
+		<control type="group" description="Faded Info thumbs">
+			<control type="image" description="MiniStage">
+				<posx>60</posx>
+				<posy>244</posy>
+				<width>542</width>
+				<height>212</height>
+				<aspectratio align="center" aligny="bottom">stretch</aspectratio>
+				<fadetime>100</fadetime>
+				<texture>img/IconStage2.png</texture>
+			</control>
+			<control type="image" description="Thumb Reflection">
+				<posx>70</posx>
+				<posy>365</posy>
+				<width>510</width>
+				<height>334</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<include>Icon_Fade</include>
+				<bordersize>9</bordersize>
+				<texture background="true" diffuse="img/Reflection2.png" flipy="true">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="image" description="Thumb">
+				<posx>70</posx>
+				<posy>48</posy>
+				<width>510</width>
+				<height>334</height>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<include>Icon_Fade</include>
+				<bordertexture border="9">img/ThumbShadow3.png</bordertexture>
+				<bordersize>9</bordersize>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
 			</control>
 		</control>
 	</include>

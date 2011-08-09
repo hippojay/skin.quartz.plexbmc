@@ -1,84 +1,88 @@
 <window type="dialog" id="142">
 	<defaultcontrol always="true">603</defaultcontrol>
 	<controls>
-
-		<control type="group">
-
-			<control type="label">
-				<include>DialogID</include>
-				<label>DialogFullscreenInfo.xml</label>
+		<control type="image" description="Background">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>208</height>
+				<texture flipy="true">OSD/OSDBackground.png</texture>
+				<colordiffuse>BBFFFFFF</colordiffuse>
 			</control>
-			
-			<control type="group">
-			<posx>0</posx>
-			<posy>0</posy>
-
-				<control type="image">
-					<posx>-10</posx>
-					<posy>0</posy>
-					<width>1300</width>
-					<height>240</height>
-					<texture flipy="true" border="0">img/Gradient.png</texture>
-				</control>
-				
-				
 			<control type="image">
-				<posx>10</posx>
-				<posy>10</posy>
-				<width>150</width>
-				<height>150</height>
-				<aspectratio aligny="center">keep</aspectratio>
+				<posx>18</posx>
+				<posy>8</posy>
+				<width>160</width>
+				<height>160</height>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
+				<bordertexture border="9">img/ThumbShadow3.png</bordertexture>
+				<bordersize>6</bordersize>
 				<texture>$INFO[VideoPlayer.Cover]</texture>
 			</control>
-			<control type="label">
-				<posx>200</posx>
-				<posy>10</posy>
-				<width>800</width>
-				<label>[B]$INFO[VideoPlayer.Title][/B]        ([COLOR=Grey]$INFO[Player.Chapter,$LOCALIZE[21396] ]$INFO[Player.ChapterCount, / ])[/COLOR]</label>
-				<scroll>true</scroll>
-				<align>left</align>
-				<font>Large</font>
-				<visible>VideoPlayer.Content(Movies)</visible>
+			<control type="label" description="Main label">
+				<visible>VideoPlayer.Content(MusicVideos)</visible>
+				<include>FullscreenInfoLabelMain</include>
+				<label>$INFO[VideoPlayer.Artist]</label>
 			</control>
-			<control type="label">
-				<posx>200</posx>
-				<posy>10</posy>
-				<width>800</width>
-				<label>$INFO[VideoPlayer.TVShowTitle] - $INFO[VideoPlayer.Title] [COLOR=Grey]($INFO[VideoPlayer.Season] $INFO[VideoPlayer.Episode,x])[/COLOR]</label>
-				<align>left</align>
-				<font>Large</font>
+			<control type="label" description="label2">
+				<visible>VideoPlayer.Content(MusicVideos)</visible>
+				<include>FullscreenInfoLabel2</include>
+				<label>$INFO[VideoPlayer.Album]</label>
+			</control>
+			<control type="label" description="Main">
+				<visible>VideoPlayer.Content(Movies)</visible>
+				<include>FullscreenInfoLabelMain</include>
+				<label>$INFO[VideoPlayer.Title]</label>
+			</control>
+			<control type="label" description="Label2">
+				<visible>VideoPlayer.Content(Movies)</visible>
+				<include>FullscreenInfoLabel2</include>
+				<label>$LOCALIZE[21396] $INFO[Player.Chapter] $INFO[Player.ChapterCount, / ]</label>
+			</control>
+			<control type="label" description="Main">
 				<visible>VideoPlayer.Content(Episodes)</visible>
+				<include>FullscreenInfoLabelMain</include>
+				<label>$INFO[VideoPlayer.Title]</label>
+			</control>
+			<control type="label" description="Label2">
+				<visible>VideoPlayer.Content(Episodes)</visible>
+				<include>FullscreenInfoLabel2</include>
+				<label>$INFO[VideoPlayer.TVShowTitle] - $LOCALIZE[20373] $INFO[VideoPlayer.Season], $LOCALIZE[20359] $INFO[VideoPlayer.Episode])</label>
 			</control>
 			<control type="textbox">
 				<posx>200</posx>
-				<posy>60</posy>
+				<posy>82</posy>
 				<width>1060</width>
-				<height>100</height>
+				<height>82</height>
 				<label>$INFO[VideoPlayer.Plot]</label>
 				<align>jistify</align>
-				<font>Medium</font>
+				<autoscroll>false</autoscroll>
+				<font>XSmall</font>
 			</control>
-			<control type="label">
-				<posx>200</posx>
-				<posy>10</posy>
-				<width>800</width>
-				<label>$INFO[VideoPlayer.Artist]$INFO[VideoPlayer.Album, - ]</label>
-				<align>left</align>
-				<font>Large</font>
-				<visible>VideoPlayer.Content(MusicVideos)</visible>
-			</control>
+			
 			<control type="label">
 				<posx>24r</posx>
-				<posy>10</posy>
+				<posy>0</posy>
 				<width>300</width>
 				<align>right</align>
-				<font>Normal</font>
-				<label>[B]$INFO[System.Time][/B]</label>	
+				<font>Title</font>
+				<textcolor>White</textcolor>
+				<shadowcolor>Black</shadowcolor>
+				<label>$INFO[System.Time]</label>	
 			</control>
-						
+			<control type="label">
+				<posx>20r</posx>
+				<posy>28</posy>
+				<width>300</width>
+				<align>right</align>
+				<textcolor>Silver</textcolor>
+				<label>$INFO[Player.FinishTime,(,)]</label>
+			</control>
 		
+		<control type="label">
+			<include>DialogID</include>
+			<label>DialogFullscreenInfo.xml</label>
 		</control>
-</control>
 		<include>Debug_Grid</include>
 
 	</controls>

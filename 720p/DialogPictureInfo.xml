@@ -1,10 +1,14 @@
 <window id="139">
 	<defaultcontrol always="true">5</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
-	<animation effect="fade" time="100">WindowOpen</animation>
 	<controls>
-		<include>GlobalBackground</include>
+		<control type="image">
+				<posx>300</posx>
+				<posy>20</posy>
+				<width>700</width>
+				<height>680</height>
+				<texture border="22">img/DialogProgressBG.png</texture>
+			</control>
 		<control type="label">
 			<posy>40</posy>
 			<include>DialogID</include>
@@ -16,21 +20,14 @@
 			<posy>40</posy>
 			<width>1280</width>
 			<label>13406</label>
-			<font>XLarge</font>
+			<font>Title</font>
 			<align>center</align>
-		</control>
-		<control type="image" description="Splitter">
-			<posx>240</posx>
-			<posy>50</posy>
-			<height>128</height>
-			<width>800</width>
-			<texture>img/HSplitter.png</texture>
 		</control>
 		<control type="group">
 			<posx>350</posx>
 			<posy>40</posy>
 			<control type="image" description="Slider ">
-				<visible>Container(5).HasFocus()</visible>
+				<visible>!Control.HasFocus(60)</visible>
 				<posx>0</posx>
 				<posy>82</posy>
 				<width>580</width>
@@ -109,14 +106,15 @@
 			</control>
 		</control>
 		<control type="scrollbar" id="60">
-			<posx>300r</posx>
-			<posy>160</posy>
-			<height>420</height>
-			<width>18</width>
+			<posx>330r</posx>
+			<posy>130</posy>
+			<height>500</height>
+			<width>24</width>
 			<onleft>5</onleft>
 			<onright>-</onright>
-			<animation type="Conditional" condition="!Control.HasFocus(60) + !Container.Scrolling">
-				<effect type="fade" start="100" end="40" time="200" reversible="true" />
+			<showonepage>true</showonepage>
+			<animation type="Conditional" condition="!Control.HasFocus(60)">
+				<effect type="fade" start="100" end="40" time="0" reversible="true" />
 			</animation>
 		</control>
 		<include>Debug_Grid</include>

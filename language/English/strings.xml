@@ -150,19 +150,24 @@
   
   <!-- QUARTZ -->
   
-  <string id="31035">Newly Added</string>
+  <string id="31035">Show clock only on Home window</string>
   <string id="31036">Please, add items you wish to assign to your Favourites first. To do so, find your item and then use a context menu (press "C" on your keyboard).</string>
-  <string id="31037">Always show clock</string>
-  <string id="31038">Reset all settings to defaults</string>
+  <string id="31037">Hide XBMC Logo (Home window)</string>
+  <string id="31038">Reset ALL skin settings to default values</string>
   <string id="31039">Item</string>
-  <string id="31397">Fanart+Info</string>
-  <string id="31398">List+Info</string>
-  <string id="31399">Icons+Info</string>
+  <string id="31395">Advanced options in OSD</string>
+  <string id="31396">Close</string> 
+  <string id="31394">BACK</string>
+  <string id="31397">Invert watched and unwatched marks (Videos)</string>
+  <string id="31398">Use global background</string>
+  <string id="31399">Customize section backgrounds</string>
+  <string id="31400">Section</string>
   <string id="31287">KIOSK MODE</string>
   <string id="31288">Small Cover</string>
   <string id="31289">Info panel</string>
-  <string id="31290">Show unwatched marks for Movies & Episodes</string>
-  <string id="31395">Advanced options in OSD</string> 
-
+  <string id="31290">Use different background for each XBMC section</string>
+  <string id="31291"></string>
+  <string id="31292"></string>
+  
   <string id="31421">Select your XBMC user Profile[CR]to login and continue</string>
 </strings>

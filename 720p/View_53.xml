@@ -1,235 +1,247 @@
 <includes>
-	<include name="Movies_View_53" description="VideoLibrary">
-		<control type="group" description="Group 53">
+	<include name="View_53">
+		<control type="group" description="Icons">
 			<visible>Control.IsVisible(53)</visible>
-			<include>TopAndBottomSeparator</include>
-			<include>Headings</include>
-			<control type="group" description="Video Covers">
-				<!--9000 visibility in Thumbs-->
-				<!--<visible>Container.Content(Movies) + !System.IdleTime(2)</visible>
-				<animation effect="fade" start="0" end="100" time="200" reversible="false">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="500" reversible="false">Hidden</animation>
-				<include condition="Window.IsActive(VideoLibrary)">Thumbs</include>-->
-			</control>
-			<!--<control type="group" description="Movie Infopanel">
-				<visible>Container.Content(Movies)</visible>
-			<visible>!ControlGroup(9000).HasFocus() + System.IdleTime(2)</visible>
-				<animation effect="fade" start="0" end="100" time="600" reversible="false">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
-				<include condition="Window.IsActive(VideoLibrary)">InfoThumbs</include>
-				<include condition="Window.IsActive(VideoLibrary)">InfoPanel</include>
-			</control>-->
-			<control type="group" description="Episodes Infopanel">
-				<visible>!ControlGroup(9000).HasFocus() + [Container.Content(Episodes) | Container.Content(TVShows) | Container.Content(Movies)]</visible>
-				<animation effect="fade" start="0" end="100" time="600" reversible="false">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
-				<include condition="Window.IsActive(VideoLibrary)">FadeInfoThumbs</include>
-				<include condition="Window.IsActive(VideoLibrary)">InfoPanel</include>
-			</control>
-			<include condition="!Skin.HasSetting(KioskEnabled)">List_Dots_53</include>
-			<control type="fixedlist" id="53" description="Banner INFO Icons">
-				<visible>Container.Content(TVShows) + !Skin.HasSetting(TVPosters)</visible>
-				<viewtype label="31399">Icons+Info</viewtype>
-				<onleft>9000</onleft>
-				<onright>60</onright>
-				<posx>650</posx>
-				<posy>90</posy>
-				<width>580</width>
-				<height>570</height>
-				<scrolltime>240</scrolltime>
-				<pagecontrol>60</pagecontrol>
-				<orientation>vertical</orientation>
-				<focusposition>1</focusposition>
-				<movement>2</movement>
-				<preloaditems>4</preloaditems>
-				<itemlayout height="140" width="576">
-					<control type="image">
-						<posx>8</posx>
-						<posy>8</posy>
-						<width>560</width>
-						<height>124</height>
-						<!--<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
-						<bordersize>2</bordersize>-->-->
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio>keep</aspectratio>
-						<fadetime>200</fadetime>
-					</control>
-				</itemlayout>
-				<focusedlayout height="140" width="576">
-					<control type="image">
-						<posx>8</posx>
-						<posy>8</posy>
-						<width>560</width>
-						<height>124</height>
-						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
-						<bordersize>2</bordersize>-->
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio>keep</aspectratio>
-						<fadetime>200</fadetime>
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="98" end="108" time="330" easing="inout" center="auto"/>
-						</animation>
-					</control>
-				</focusedlayout>
-			</control>
-			<control type="panel" id="53" description="INFO Icons">
-				<visible>Container.Content(Movies) | [Container.Content(TVShows) + Skin.HasSetting(TVPosters)]</visible>
-				<viewtype label="31399">Icons+Info</viewtype>
-				<onleft>9000</onleft>
-				<onright>60</onright>
-				<posx>654</posx>
-				<posy>86</posy>
-				<width>570</width>
-				<height>570</height>
-				<scrolltime>240</scrolltime>
-				<pagecontrol>60</pagecontrol>
-				<orientation>vertical</orientation>
-				<preloaditems>4</preloaditems>
-				<itemlayout height="190" width="190">
-					<control type="image">
-						<posx>15</posx>
-						<posy>15</posy>
-						<width>160</width>
-						<height>160</height>
-						<!--<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
-						<bordersize>2</bordersize>-->-->
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio>keep</aspectratio>
-						<fadetime>0</fadetime>
-					</control>
-				</itemlayout>
-				<focusedlayout height="190" width="190">
-					<control type="image">
-						<posx>15</posx>
-						<posy>15</posy>
-						<width>160</width>
-						<height>160</height>
-						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
-						<bordersize>2</bordersize>-->
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio>keep</aspectratio>
-						<fadetime>0</fadetime>
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="98" end="116" time="330" easing="inout" center="auto"/>
-						</animation>
-					</control>
-				</focusedlayout>
+			<control type="image">
+				<include>Dimensions_Fullscreen</include>
+				<texture>img/Vignette_52.png</texture>
+				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="panel" id="53" description="Icons">
-				<visible>Container.Content(Episodes)</visible>
-				<viewtype label="31399">Icons+Info</viewtype>
-				<onleft>9000</onleft>
-				<onright>60</onright>
-				<posx>654</posx>
-				<posy>100</posy>
-				<width>570</width>
-				<height>568</height>
-				<scrolltime>240</scrolltime>
+				<viewtype label="538">Big Icons</viewtype>
+				<onleft>60</onleft>
+				<onright>9000</onright>
+				<onup>53</onup>
+				<ondown>53</ondown>
+				<posx>80</posx>
+				<posy>80</posy>
+				<width>1120</width>
+				<height>839</height>
+				<scrolltime>400</scrolltime>
 				<pagecontrol>60</pagecontrol>
 				<orientation>vertical</orientation>
 				<preloaditems>4</preloaditems>
-				<itemlayout height="142" width="190">
+				<itemlayout condition="container.content(Seasons) | container.content(Movies) | container.content(TVShows)" height="280" width="224">
 					<control type="image">
-						<posx>15</posx>
-						<posy>7</posy>
-						<width>160</width>
-						<height>104</height>
-						<!--<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
-						<bordersize>2</bordersize>-->-->
+						<posx>31</posx>
+						<posy>0</posy>
+						<width>162</width>
+						<height>234</height>
+						<bordertexture border="7">img/ThumbBorderNF2.png</bordertexture>
+						<bordersize>8</bordersize>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center" aligny="top">scale</aspectratio>
-						<fadetime>0</fadetime>
+						<aspectratio aligny="top" align="center">scale</aspectratio>
+					</control>
+					<control type="image">
+						<posx>170</posx>
+						<posy>210</posy>
+						<width>14</width>
+						<height>14</height>
+						<texture>overlay/$INFO[ListItem.Overlay]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
 					</control>
 				</itemlayout>
-				<focusedlayout height="142" width="190">
+				<focusedlayout condition="container.content(Seasons) | container.content(Movies) | container.content(TVShows)" height="280" width="224">
 					<control type="image">
-						<posx>15</posx>
-						<posy>7</posy>
-						<width>160</width>
-						<height>104</height>
-						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
-						<bordersize>2</bordersize>-->
+						<posx>31</posx>
+						<posy>0</posy>
+						<width>162</width>
+						<height>234</height>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center" aligny="top">scale</aspectratio>
-						<fadetime>0</fadetime>
+						<aspectratio  aligny="top" align="center">scale</aspectratio>
+						<bordertexture border="10">img/ThumbBorder.png</bordertexture>
+						<bordersize>8</bordersize>
 						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="98" end="116" time="330" easing="inout" center="auto"/>
+							<effect type="zoom" start="100" end="120" time="200" center="auto"/>
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="zoom" start="120" end="100" time="100" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>184</posx>
+						<posy>234</posy>
+						<width>24</width>
+						<height>24</height>
+						<texture>overlay/$INFO[ListItem.Overlay]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" delay="200" time="100"/>
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="fade" start="100" end="0" delay="0" time="0"/>
+						</animation>
+					</control>
+				</focusedlayout>
+				<itemlayout condition="Window.IsActive(myprograms.xml) | Window.IsActive(addonbrowser.xml) | Window.IsActive(mymusicnav.xml) | Window.IsActive(mymusicsongs.xml) | Window.IsActive(mymusicplaylist.xml)" height="280" width="224">
+					<control type="image">
+						<posx>7</posx>
+						<posy>7</posy>
+						<width>210</width>
+						<height>210</height>
+						<bordertexture border="7">img/ThumbBorderNF2.png</bordertexture>
+						<bordersize>8</bordersize>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="textbox" description="label">
+						<visible>IsEmpty(ListItem.Thumb) + !Window.IsActive(myprograms.xml)</visible>
+						<posx>30</posx>
+						<posy>80</posy>
+						<width>160</width>
+						<height>160</height>
+						<font>XTitle</font>
+						<shadowcolor>Black</shadowcolor>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout condition="Window.IsActive(myprograms.xml) | Window.IsActive(addonbrowser.xml) | Window.IsActive(mymusicnav.xml) | Window.IsActive(mymusicsongs.xml) | Window.IsActive(mymusicplaylist.xml)" height="280" width="224">
+					<control type="image">
+						<posx>7</posx>
+						<posy>7</posy>
+						<width>210</width>
+						<height>210</height>
+						<bordertexture border="10">img/ThumbBorder.png</bordertexture>
+						<bordersize>8</bordersize>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>scale</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="114" time="200" center="auto"/>
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="zoom" start="114" end="100" time="100" center="auto"/>
+						</animation>
+					</control>
+					<control type="textbox">
+						<visible>!Container.Scrolling</visible>
+						<visible>IsEmpty(ListItem.Thumb) + !Window.IsActive(myprograms.xml)</visible>
+						<posx>30</posx>
+						<posy>80</posy>
+						<width>160</width>
+						<height>160</height>
+						<font>XTitle</font>
+						<textcolor>White</textcolor>
+						<shadowcolor>Black</shadowcolor>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<itemlayout height="210" width="280">
+					<control type="image">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>260</width>
+						<height>155</height>
+						<bordertexture border="7">img/ThumbBorderNF2.png</bordertexture>
+						<bordersize>8</bordersize>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>!Container.Scrolling</visible>
+						<posx>240</posx>
+						<posy>130</posy>
+						<width>14</width>
+						<height>14</height>
+						<texture>overlay/$INFO[ListItem.Overlay]</texture>
+						<aspectratio aligny="bottom">keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="210" width="280">
+					<control type="image">
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>260</width>
+						<height>155</height>
+						<bordertexture border="10">img/ThumbBorder.png</bordertexture>
+						<bordersize>8</bordersize>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<aspectratio>scale</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="100" end="114" time="200" center="auto"/>
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="zoom" start="114" end="100" time="100" center="auto"/>
+						</animation>
+					</control>
+					<control type="image">
+						<posx>256</posx>
+						<posy>138</posy>
+						<width>24</width>
+						<height>24</height>
+						<texture>overlay/$INFO[ListItem.Overlay]</texture>
+						<aspectratio aligny="top">keep</aspectratio>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="0" end="100" delay="200" time="100"/>
+						</animation>
+						<animation type="UnFocus" reversible="false">
+							<effect type="fade" start="100" end="0" delay="0" time="0"/>
 						</animation>
 					</control>
 				</focusedlayout>
 			</control>
-		</control>
-	</include>
-	<include name="View_53" description="MusicLibrary">
-		<control type="group" description="Group 53">
-			<visible>Control.IsVisible(53)</visible>
-			<include>TopAndBottomSeparator</include>
-			<include>Headings</include>
-			<control type="group" description="Album Covers">
-				<!--9000 visibility in Thumbs-->
-				<visible>Container.Content(Albums) + !System.IdleTime(2)</visible>
-				<!--<visible>[Container.Content(Albums) + !System.IdleTime(2)] | [Container.Content(Songs) + stringcompare(Container.Listitem(0).Label,..)]</visible>-->
-				<!--<animation effect="fade" start="0" end="100" time="200" reversible="false">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="500" reversible="false">Hidden</animation>
-				<include condition="Window.IsActive(MusicLibrary)">Square_Thumbs</include>-->
+			<control type="image">
+				<posx>0</posx>
+				<posy>640</posy>
+				<height>80</height>
+				<width>1280</width>
+				<aspectratio>stretch</aspectratio>
+				<texture>img/BlackGradient2.png</texture>
 			</control>
-			<!--<control type="group" description="Albums Infopanel">
-				<visible>!ControlGroup(9000).HasFocus() + Container.Content(Albums) + System.IdleTime(2)</visible>
-				<animation effect="fade" start="0" end="100" time="600" reversible="false">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
-				<include condition="Window.IsActive(MusicLibrary)">InfoThumbs</include>
-				<include condition="Window.IsActive(MusicLibrary)">InfoPanel</include>
-			</control>-->
-			<control type="group" description="Songs Infopanel">
-				<visible>!ControlGroup(9000).HasFocus() + [Container.Content(Songs) | Container.Content(Albums)]</visible>
-				<animation effect="fade" start="0" end="100" time="600" reversible="false">Visible</animation>
-				<animation effect="fade" start="100" end="0" time="0" reversible="false">Hidden</animation>
-				<include condition="Window.IsActive(MusicLibrary)">FadeInfoThumbs</include>
-				<include condition="Window.IsActive(MusicLibrary)">InfoPanel</include>
-			</control>		
-			<include condition="!Skin.HasSetting(KioskEnabled)">List_Dots_53</include>
-			<control type="panel" id="53" description="Square Icons">
-				<visible>Container.Content(Albums) | Container.Content(Songs)</visible>
-				<viewtype label="31399">Icons+Info</viewtype>
+			<control type="group">
+				<posy>682</posy>
+				<control type="fadelabel" description="Title label long">
+					<posx>50</posx>
+					<posy>0</posy>
+					<width>650</width>
+					<height>30</height>
+					<align>left</align>
+					<label>$INFO[ListItem.Label]</label>
+					<scroll>false</scroll>
+					<font>Title</font>
+				</control>
+				<control type="label" description="Title label long">
+					<visible>!IsEmpty(ListItem.Duration)</visible>
+					<posx>1050</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<height>30</height>
+					<align>right</align>
+					<label>[COLOR=Silver]$LOCALIZE[12391]: [/COLOR][B]$INFO[ListItem.Duration][/B]</label>
+					<scroll>false</scroll>
+					<font>Small</font>
+				</control>
+				<control type="image">
+					<visible>!container.content(seasons) + !container.content(albums) + !container.content(artists)</visible>
+					<posx>1100</posx>
+					<posy>2</posy>
+					<height>24</height>
+					<width>120</width>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.Rating,badges/,.png]</texture>
+				</control>
+				<control type="label" description="Watched status">
+					<visible>!IsEmpty(ListItem.Property(UnWatchedEpisodes))</visible>
+					<posx>1050</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<height>30</height>
+					<align>right</align>
+					<label>[COLOR=Silver]$LOCALIZE[16101]: [/COLOR][B]$INFO[ListItem.Property(UnWatchedEpisodes)][/B] / $INFO[ListItem.Property(TotalEpisodes)]</label>
+					<scroll>false</scroll>
+					<font>Small</font>
+				</control>
+			</control>
+			<control type="scrollbar" id="60">
+				<visible>![Skin.HasSetting(KioskEnabled) + Skin.HasSetting(HideScrollbar)]</visible>
+				<posx>34</posx>
+				<posy>80</posy>
+				<height>564</height>
+				<width>24</width>
 				<onleft>9000</onleft>
-				<onright>60</onright>
-				<posx>654</posx>
-				<posy>84</posy>
-				<width>570</width>
-				<height>570</height>
-				<scrolltime>240</scrolltime>
-				<pagecontrol>60</pagecontrol>
-				<orientation>vertical</orientation>
-				<preloaditems>4</preloaditems>
-				<itemlayout height="190" width="190">
-					<control type="image">
-						<posx>14</posx>
-						<posy>14</posy>
-						<width>166</width>
-						<height>166</height>
-						<!--<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
-						<bordersize>2</bordersize>-->-->
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<fadetime>0</fadetime>
-					</control>
-				</itemlayout>
-				<focusedlayout height="190" width="190">
-					<control type="image">
-						<posx>14</posx>
-						<posy>14</posy>
-						<width>166</width>
-						<height>166</height>
-						<!--<bordertexture border="2">img/ButtonFO.png</bordertexture>
-						<bordersize>2</bordersize>-->
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<fadetime>0</fadetime>
-						<animation type="Focus" reversible="false">
-							<effect type="zoom" start="98" end="116" time="330" easing="inout" center="auto"/>
-						</animation>
-					</control>
-				</focusedlayout>
+				<onright>53</onright>
+				<animation condition="!Control.HasFocus(60) + !Container.Scrolling" effect="fade" start="100" end="0" time="200" reversible="true">Conditional</animation>
 			</control>
 		</control>
 	</include>

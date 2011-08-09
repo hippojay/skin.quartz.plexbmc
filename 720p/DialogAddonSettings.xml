@@ -1,53 +1,56 @@
 <window id="10140">
-	<defaultcontrol always="false">9</defaultcontrol>
-	<allowoverlay>yes</allowoverlay>
-	<backgroundcolor>0</backgroundcolor>
+	<defaultcontrol always="true">9</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
 	<coordinates>
 		<posx>0</posx>
 		<posy>0</posy>
 	</coordinates>
 	<controls>
-		<include>GlobalBackground</include>
+		
+		<include>MiniBackground</include>
+		
+	
+		<control type="image" description="DialogBG">
+				<posx>60</posx>
+				<posy>50</posy>
+				<width>1160</width>
+				<height>630</height>
+				<aspectratio>stretch</aspectratio>
+				<texture border="22">img/DialogProgressBG.png</texture>
+				
+			</control>
+			
+				
+		<include>Header</include>
 		<control type="label">
 			<include>WindowID</include>
 			<label>DialogAddonSettings.xml</label>
 		</control>
-		<control type="image" description="separator Top">
-			<posy>74</posy>
-			<posx>660</posx>
-			<width>550</width>
-			<height>2</height>
-			<texture>img/ButtonFO.png</texture>
-			<aspectratio>stretch</aspectratio>
-		</control>
+		
 		<control type="label" id="20" description="Heading">
-			<posx>660</posx>
-			<posy>25</posy>
-			<align>center</align>
-			<width>540</width>
-			<font>XLarge</font>
+			<include>Heading</include>
 			<label>-</label>
 		</control>
 		<control type="grouplist" id="9" description="Left Configure Panel">
 			<posx>100</posx>
-			<posy>120</posy>
+			<posy>80</posy>
 			<width>300</width>
-			<height>420</height>
+			<height>550</height>
 			<itemgap>0</itemgap>
 			<onleft>30</onleft>
 			<onright>2</onright>
 			<onup>9</onup>
-			<ondown>9000</ondown>
+			<ondown>8999</ondown>
 		</control>
-		<control type="image" description="separator Top">
+		<control type="image" description="separator Left container">
 			<posy>495</posy>
 			<posx>80</posx>
 			<width>300</width>
-			<height>2</height>
-			<texture>img/ButtonFO.png</texture>
+			<height>1</height>
+			<texture>img/Line.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
-		<control type="grouplist" id="9000" description="Left OK/Cancel Panel">
+		<control type="grouplist" id="8999" description="Left OK/Cancel Panel">
 			<posx>100</posx>
 			<posy>500</posy>
 			<width>300</width>
@@ -63,14 +66,17 @@
 			<control type="button" id="10" description="OK Button">
 				<width>260</width>
 				<label>186</label>
+				
 			</control>
 			<control type="button" id="12" description="Defaults Button">
 				<width>260</width>
 				<label>409</label>
+				
 			</control>
 			<control type="button" id="11" description="Cancel Button">
 				<width>260</width>
 				<label>222</label>
+				
 			</control>
 		</control>
 		<control type="image" description="Splitter">
@@ -87,20 +93,22 @@
 		</control>
 		<control type="group" description="Right Panel">
 			<posx>430</posx>
-			<posy>120</posy>
+			<posy>80</posy>
 			<control type="grouplist" id="2" description="Right controls">
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>750</width>
-				<height>650</height>
+				<height>580</height>
 				<itemgap>0</itemgap>
 				<onup>2</onup>
-				<ondown>9000</ondown>
+				<ondown>2</ondown>
 				<onleft>9</onleft>
-				<onright>-</onright>
+				<onright>60</onright>
+				<pagecontrol>60</pagecontrol>
 			</control>
 			<control type="button" id="13" description="Default Category Button">
 				<font>Small</font>
+				<texturefocus border="5">img/ButtonOverlay.png</texturefocus>
 			</control>
 			<control type="button" id="3" description="Default Button">
 				<font>Small</font>
@@ -116,8 +124,8 @@
 			</control>
 			<control type="label" id="7">
 				<label>-</label>
-				<font>Small</font>
-				<textcolor>Grey</textcolor>
+				<font>Title</font>
+				<textcolor>Blue</textcolor>
 			</control>
 			<control type="image" id="6" description="Default Seperator">
 				<height>-2</height>
@@ -127,6 +135,15 @@
 				<font>Small</font>
 				<width>600</width>
 			</control>
+		</control>
+		<control type="scrollbar" id="60">
+				<visible>![Skin.HasSetting(KioskEnabled) + Skin.HasSetting(HideScrollbar)]</visible>
+				<posx>1230</posx>
+				<posy>110</posy>
+				<height>586</height>
+				<width>24</width>
+				<onleft>2</onleft>
+				<onright>8999</onright>
 		</control>
 		<include>Debug_Grid</include>
 	</controls>
