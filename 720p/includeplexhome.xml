@@ -334,6 +334,11 @@
 						<onclick>ActivateWindow(VideoLibrary,plugin://plugin.video.plexbmc/?url=http://video&mode=22,return)</onclick>
                         <visible>Skin.HasSetting(plexbmcok)</visible>
                     </item>
+                    <item id="22">
+                        <label>XBMC addons</label>
+						<onclick>ActivateWindow(VideoLibrary,addons)</onclick>
+                        <visible>Skin.HasSetting(plexbmcok)</visible>
+                    </item>
 
 				</content>
 				<include>Animation301</include>
@@ -686,6 +691,11 @@
 						<label>PleXBMC Settings</label>
                         <onclick>XBMC.RunScript(plugin.video.plexbmc,setting)</onclick>
 					</item>
+                    <item id="22">
+                        <label>Plex Online</label>
+						<onclick>ActivateWindow(VideoLibrary,plugin://plugin.video.plexbmc/?url=http://online&mode=22,return)</onclick>
+                        <visible>Skin.HasSetting(plexbmcok)</visible>
+                    </item>					
 					<item id="9" description="Quit">
 						<label>13009</label>
 						<onclick>ActivateWindow(shutdownmenu)</onclick>
