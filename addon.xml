@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.quartz.plexbmc" version="0.4-1.0.3" name="Quartz PleXBMC" provider-name="Pecinko.  Modded by Hippojay for Plexbmc">
+<addon id="skin.quartz.plexbmc" version="0.5-1.0.3" name="Quartz PleXBMC" provider-name="Pecinko.  Modded by Hippojay for Plexbmc">
 	<requires>
 		<import addon="xbmc.gui" version="2.11"/>
     	<!--<import addon="script.favourites" version="2.0.0"/>
