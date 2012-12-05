@@ -150,7 +150,7 @@
 						<include>SettingsButtonCommons</include>
 						<label>PleXBMC Integration</label>
 						<onclick>Skin.ToggleSetting(plexbmcok)</onclick>
-						<selected>!Skin.HasSetting(plexbmcok)</selected>
+						<selected>Skin.HasSetting(plexbmcok)</selected>
 					</control>
 					<control type="radiobutton" id="101" description="Enable Debug Grid">
 						<visible>false</visible>
